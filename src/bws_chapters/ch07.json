@@ -1,0 +1,416 @@
+{
+  "chapter": 7,
+  "title_en": "Functions and Cardinality",
+  "title_zh": "函数与基数",
+  "start_page": 467,
+  "end_page": 566,
+  "sections": [
+    {
+      "section_id": "7.1",
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "page": 467,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 467,
+          "en": "We will formally define a function. Specifically, we will see that a function is really a particular kind of relation with certain properties. Later in this chapter, we will use the concept of a bijective function—essentially, a \"pairing up\" of elements of two sets—to talk about the \"sizes\" of sets and how to compare them.",
+          "zh": "我们将形式化地定义函数。具体而言，我们将看到函数实际上是一种具有特定性质的关系。本章稍后，我们将利用双射函数的概念——本质上是两个集合元素之间的一一\"配对\"——来讨论集合的\"大小\"以及如何比较它们。"
+        },
+        {
+          "type": "strategy",
+          "page": 468,
+          "en": "By the end of this chapter, you should be able to: state the definition of a function and provide many examples; define images and pre-images and prove properties of them; state properties of functions (injection/surjection/bijection) and prove/disprove them; find compositions; describe the relationship between bijective functions and inverses; use bijections to define cardinalities and prove claims; state the difference between finite, countably infinite, and uncountably infinite sets.",
+          "zh": "学完本章后，你应当能够：陈述函数的定义并举出大量例子；定义像与原像并证明它们的性质；陈述函数的单射、满射、双射性质并能证明或否定；求复合函数；描述双射与反函数的关系；用双射定义基数并证明相关命题；区分有限集、可数无穷集与不可数无穷集。"
+        },
+        {
+          "type": "note",
+          "page": 468,
+          "en": "The important idea from the previous chapter that will be helpful in this one is that of a relation. We will see that a function is just a particular kind of relation.",
+          "zh": "上一章中对本章有帮助的重要概念是关系。我们将看到，函数只不过是一种特殊的关系。"
+        },
+        {
+          "type": "warning",
+          "page": 469,
+          "en": "Some of the results presented in our discussion of cardinality will laugh wholeheartedly in the face of your intuitions. Seriously! We will see some strange, counter-intuitive facts, and it will help to keep an open mind about them.",
+          "zh": "在基数讨论中呈现的某些结果会彻底违背你的直觉。真的！我们将看到一些奇怪的、反直觉的事实，对它们保持开放的心态会有帮助。"
+        }
+      ]
+    },
+    {
+      "section_id": "7.2",
+      "title_en": "Definition and Examples",
+      "title_zh": "定义与例子",
+      "page": 469,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 470,
+          "en": "Let A, B be sets. Let f be a relation between A and B, so f ⊆ A × B. Also, assume that f has the property that ∀a ∈ A. ∃! b ∈ B. (a, b) ∈ f. Such a relation is called a function from A to B. We call A the domain of the function and B the codomain of the function. We write f : A → B to mean f is a function from A to B.",
+          "zh": "设 A、B 为集合。设 f 是 A 与 B 之间的一个关系，即 f ⊆ A × B。并假定 f 具有性质：∀a ∈ A，存在唯一的 b ∈ B 使得 (a, b) ∈ f。这样的关系称为从 A 到 B 的函数。称 A 为该函数的定义域，B 为陪域。我们记 f : A → B，表示 f 是从 A 到 B 的函数。"
+        },
+        {
+          "type": "warning",
+          "page": 471,
+          "en": "We want to completely avoid using the word \"range\" in this context because of a potential ambiguity. Some authors use \"range\" to mean codomain, others use it to mean image. To avoid this confusion, we will only use the words codomain and image.",
+          "zh": "由于潜在的歧义，我们在此语境中完全避免使用\"range\"一词。有些作者用\"range\"指陪域，另一些作者用它指像集。为避免混淆，我们只使用\"陪域(codomain)\"和\"像(image)\"这两个词。"
+        },
+        {
+          "type": "definition",
+          "page": 474,
+          "en": "Given a domain A, a codomain B, and a proposed \"rule\" for f, then we say f is a well-defined function if and only if (1) the rule is defined on all elements of A, and (2) for every a ∈ A, the rule outputs a unique element of the set B.",
+          "zh": "给定定义域 A、陪域 B 以及 f 的一条候选\"规则\"，我们称 f 是一个良定义的函数，当且仅当：(1) 该规则在 A 的所有元素上都有定义；(2) 对每个 a ∈ A，该规则输出集合 B 中唯一一个元素。"
+        },
+        {
+          "type": "definition",
+          "page": 475,
+          "en": "Let S be a set. The identity function on S is defined to be the function Id : S → S given by Id(x) = x for all x ∈ S. That is, the identity function \"outputs exactly what it inputs\".",
+          "zh": "设 S 为一个集合。S 上的恒等函数定义为函数 Id : S → S，满足对一切 x ∈ S，Id(x) = x。也就是说，恒等函数\"输出与输入完全相同的东西\"。"
+        },
+        {
+          "type": "theorem",
+          "page": 476,
+          "en": "Let A, B be sets, and let f : A → B and g : A → B be functions. Suppose that f(x) = g(x) for all x ∈ A. Then we say f and g are equal as functions, and we write f = g.",
+          "zh": "设 A、B 为集合，f : A → B 与 g : A → B 为函数。假设对一切 x ∈ A 都有 f(x) = g(x)。则称 f 与 g 作为函数相等，记作 f = g。"
+        },
+        {
+          "type": "warning",
+          "page": 475,
+          "en": "Three different things could go wrong: (1) There might be an element of the domain for which no \"output\" is defined; (2) There might be an element of the domain for which more than one \"output\" is defined; (3) There might be an element of the domain for which exactly one \"output\" is defined, but it is not an element of the codomain.",
+          "zh": "一个候选关系可能在三方面出问题：(1) 定义域中某个元素没有定义任何\"输出\"；(2) 定义域中某个元素定义了不止一个\"输出\"；(3) 定义域中某个元素恰有一个\"输出\"，但该输出不属于陪域。"
+        }
+      ]
+    },
+    {
+      "section_id": "7.3",
+      "title_en": "Images and Pre-images",
+      "title_zh": "像与原像",
+      "page": 482,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 483,
+          "en": "Let A, B be sets and let f : A → B be a function. Let X ⊆ A. The image of X under the function f is written and defined as Im_f(X) = {b ∈ B | ∃a ∈ X. f(a) = b}. That is, the image of X under f is the set of all \"outputs\" that come from \"inputs\" in the set X. When we say the image of f, we mean the image of the entire domain, i.e. Im_f(A).",
+          "zh": "设 A、B 为集合，f : A → B 为函数，X ⊆ A。X 在函数 f 下的像记作并定义为 Im_f(X) = {b ∈ B | 存在 a ∈ X 使 f(a) = b}。也就是说，f 下 X 的像是由集合 X 中\"输入\"所产生的所有\"输出\"组成的集合。当我们说 f 的像时，指的是整个定义域的像，即 Im_f(A)。"
+        },
+        {
+          "type": "strategy",
+          "page": 485,
+          "en": "To approach questions like these, we must (a) identify a claim for what Im_f(C) is by defining a set, and then (b) prove that the set we defined is actually equal to Im_f(C), in the sense of sets. This means we will use a double-containment argument!",
+          "zh": "处理这类问题时，我们必须：(a) 通过定义一个集合来给出关于 Im_f(C) 是什么的断言；(b) 证明我们定义的集合在集合意义上确实等于 Im_f(C)。这意味着我们要使用双向包含论证！"
+        },
+        {
+          "type": "theorem",
+          "page": 490,
+          "en": "Let A, B be sets. Let f : A → B be a function. Let S, T ⊆ A. Then, Im_f(S ∩ T) ⊆ Im_f(S) ∩ Im_f(T). Why didn't we claim an equality here? It turns out that equality need not hold, in fact!",
+          "zh": "设 A、B 为集合，f : A → B 为函数，S、T ⊆ A。则 Im_f(S ∩ T) ⊆ Im_f(S) ∩ Im_f(T)。为什么我们没有断言等式呢？事实上，等式一般并不成立！"
+        },
+        {
+          "type": "example",
+          "page": 493,
+          "en": "Define A = {1, 2, 3} and B = {⋆, □}. Define f : A → B by f(1) = ⋆, f(2) = □, f(3) = ⋆. Define S = {1, 2} and T = {2, 3}. Observe S ∩ T = {2}, so Im_f(S ∩ T) = {□}. However Im_f(S) = Im_f(T) = B, so ⋆ ∈ Im_f(S) ∩ Im_f(T) but ⋆ ∉ Im_f(S ∩ T).",
+          "zh": "令 A = {1,2,3}，B = {⋆,□}，定义 f : A → B 为 f(1)=⋆、f(2)=□、f(3)=⋆。令 S={1,2}、T={2,3}。注意 S∩T={2}，故 Im_f(S∩T)={□}；但 Im_f(S)=Im_f(T)=B，因此 ⋆ ∈ Im_f(S)∩Im_f(T)，而 ⋆ ∉ Im_f(S∩T)。"
+        },
+        {
+          "type": "definition",
+          "page": 493,
+          "en": "Let A, B be sets and let f : A → B be a function. Let Y ⊆ B. The pre-image of Y under the function f is written and defined as PreIm_f(Y) = {a ∈ A | f(a) ∈ Y}. That is, the pre-image of Y under f is the set of all \"inputs\" that produce an \"output\" in Y.",
+          "zh": "设 A、B 为集合，f : A → B 为函数，Y ⊆ B。Y 在函数 f 下的原像记作并定义为 PreIm_f(Y) = {a ∈ A | f(a) ∈ Y}。也就是说，f 下 Y 的原像是所有其\"输出\"落在 Y 中的\"输入\"所组成的集合。"
+        },
+        {
+          "type": "theorem",
+          "page": 495,
+          "en": "Let A, B be sets. Let f : A → B be a function. Let X, Y ⊆ B. Then, PreIm_f(X ∩ Y) = PreIm_f(X) ∩ PreIm_f(Y). Notice how the proof below appeals directly to the formal definition of pre-images.",
+          "zh": "设 A、B 为集合，f : A → B 为函数，X、Y ⊆ B。则 PreIm_f(X ∩ Y) = PreIm_f(X) ∩ PreIm_f(Y)。注意下面的证明直接诉诸原像的形式定义。"
+        },
+        {
+          "type": "theorem",
+          "page": 496,
+          "en": "Let A, B be sets. Let f : A → B be a function. Let Y ⊆ B. Then, Im_f(PreIm_f(Y)) ⊆ Y. (The reverse containment Im_f(PreIm_f(Y)) ⊇ Y need not hold.)",
+          "zh": "设 A、B 为集合，f : A → B 为函数，Y ⊆ B。则 Im_f(PreIm_f(Y)) ⊆ Y。（反向包含 Im_f(PreIm_f(Y)) ⊇ Y 一般并不成立。）"
+        }
+      ]
+    },
+    {
+      "section_id": "7.4",
+      "title_en": "Properties of Functions",
+      "title_zh": "函数的性质",
+      "page": 497,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 498,
+          "en": "Let A, B be sets and let f : A → B be a function. We say f is a surjective function if and only if Im_f(A) = B. Equivalently, f is surjective ⇐⇒ ∀b ∈ B. ∃a ∈ A. f(a) = b. That is, f is surjective if and only if every output has at least one corresponding input.",
+          "zh": "设 A、B 为集合，f : A → B 为函数。我们称 f 是满射函数，当且仅当 Im_f(A) = B。等价地，f 是满射 ⇐⇒ ∀b ∈ B，存在 a ∈ A 使 f(a) = b。也就是说，f 是满射当且仅当每个输出都至少有一个对应的输入。"
+        },
+        {
+          "type": "definition",
+          "page": 502,
+          "en": "Let A, B be sets and let f : A → B be a function. We say f is an injective function if and only if it has the property that ∀a1, a2 ∈ A. a1 ≠ a2 ⇒ f(a1) ≠ f(a2). Equivalently, ∀a1, a2 ∈ A. f(a1) = f(a2) ⇒ a1 = a2. This expresses \"if two outputs are equal, they must come from the same input\".",
+          "zh": "设 A、B 为集合，f : A → B 为函数。我们称 f 是单射函数，当且仅当它具有性质：∀a1, a2 ∈ A，a1 ≠ a2 ⇒ f(a1) ≠ f(a2)。等价地，∀a1, a2 ∈ A，f(a1) = f(a2) ⇒ a1 = a2。这表达了\"若两个输出相等，则它们必来自同一个输入\"。"
+        },
+        {
+          "type": "strategy",
+          "page": 506,
+          "en": "Prove f is surjective: (1) Let b ∈ B be arbitrary and fixed. (2) Define a = ___. (3) Show a ∈ A. (4) Show f(a) = b. Prove f is injective: (1) Let x, y ∈ A be arbitrary. (2) Suppose f(x) = f(y). (3) Deduce x = y. Prove f is not injective: (1) Define x = ___ and y = ___. (2) Show x, y ∈ A. (3) Show x ≠ y. (4) Show f(x) = f(y).",
+          "zh": "证明 f 是满射：(1) 任取并固定 b ∈ B；(2) 令 a = ___；(3) 证明 a ∈ A；(4) 证明 f(a) = b。证明 f 是单射：(1) 任取 x, y ∈ A；(2) 假设 f(x) = f(y)；(3) 推出 x = y。证明 f 不是单射：(1) 令 x = ___、y = ___；(2) 证明 x, y ∈ A；(3) 证明 x ≠ y；(4) 证明 f(x) = f(y)。"
+        },
+        {
+          "type": "definition",
+          "page": 508,
+          "en": "Let A, B be sets and let f : A → B be a function. We say f is a bijective function if and only if f is both injective and surjective. We will sometimes say that f is a bijection between the sets A and B, instead of saying \"from A to B\".",
+          "zh": "设 A、B 为集合，f : A → B 为函数。我们称 f 是双射函数，当且仅当 f 既是单射又是满射。我们有时会说 f 是集合 A 与 B 之间的一个双射，而不说\"从 A 到 B 的双射\"。"
+        },
+        {
+          "type": "example",
+          "page": 508,
+          "en": "Define E ⊆ N to be the set of all even natural numbers. Define d : N → E by d(n) = 2n. We claim d is a bijection. This seems strange: there is a bijection between N and E, a set that is a proper subset of N?",
+          "zh": "设 E ⊆ N 为所有偶自然数组成的集合，定义 d : N → E 为 d(n) = 2n。我们断言 d 是一个双射。这看起来有些奇怪：N 与 E（N 的一个真子集）之间竟然存在双射？"
+        },
+        {
+          "type": "warning",
+          "page": 507,
+          "en": "To prove a function is not bijective, we need to prove it is either not surjective or not injective. (It might be that both properties fail, but one such proof is sufficient.)",
+          "zh": "要证明一个函数不是双射，只需证明它不满射或不单射即可。（也许两条性质都不成立，但其中一条的证明已足够。）"
+        }
+      ]
+    },
+    {
+      "section_id": "7.5",
+      "title_en": "Compositions and Inverses",
+      "title_zh": "复合与反函数",
+      "page": 511,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 512,
+          "en": "Let A, B, C be sets, and let f : A → B and g : B → C be functions. Consider the function h : A → C defined by h(a) = g(f(a)) for all a ∈ A. We say that h is the composition of g with f and we write h = g ◦ f. Read the \"◦\" out loud as \"after\": h = g ◦ f means \"g after f\".",
+          "zh": "设 A、B、C 为集合，f : A → B 与 g : B → C 为函数。考虑函数 h : A → C，定义为对一切 a ∈ A，h(a) = g(f(a))。称 h 为 g 与 f 的复合，记作 h = g ◦ f。把\"◦\"读作\"之后\"：h = g ◦ f 即\"g 在 f 之后\"。"
+        },
+        {
+          "type": "theorem",
+          "page": 515,
+          "en": "Let A, B, C, D be any sets. Let f : A → B and g : B → C and h : C → D be functions. Then, h ◦ (g ◦ f) = (h ◦ g) ◦ f. Function composition is associative.",
+          "zh": "设 A、B、C、D 为任意集合，f : A → B、g : B → C、h : C → D 为函数。则 h ◦ (g ◦ f) = (h ◦ g) ◦ f。函数复合满足结合律。"
+        },
+        {
+          "type": "theorem",
+          "page": 515,
+          "en": "Let A, B, C be sets and let f : A → B and g : B → C be functions. If g ◦ f is injective, then f is necessarily injective. The converse is False: f being injective does not guarantee that g ◦ f is injective.",
+          "zh": "设 A、B、C 为集合，f : A → B、g : B → C 为函数。若 g ◦ f 是单射，则 f 必为单射。反之不成立：f 是单射并不能保证 g ◦ f 是单射。"
+        },
+        {
+          "type": "definition",
+          "page": 517,
+          "en": "Let f : A → B be a function. Suppose there is a function g : B → A such that f ◦ g = Id_B and g ◦ f = Id_A. Then we say g is the inverse of f and write g = f⁻¹.",
+          "zh": "设 f : A → B 为函数。假设存在函数 g : B → A，使得 f ◦ g = Id_B 且 g ◦ f = Id_A。则称 g 是 f 的反函数，记作 g = f⁻¹。"
+        },
+        {
+          "type": "warning",
+          "page": 518,
+          "en": "It is extremely important that you show both compositions yield the identity function; that is, you must show both f ◦ g = Id_B and g ◦ f = Id_A. One direction alone is not sufficient.",
+          "zh": "极其重要的是，你必须证明两个复合都等于恒等函数，即必须同时证明 f ◦ g = Id_B 与 g ◦ f = Id_A。仅证明一个方向是不够的。"
+        },
+        {
+          "type": "theorem",
+          "page": 519,
+          "en": "Let A, B be any sets. Let f : A → B be a function. Then, f is bijective ⇐⇒ f has an inverse f⁻¹ : B → A.",
+          "zh": "设 A、B 为任意集合，f : A → B 为函数。则 f 是双射 ⇐⇒ f 具有反函数 f⁻¹ : B → A。"
+        },
+        {
+          "type": "note",
+          "page": 521,
+          "en": "Let f : A → B and g : B → C be bijective functions. Then h = g ◦ f is also bijective, and h⁻¹ = f⁻¹ ◦ g⁻¹. Also, if f is a bijection, then f⁻¹ is also a bijection and (f⁻¹)⁻¹ = f.",
+          "zh": "设 f : A → B、g : B → C 为双射，则 h = g ◦ f 也是双射，且 h⁻¹ = f⁻¹ ◦ g⁻¹。此外，若 f 是双射，则 f⁻¹ 也是双射，且 (f⁻¹)⁻¹ = f。"
+        }
+      ]
+    },
+    {
+      "section_id": "7.6",
+      "title_en": "Cardinality",
+      "title_zh": "基数",
+      "page": 522,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 523,
+          "en": "In the land of Cardinality, the Bijection is King. Only he can tell us when two sets have the same cardinality, whether they be finite or infinite.",
+          "zh": "在基数的国度里，双射是国王。唯有它能告诉我们两个集合何时具有相同的基数，无论它们是有限集还是无限集。"
+        },
+        {
+          "type": "definition",
+          "page": 523,
+          "en": "Let S be any set. We say S is finite if and only if ∃n ∈ N ∪ {0} such that there exists a bijection f : S → [n]. In this case, we write |S| = n. We say S is infinite if and only if S is not finite.",
+          "zh": "设 S 为任意集合。称 S 是有限集，当且仅当存在 n ∈ N ∪ {0} 以及双射 f : S → [n]。此时记 |S| = n。称 S 是无限集，当且仅当 S 不是有限集。"
+        },
+        {
+          "type": "definition",
+          "page": 524,
+          "en": "We say S is countably infinite if and only if there exists a bijection f : S → N. We say S is uncountably infinite (or just uncountable) if and only if S is infinite and every function f : S → N fails to be a bijection. We do not write |S| = ∞; there are many different levels of infinite sets.",
+          "zh": "称 S 是可数无穷的，当且仅当存在双射 f : S → N。称 S 是不可数无穷的（简称不可数的），当且仅当 S 是无限集，且每个函数 f : S → N 都不是双射。我们不写 |S| = ∞；无限集有许多不同的层次。"
+        },
+        {
+          "type": "definition",
+          "page": 525,
+          "en": "We write |S| = |T| iff there exists a bijection f : S → T. We write |S| ≤ |T| iff there exists an injection f : S → T. We write |S| < |T| iff |S| ≤ |T| and |S| ≠ |T|. We write |S| ≥ |T| iff there exists a surjection f : S → T.",
+          "zh": "|S| = |T| 当且仅当存在双射 f : S → T；|S| ≤ |T| 当且仅当存在单射 f : S → T；|S| < |T| 当且仅当 |S| ≤ |T| 且 |S| ≠ |T|；|S| ≥ |T| 当且仅当存在满射 f : S → T。"
+        },
+        {
+          "type": "theorem",
+          "page": 526,
+          "en": "Let S be any set. Then |S| < |P(S)|. (Cantor's Theorem.) The power set of a set always has strictly larger cardinality than the set itself. This holds for infinite sets, too: |N| < |P(N)| < |P(P(N))| < ⋯. Immediately, this tells us there are infinitely-many cardinalities. The Cantor-Schroeder-Bernstein Theorem adds: if f : A → B and g : B → A are both injections, then there exists a bijection h : A → B.",
+          "zh": "设 S 为任意集合，则 |S| < |P(S)|（康托尔定理）。一个集合的幂集的基数严格大于该集合本身的基数。这对无限集同样成立：|N| < |P(N)| < |P(P(N))| < ⋯。这立即告诉我们存在无穷多个基数。康托尔-施罗德-伯恩斯坦定理补充：若 f : A → B 与 g : B → A 都是单射，则存在双射 h : A → B。"
+        },
+        {
+          "type": "example",
+          "page": 535,
+          "en": "The Hilbert Hotel argument and explicit bijections show |N| = |N ∪ {0}| = |N × N| = |Z| = |Q|, even though N ⊂ Z ⊂ Q and the rationals are dense in R. Intuitively, |N| = |Z| = |Q| < |R|.",
+          "zh": "希尔伯特旅馆论证与显式双射表明 |N| = |N ∪ {0}| = |N × N| = |Z| = |Q|，尽管 N ⊂ Z ⊂ Q 且有理数在 R 中稠密。直观上，|N| = |Z| = |Q| < |R|。"
+        },
+        {
+          "type": "theorem",
+          "page": 545,
+          "en": "Theorem 7.6.22: Suppose we have, for each n ∈ N, a countably infinite set A_n. Then the union A = ⋃_{n∈N} A_n is also countably infinite. A countable union of countable sets is countable. (But a countably infinite Cartesian product of finite sets need not be countable.)",
+          "zh": "定理 7.6.22：设对每个 n ∈ N 都有一个可数无穷集合 A_n，则并集 A = ⋃_{n∈N} A_n 也是可数无穷的。可数个可数集的并集仍是可数的。（但有限集的可数无穷笛卡尔积未必可数。）"
+        },
+        {
+          "type": "theorem",
+          "page": 549,
+          "en": "A countably infinite Cartesian product of sets with just two elements is uncountably infinite: {0,1}^N = {0,1}×{0,1}×⋯ is uncountably infinite. Proof by Cantor's diagonal argument: list all sequences y_i = (a_{i,1}, a_{i,2}, …), then define x_i = 0 if a_{i,i}=1 and x_i=1 if a_{i,i}=0; the new sequence x differs from every y_i in the i-th coordinate, so it is missing from the list—a contradiction.",
+          "zh": "仅含两个元素的集合所作的可数无穷笛卡尔积是不可数无穷的：{0,1}^N 不可数。证明用康托尔对角线论证：把所有序列 y_i=(a_{i,1},a_{i,2},…) 列出，再定义 x_i = 0 若 a_{i,i}=1、x_i = 1 若 a_{i,i}=0；这个新序列在第 i 个坐标上与每个 y_i 都不同，因而不在列表中——矛盾。"
+        },
+        {
+          "type": "example",
+          "page": 551,
+          "en": "R is uncountably infinite. In fact |R| = |P(N)|. The interval [0,1] has the same cardinality as R, and {0,1}^N has the same cardinality as P(N), so |N| = |Z| = |Q| < |R| = |P(N)|. (Equivalently, A is infinite iff A admits a bijection with a proper subset of itself.)",
+          "zh": "R 是不可数无穷的。事实上 |R| = |P(N)|。区间 [0,1] 与 R 同基数，{0,1}^N 与 P(N) 同基数，因此 |N| = |Z| = |Q| < |R| = |P(N)|。（等价地：A 是无限集当且仅当 A 能与自身的某个真子集建立双射。）"
+        }
+      ]
+    },
+    {
+      "section_id": "7.7",
+      "title_en": "Summary",
+      "title_zh": "小结",
+      "page": 557,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 557,
+          "en": "We saw that a function is just a relation with a particular property. We formalized these notions mathematically by defining terminology like domain, codomain, and image. Further properties of functions include injectivity and surjectivity.",
+          "zh": "我们看到函数不过是具有特定性质的一种关系。我们通过定义域、陪域、像等术语把这些概念形式化。函数的进一步性质包括单射性与满射性。"
+        },
+        {
+          "type": "note",
+          "page": 557,
+          "en": "We saw and proved that a function is bijective if and only if it has an inverse! This made for an important result later on when we discussed cardinality, where \"the bijection is king\". The notion of \"pairing off elements\" helped us make sense of some of the more wild and counter-intuitive results about the \"sizes of sets\".",
+          "zh": "我们看到并证明了：函数是双射当且仅当它存在反函数！这一点在随后讨论基数（\"双射为王\"）时成为重要工具。\"把元素一一配对\"的观念帮助我们理解关于集合\"大小\"的那些更奇特、更反直觉的结果。"
+        },
+        {
+          "type": "note",
+          "page": 557,
+          "en": "We characterized infinite sets as either countably infinite or uncountably infinite. We also proved Cantor's Theorem, which shows that there are, in fact, infinitely-many cardinalities. From now on, we will be focusing on finite sets only.",
+          "zh": "我们把无限集刻画为可数无穷或不可数无穷两类。我们还证明了康托尔定理，它表明事实上存在无穷多个基数。此后我们将只关注有限集。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "function (f : A → B)", "term_zh": "函数（f : A → B）", "page": 470, "note_zh": "从 A 到 B 的一种关系，满足每个输入 a ∈ A 有唯一输出 b ∈ B。"},
+    {"term_en": "domain", "term_zh": "定义域", "page": 470, "note_zh": "函数 f : A → B 中集合 A，即所有允许的输入所在的集合。"},
+    {"term_en": "codomain", "term_zh": "陪域", "page": 470, "note_zh": "函数 f : A → B 中集合 B，即所有允许的输出可能落入的集合；不一定被完全取到。"},
+    {"term_en": "image (Im_f(X))", "term_zh": "像", "page": 483, "note_zh": "X ⊆ A 在 f 下的所有输出组成的集合 {f(a) | a ∈ X}；Im_f(A) 为陪域中实际被取到的部分。"},
+    {"term_en": "pre-image (PreIm_f(Y))", "term_zh": "原像", "page": 493, "note_zh": "Y ⊆ B 的所有输入组成的集合 {a ∈ A | f(a) ∈ Y}。"},
+    {"term_en": "surjective / onto / surjection", "term_zh": "满射（onto）", "page": 498, "note_zh": "Im_f(A) = B；等价于 ∀b ∈ B ∃a ∈ A 使 f(a)=b。"},
+    {"term_en": "injective / one-to-one / injection", "term_zh": "单射（one-to-one）", "page": 502, "note_zh": "不同输入对应不同输出；等价于 f(a1)=f(a2) ⇒ a1=a2。"},
+    {"term_en": "bijective / bijection", "term_zh": "双射", "page": 508, "note_zh": "既是单射又是满射；每个输出恰有一个输入对应。"},
+    {"term_en": "composition (g ◦ f)", "term_zh": "复合", "page": 512, "note_zh": "(g ◦ f)(a) = g(f(a))，要求 f 的陪域等于 g 的定义域。"},
+    {"term_en": "inverse function (f⁻¹)", "term_zh": "反函数", "page": 517, "note_zh": "满足 f ◦ f⁻¹ = Id_B 且 f⁻¹ ◦ f = Id_A 的函数 g : B → A。"},
+    {"term_en": "cardinality (|S|)", "term_zh": "基数", "page": 524, "note_zh": "集合的\"大小\"；|S|=|T| 当且仅当存在双射 S→T。"},
+    {"term_en": "countably infinite / denumerable", "term_zh": "可数无穷的（denumerable）", "page": 524, "note_zh": "与 N 有双射的无限集；N、Z、Q、N×N 均为可数无穷。"},
+    {"term_en": "uncountable", "term_zh": "不可数的", "page": 524, "note_zh": "无限但与 N 无大射的集合；R、P(N)、{0,1}^N 均为不可数。"},
+    {"term_en": "Cantor's diagonal argument", "term_zh": "康托尔对角线论证", "page": 549, "note_zh": "沿列表主对角线逐位取反构造新序列，证明无法枚举全部元素的反证法。"},
+    {"term_en": "Cantor's Theorem (|S| < |P(S)|)", "term_zh": "康托尔定理", "page": 526, "note_zh": "任何集合的幂集基数严格大于该集合本身；由此得到 |N| < |P(N)| < ⋯。"}
+  ],
+  "action_rules": [
+    {"en": "When defining a function, always specify the domain, the codomain, the letter name, and a rule or set of ordered pairs. Do not rely on the formula alone.", "zh": "定义函数时，务必明确写出定义域、陪域、函数名以及规则（或有序对集合）。不要只依赖公式。"},
+    {"en": "To check that a candidate rule is a well-defined function, verify three things: (1) every domain element is assigned; (2) no domain element gets two outputs; (3) every output lies in the codomain.", "zh": "要判定一条候选规则是否良定义，须检查三点：(1) 定义域中每个元素都被赋值；(2) 没有元素得到两个输出；(3) 每个输出都属于陪域。"},
+    {"en": "To prove two functions f, g : A → B are equal, show f(x) = g(x) for every x ∈ A (Theorem 7.2.12); a double-containment argument on the underlying relations is the set-level proof.", "zh": "要证明两个函数 f, g : A → B 相等，只需证明对每个 x ∈ A 都有 f(x)=g(x)（定理 7.2.12）；在集合层面则用底层关系的双向包含论证。"},
+    {"en": "To find the image Im_f(A): first guess a candidate set S by experimenting with the function, then prove S = Im_f(A) by a double-containment argument; the hard direction is S ⊆ Im_f(A), where you must construct an input for each output.", "zh": "求像 Im_f(A) 时：先用函数试探猜测候选集合 S，再用双向包含论证证明 S = Im_f(A)；较难的方向是 S ⊆ Im_f(A)，必须为每个输出构造一个输入。"},
+    {"en": "To prove f is surjective: take arbitrary b ∈ B, construct an a ∈ A, show a ∈ A and f(a)=b. To prove f is not surjective: exhibit one b ∈ B and show no a satisfies f(a)=b (directly or by contradiction).", "zh": "证明 f 是满射：任取 b ∈ B，构造 a ∈ A，证明 a ∈ A 且 f(a)=b。证明 f 不是满射：举出一个 b ∈ B，并证明不存在 a 使 f(a)=b（直接证明或反证法均可）。"},
+    {"en": "To prove f is injective: take x, y ∈ A, assume f(x)=f(y), deduce x=y. To prove f is not injective: exhibit two distinct inputs x ≠ y with f(x)=f(y).", "zh": "证明 f 是单射：取 x, y ∈ A，假设 f(x)=f(y)，推出 x=y。证明 f 不是单射：举出两个不同输入 x ≠ y 但 f(x)=f(y)。"},
+    {"en": "To prove f is bijective you may either (a) prove both injectivity and surjectivity, or (b) define an inverse g : B → A and verify both g ◦ f = Id_A and f ◦ g = Id_B.", "zh": "证明 f 是双射时，既可以 (a) 分别证明单射与满射，也可以 (b) 构造反函数 g : B → A 并同时验证 g ◦ f = Id_A 与 f ◦ g = Id_B。"},
+    {"en": "To compare cardinalities: |S|=|T| needs a bijection; |S|≤|T| needs an injection S→T; |S|<|T| needs an injection but no bijection. Remember \"in the land of Cardinality, the Bijection is King\".", "zh": "比较基数时：|S|=|T| 需要双射；|S|≤|T| 需要从 S 到 T 的单射；|S|<|T| 需要单射但无大射。牢记\"在基数的国度里，双射为王\"。"}
+  ],
+  "quiz": [
+    {
+      "page": 470,
+      "question_en": "Which of the following is the correct formal definition of a function f : A → B?",
+      "question_zh": "下列哪一项是函数 f : A → B 的正确形式定义？",
+      "options": [
+        {"en": "f is any subset of A × B.", "zh": "f 是 A × B 的任意子集。"},
+        {"en": "f ⊆ A × B and ∀a ∈ A there exists a unique b ∈ B such that (a, b) ∈ f.", "zh": "f ⊆ A × B，且 ∀a ∈ A 存在唯一的 b ∈ B 使 (a, b) ∈ f。"},
+        {"en": "f ⊆ A × B and ∀b ∈ B there exists a unique a ∈ A such that (a, b) ∈ f.", "zh": "f ⊆ A × B，且 ∀b ∈ B 存在唯一的 a ∈ A 使 (a, b) ∈ f。"},
+        {"en": "f is a rule that outputs a real number for every real input.", "zh": "f 是一条对每个实数输入都输出一个实数的规则。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Definition 7.2.1 requires f to be a relation f ⊆ A × B with the property ∀a ∈ A. ∃! b ∈ B. (a,b) ∈ f. Option 3 describes an inverse-like condition, and option 1 merely says f is a relation, not necessarily a function.",
+      "explanation_zh": "定义 7.2.1 要求 f 是关系 f ⊆ A × B，且满足 ∀a ∈ A 存在唯一的 b ∈ B 使 (a,b) ∈ f。选项 3 描述的是类似反函数的条件；选项 1 只说 f 是关系，未必是函数。"
+    },
+    {
+      "page": 498,
+      "question_en": "Let f : A → B. Which statement is equivalent to \"f is surjective\"?",
+      "question_zh": "设 f : A → B。下列哪一项与\"f 是满射\"等价？",
+      "options": [
+        {"en": "∀a ∈ A. ∃! b ∈ B. f(a) = b.", "zh": "∀a ∈ A，存在唯一的 b ∈ B 使 f(a)=b。"},
+        {"en": "∀b ∈ B. ∃a ∈ A. f(a) = b.", "zh": "∀b ∈ B，存在 a ∈ A 使 f(a)=b。"},
+        {"en": "∀a1, a2 ∈ A. a1 ≠ a2 ⇒ f(a1) ≠ f(a2).", "zh": "∀a1, a2 ∈ A，a1 ≠ a2 ⇒ f(a1) ≠ f(a2)。"},
+        {"en": "∃b ∈ B. ∀a ∈ A. f(a) ≠ b.", "zh": "存在 b ∈ B 使 ∀a ∈ A 都有 f(a) ≠ b。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Surjectivity means Im_f(A) = B, equivalently every b ∈ B is hit: ∀b ∈ B ∃a ∈ A with f(a)=b. Option 2 is injectivity; option 4 is the negation of surjectivity.",
+      "explanation_zh": "满射意味着 Im_f(A)=B，即每个 b ∈ B 都被取到：∀b ∈ B 存在 a ∈ A 使 f(a)=b。选项 2 是单射；选项 4 是\"不满射\"的否定形式。"
+    },
+    {
+      "page": 519,
+      "question_en": "Which theorem is proved in Section 7.5.3?",
+      "question_zh": "7.5.3 节证明了下列哪个定理？",
+      "options": [
+        {"en": "f is surjective ⇐⇒ f is injective.", "zh": "f 是满射 ⇐⇒ f 是单射。"},
+        {"en": "f is bijective ⇐⇒ f has an inverse f⁻¹ : B → A.", "zh": "f 是双射 ⇐⇒ f 存在反函数 f⁻¹ : B → A。"},
+        {"en": "g ◦ f is injective ⇐⇒ both f and g are injective.", "zh": "g ◦ f 是单射 ⇐⇒ f 与 g 都是单射。"},
+        {"en": "|S| < |P(S)| for every set S.", "zh": "对任意集合 S，都有 |S| < |P(S)|。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Theorem 7.5.10 states that f is bijective iff f has an inverse. Option 4 is Cantor's Theorem from Section 7.6.1.",
+      "explanation_zh": "定理 7.5.10 指出 f 是双射当且仅当 f 存在反函数。选项 4 是 7.6.1 节的康托尔定理。"
+    },
+    {
+      "page": 524,
+      "question_en": "Which of the following sets is UNCOUNTABLE?",
+      "question_zh": "下列哪个集合是不可数的？",
+      "options": [
+        {"en": "N (the natural numbers)", "zh": "N（自然数集）"},
+        {"en": "Q (the rational numbers)", "zh": "Q（有理数集）"},
+        {"en": "Z × N", "zh": "Z × N"},
+        {"en": "R (the real numbers)", "zh": "R（实数集）"}
+      ],
+      "answer": 3,
+      "explanation_en": "N, Z, Q, N×N and Z×N are all countably infinite; only R is uncountable, with |N| = |Z| = |Q| < |R|.",
+      "explanation_zh": "N、Z、Q、N×N、Z×N 都是可数无穷的；只有 R 不可数，且 |N| = |Z| = |Q| < |R|。"
+    },
+    {
+      "page": 549,
+      "question_en": "In Cantor's diagonal argument proving {0,1}^N is uncountable, why does the constructed sequence x not appear in the assumed list?",
+      "question_zh": "在证明 {0,1}^N 不可数的康托尔对角线论证中，为什么构造出的序列 x 不在假定的列表中？",
+      "options": [
+        {"en": "Because x is shorter than every listed sequence.", "zh": "因为 x 比列表中每个序列都短。"},
+        {"en": "Because x differs from the i-th listed sequence y_i in the i-th coordinate (x_i swaps a_{i,i}).", "zh": "因为 x 在第 i 个坐标上与第 i 个序列 y_i 不同（x_i 把 a_{i,i} 取反）。"},
+        {"en": "Because x uses digits other than 0 and 1.", "zh": "因为 x 使用了 0 和 1 以外的数字。"},
+        {"en": "Because the list was assumed finite.", "zh": "因为列表被假定为有限的。"}
+      ],
+      "answer": 1,
+      "explanation_en": "By construction x_i = 0 if a_{i,i}=1 and x_i=1 if a_{i,i}=0, so x differs from y_i in the i-th coordinate for every i; hence x ≠ y_i for all i, contradicting the assumption that the list contains every sequence.",
+      "explanation_zh": "由构造 x_i = 0 若 a_{i,i}=1、x_i = 1 若 a_{i,i}=0，因此对每个 i，x 在第 i 个坐标上都与 y_i 不同，从而 x ≠ y_i 对所有 i 成立，与\"列表包含所有序列\"的假定矛盾。"
+    }
+  ]
+}

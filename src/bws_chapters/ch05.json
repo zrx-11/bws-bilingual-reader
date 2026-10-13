@@ -1,0 +1,344 @@
+{
+  "chapter": 5,
+  "title_en": "Rigorous Mathematical Induction",
+  "title_zh": "严格的数学归纳法",
+  "start_page": 321,
+  "end_page": 374,
+  "sections": [
+    {
+      "section_id": "5.1",
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "page": 321,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 321,
+          "en": "We feel a little uncomfortable with how informal (mathematically speaking) we were with our initial treatment of induction. ... The final theorem stated and proved (with your help!) in this chapter will be a striking example of equivalence; specifically, we will show that three theorems are all connected by biconditional statements.",
+          "zh": "我们对最初处理数学归纳法时（从数学角度看）不够严格感到有些不安。……本章最后（在你的帮助下）陈述并证明的定理将是等价性的一个引人注目的例子：我们将证明三个定理全部由双条件命题相互连接。"
+        },
+        {
+          "type": "strategy",
+          "page": 322,
+          "en": "By the end of this chapter, you should be able to: State the Principle of Mathematical Induction and describe how its proof is related to the set of natural numbers; State the Principle of Strong Mathematical Induction ... Use inductive arguments to prove claims and, in particular, identify when a strong inductive argument is required; State the Well-Ordering Principle and explain its relationship to mathematical induction.",
+          "zh": "学完本章后，你应当能够：陈述数学归纳法原理并说明其证明与自然数集 N 的关系；陈述强数学归纳法原理并与之比较；运用归纳论证证明命题，尤其能识别何时需要强归纳；陈述良序原理并解释它与数学归纳法的关系。"
+        },
+        {
+          "type": "note",
+          "page": 322,
+          "en": "This will be the first great example of a 'The following are equivalent...'-style theorem, like we pointed out in the proof strategy for biconditional statements, in Section 4.9.6.",
+          "zh": "本章将给出第一个重要的'以下命题彼此等价'式定理，即第 4.9.6 节中讲过的双条件命题证明策略的典型范例。"
+        }
+      ]
+    },
+    {
+      "section_id": "5.2",
+      "title_en": "Regular Induction",
+      "title_zh": "普通归纳法",
+      "page": 322,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 323,
+          "en": "Theorem 5.2.2 (Principle of Mathematical Induction). Let P(n) be a variable proposition. Suppose that (1) P(1) holds True, and (2) ∀k ∈ N. P(k) =⇒ P(k + 1) holds True. Then ∀n ∈ N. P(n) holds True.",
+          "zh": "定理 5.2.2（数学归纳法原理，PMI）。设 P(n) 是一个变量命题。假设 (1) P(1) 成立；(2) 对任意 k∈N，P(k)=⇒P(k+1) 成立。则对任意 n∈N，命题 P(n) 成立。"
+        },
+        {
+          "type": "definition",
+          "page": 323,
+          "en": "Definition 5.2.3. Let I be a set. If the following conditions hold: 1. 1 ∈ I, and 2. For any element k, the implication k ∈ I =⇒ k + 1 ∈ I holds; then I is called an inductive set.",
+          "zh": "定义 5.2.3。设 I 是一个集合。若满足：(1) 1∈I；(2) 对任意元素 k，蕴含式 k∈I=⇒k+1∈I 成立，则称 I 为归纳集。"
+        },
+        {
+          "type": "definition",
+          "page": 323,
+          "en": "Definition 5.2.4. The set of all natural numbers is the set N := {x | for every inductive set I, x ∈ I}. Put another way, N is the smallest inductive set.",
+          "zh": "定义 5.2.4。全体自然数构成的集合为 N := {x | 对每一个归纳集 I，都有 x∈I}。换言之，N 是最小的归纳集。"
+        },
+        {
+          "type": "strategy",
+          "page": 324,
+          "en": "Let S be the set of instances for which P(n) is True, S = {n ∈ N | P(n) is True}. Conditions (1) and (2) guarantee that S is an inductive set. By the definition of N, N ⊆ S; by a double-containment argument S = N. The entire crux of a proof by induction lies in verifying that the truth set for P(n) is an inductive set.",
+          "zh": "令 S 为使命题 P(n) 成立的实例集合，即 S={n∈N | P(n) 为真}。条件 (1)、(2) 保证 S 是归纳集；由 N 的定义得 N⊆S；再由双向包含论证得 S=N。归纳证明的全部关键在于验证 P(n) 的真值集是一个归纳集。"
+        },
+        {
+          "type": "warning",
+          "page": 326,
+          "en": "Be as explicit and thorough as possible in the Base Case. Do not just write out what P(1) means and expect the reader to understand why it is True. ... If the proposition P(1) is some kind of equation, demonstrate why both sides are actually equal, instead of just writing the equation and expecting a reader to see why it works out.",
+          "zh": "在基例中务必尽量明确、详尽。不要只写出 P(1) 的含义就指望读者明白它为何为真。……若 P(1) 是一个等式，务必证明两边确实相等，而不是把等式写在那里就指望读者自己看出道理。"
+        },
+        {
+          "type": "warning",
+          "page": 327,
+          "en": "You must invoke the IH somewhere in the Induction Step! If you didn't use the IH at all, why did you need to use induction? When you use the IH, say that you are doing so.",
+          "zh": "在归纳步骤中你必须在某处调用归纳假设（IH）！如果你根本没有用到 IH，那为什么还要用归纳法？当你使用 IH 时，要明说你正在使用它。"
+        },
+        {
+          "type": "example",
+          "page": 327,
+          "en": "Example 5.2.5. Sum of the odds is a square: The sum of the first n odd natural numbers is n^2. Proof: BC n=1: sum=1=1^2. IS: separate out the (k+1)-th term, invoke IH k^2, factor (2k+1)+k^2=(k+1)^2.",
+          "zh": "例 5.2.5。奇数之和为平方数：前 n 个奇自然数之和等于 n²。证明：基例 n=1 时和为 1=1²；归纳步骤中分离出第 k+1 项，调用归纳假设 k²，再因式分解 (2k+1)+k²=(k+1)²。"
+        },
+        {
+          "type": "example",
+          "page": 328,
+          "en": "Example 5.2.6. Geometric series formula: For every q ∈ R − {0, 1} and n ∈ N, Σ_{i=0}^{n-1} q^i = (q^n − 1)/(q − 1). Follow-up: why do we need q ∉ {0, 1}?",
+          "zh": "例 5.2.6。等比数列求和公式：对任意 q∈R−{0,1} 与 n∈N，有 Σ_{i=0}^{n-1} q^i = (q^n−1)/(q−1)。追问：为什么要排除 q=0 与 q=1？"
+        }
+      ]
+    },
+    {
+      "section_id": "5.3",
+      "title_en": "Other Variants of Induction",
+      "title_zh": "归纳法的其他变体",
+      "page": 331,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 331,
+          "en": "Theorem 5.3.1 (Induction with any base case). Let P(n) be a variable proposition. Let M ∈ Z be arbitrary and fixed, and S = {z ∈ Z | z ≥ M}. Suppose (1) P(M) holds, and (2) ∀k ∈ S. P(k) =⇒ P(k+1). Then ∀n ∈ S. P(n) holds.",
+          "zh": "定理 5.3.1（任意基例的归纳法）。设 P(n) 是变量命题，任取固定 M∈Z，令 S={z∈Z | z≥M}。假设 (1) P(M) 成立；(2) 对任意 k∈S，P(k)=⇒P(k+1)。则对任意 n∈S，P(n) 成立。"
+        },
+        {
+          "type": "example",
+          "page": 333,
+          "en": "Example 5.3.2. How 2^n compares to n^2: 2^n > n^2 ⇐⇒ n ∈ {0,1} ∪ {z ∈ N | z ≥ 5}. We verify n=0,1,2,3,4 by hand, then induct on S={z∈N|z≥5} with BC at n=5.",
+          "zh": "例 5.3.2。比较 2^n 与 n²：2^n > n² 当且仅当 n∈{0,1}∪{z∈N|z≥5}。对手算 n=0,1,2,3,4，再在集合 S={z∈N|z≥5} 上以 n=5 为基例作归纳。"
+        },
+        {
+          "type": "theorem",
+          "page": 335,
+          "en": "Theorem 5.3.3 (Backwards induction). Let P(n) be a variable proposition, M ∈ Z, S = {z ∈ Z | z ≤ M}. Suppose (1) P(M) holds, and (2) ∀k ∈ S. P(k) =⇒ P(k−1). Then ∀n ∈ S. P(n) holds.",
+          "zh": "定理 5.3.3（反向归纳法）。设 P(n) 是变量命题，M∈Z，S={z∈Z | z≤M}。假设 (1) P(M) 成立；(2) 对任意 k∈S，P(k)=⇒P(k−1)。则对任意 n∈S，P(n) 成立。"
+        },
+        {
+          "type": "example",
+          "page": 336,
+          "en": "Example 5.3.4. Remainders of odd squares when divided by 8: Let O be the odd naturals. For every n ∈ O, n^2 is 1 more than a multiple of 8. IS goal is P(k+2), not P(k+1).",
+          "zh": "例 5.3.4。奇数平方除以 8 的余数：设 O 为奇自然数集。对任意 n∈O，n² 都是 8 的倍数加 1。归纳步骤的目标是 P(k+2)，而不是 P(k+1)。"
+        },
+        {
+          "type": "theorem",
+          "page": 337,
+          "en": "Theorem 5.3.5 (Induction on the odds). Let O be the odd naturals. If (1) P(1) holds, and (2) ∀k ∈ O. P(k) =⇒ P(k+2), then ∀n ∈ O. P(n). Theorem 5.3.6 (Induction on the evens) starts at P(2) with the same step.",
+          "zh": "定理 5.3.5（在奇数上归纳）。设 O 为奇自然数集。若 (1) P(1) 成立；(2) 对任意 k∈O，P(k)=⇒P(k+2)，则对任意 n∈O，P(n) 成立。定理 5.3.6（在偶数上归纳）类似，只是从 P(2) 出发。"
+        },
+        {
+          "type": "strategy",
+          "page": 340,
+          "en": "You could conceivably make jumps of size 4, or 10, or even make jumps that double your value; that is, you could prove that some proposition P(n) holds for every n that is a power of 2, say, by proving P(1) holds, and ∀n ∈ N. P(n) =⇒ P(2n).",
+          "zh": "你完全可以作步长为 4、10 的跳跃，甚至作翻倍跳跃；例如要证明命题 P(n) 对所有 2 的幂成立，只需证明 P(1) 成立，且对任意 n∈N 有 P(n)=⇒P(2n)。"
+        },
+        {
+          "type": "warning",
+          "page": 340,
+          "en": "We cannot induct on the set of all prime numbers. If you're trying to prove some fact holds for every prime number, don't even bother trying to use induction! You'd have to have some 'rule' that says, 'If k is a prime number, then the next prime number is . . .'.",
+          "zh": "我们无法在全体素数集上作归纳。如果你要证明某性质对每个素数都成立，根本不要尝试用归纳法！你必须先有一条规则：'若 k 是素数，则下一个素数是……'——这样的规则并不存在。"
+        }
+      ]
+    },
+    {
+      "section_id": "5.4",
+      "title_en": "Strong Induction",
+      "title_zh": "强归纳法",
+      "page": 342,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 343,
+          "en": "Theorem 5.4.1 (Principle of Strong Mathematical Induction). Let P(n) be a variable proposition. Suppose (1) P(1) holds True, and (2) ∀k ∈ N. ∀i ∈ [k]. P(i) =⇒ P(k+1) holds True. Then ∀n ∈ N. P(n) holds.",
+          "zh": "定理 5.4.1（强数学归纳法原理，Strong PMI/SPMI）。设 P(n) 是变量命题。假设 (1) P(1) 成立；(2) 对任意 k∈N，只要 P(1),P(2),…,P(k) 全部成立，就有 P(k+1) 成立。则对任意 n∈N，P(n) 成立。"
+        },
+        {
+          "type": "theorem",
+          "page": 346,
+          "en": "Proof idea: define Q(n) ⇐⇒ ∀i ∈ [n]. P(i). Prove ∀n ∈ N. Q(n) by regular PMI: BC Q(1)⇔P(1); IS Q(k) plus condition (2) gives P(k+1), hence Q(k+1). Then Q(n)=⇒P(n). This proves PMI=⇒SPMI.",
+          "zh": "证明思路：定义 Q(n)⇔对任意 i∈[n]，P(i) 成立。用普通 PMI 证明 ∀n∈N，Q(n)：基例 Q(1)⇔P(1)；归纳步骤由 Q(k) 加上条件 (2) 得 P(k+1)，从而 Q(k+1)。再由 Q(n)=⇒P(n)。这就证明了 PMI=⇒SPMI。"
+        },
+        {
+          "type": "strategy",
+          "page": 347,
+          "en": "Whenever we have to prove something by induction, we might as well always use Strong Induction. ... Strong Induction 'subsumes' Regular Induction as a technique.",
+          "zh": "只要是用归纳法证明命题，我们不如一律使用强归纳法。……强归纳法作为一种技巧在逻辑上'包含'了普通归纳法。"
+        },
+        {
+          "type": "example",
+          "page": 349,
+          "en": "Example 5.4.2. A formula for a recursively-defined sequence: s_0 = 1, s_n = 1 + Σ_{i=0}^{n-1} s_i. Claim s_n = 2^n. IS uses all of P(0)∧…∧P(k) to sum the geometric series.",
+          "zh": "例 5.4.2。一个递归序列的闭式：s_0=1，s_n=1+Σ_{i=0}^{n-1} s_i。断言 s_n=2^n。归纳步骤同时用到 P(0)∧…∧P(k) 全部实例来对等比数列求和。"
+        },
+        {
+          "type": "example",
+          "page": 350,
+          "en": "Example 5.4.3. Every n ∈ N − {1} has a prime factorization. IS splits into two cases: k+1 is prime (trivial), or k+1 = a·b with 2≤a,b≤k, then multiply factorizations of a and b. Notice we invoked the IH but did not know which previous instance.",
+          "zh": "例 5.4.3。每个 n∈N−{1} 都有素因数分解。归纳步骤分两种情形：k+1 本身是素数（显然）；或 k+1=a·b 且 2≤a,b≤k，把 a、b 的素因数分解相乘即得。注意：此处调用了归纳假设，却事先并不知道具体用到哪一个先前实例。"
+        },
+        {
+          "type": "example",
+          "page": 351,
+          "en": "Example 5.4.4. A closed form for the Fibonacci Sequence (Binet's formula): f_0=0, f_1=1, f_n=f_{n-1}+f_{n-2}. Let φ=(1+√5)/2. Then f_n = (1/√5)(φ^n − (1−φ)^n).",
+          "zh": "例 5.4.4。斐波那契数列的闭式（比内公式）：f_0=0，f_1=1，f_n=f_{n-1}+f_{n-2}。令 φ=(1+√5)/2，则 f_n = (1/√5)(φ^n − (1−φ)^n)。"
+        },
+        {
+          "type": "warning",
+          "page": 353,
+          "en": "Because the Fibonacci Sequence is defined recursively so that each term depends on two previous terms, we could not use the truth of P(0) alone to deduce P(1). We had to show P(1) held separately. ... If you find yourself including many base cases, be sure to start your IS by seeking to prove a value above those base case values!",
+          "zh": "由于斐波那契数列每一项都依赖前两项，单凭 P(0) 无法推出 P(1)，必须单独证明 P(1)。……若你设置了多个基例，务必让归纳步骤从基例最大值之上的值开始；否则你会暗中引用尚未定义的项（如 f_{-1}）。"
+        },
+        {
+          "type": "example",
+          "page": 354,
+          "en": "Example 5.4.5. A Generalized DeMorgan's Law for Sets: For sets A_i ⊆ U, ∪_{i=1}^n A_i = ∩_{i=1}^n A_i. BC checks P(1) trivially and P(2) by the ordinary DeMorgan's law; IS uses the n=2 case together with P(k).",
+          "zh": "例 5.4.5。集合的广义德摩根律：对 A_i⊆U，有 ∪_{i=1}^n A_i = ∩_{i=1}^n A_i。基例先验 P(1)（显然）与 P(2)（普通德摩根律）；归纳步骤同时调用 n=2 情形与 P(k)。"
+        }
+      ]
+    },
+    {
+      "section_id": "5.5",
+      "title_en": "Variants of Strong Induction",
+      "title_zh": "强归纳法的变体",
+      "page": 357,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 358,
+          "en": "The contrapositive of the strong inductive conditional is: ∀k ∈ N. ¬P(k+1) =⇒ ∃i ∈ [k]. ¬P(i). Supposing P(k+1) fails, we deduce that some earlier instance also fails.",
+          "zh": "强归纳条件句的逆否命题为：∀k∈N，¬P(k+1)=⇒∃i∈[k]，¬P(i)。即假设 P(k+1) 不成立，就推出此前存在某个实例 i 也不成立。"
+        },
+        {
+          "type": "definition",
+          "page": 359,
+          "en": "'Criminal' refers to an instance where the proposition fails ... Another phrase that encapsulates this same idea is 'No Least Counterexample'. ... another term for this method is 'Infinite Descent'.",
+          "zh": "'Criminal（罪犯）'指命题不成立的实例……这一思想的另一说法是'无最小反例'；该方法还有一个名称叫'无穷递降法'。"
+        },
+        {
+          "type": "example",
+          "page": 360,
+          "en": "Example 5.5.1. Every n ∈ N can be expressed uniquely as a power of 2 times an odd number: ∀n ∈ N. ∃! m,ℓ ∈ N∪{0}. n = 2^m · (2ℓ+1). Proof by minimal criminal argument splits on the parity of k+1.",
+          "zh": "例 5.5.1。每个 n∈N 都可唯一地写成 2 的幂乘以一个奇数：∀n∈N，存在唯一的 m,ℓ∈N∪{0} 使 n=2^m·(2ℓ+1)。证明用'极小反例'法，按 k+1 的奇偶分情形讨论。"
+        },
+        {
+          "type": "theorem",
+          "page": 362,
+          "en": "Theorem 5.5.2 (Well-Ordering Principle). Every non-empty subset of N has a least element. ∀S ∈ P(N). [S ≠ ∅ =⇒ (∃ℓ ∈ S. (∀x ∈ S. ℓ ≤ x))].",
+          "zh": "定理 5.5.2（良序原理，WOP）。N 的每一个非空子集都有最小元。形式化地：∀S∈P(N)，若 S≠∅，则存在 ℓ∈S 使得对任意 x∈S，都有 ℓ≤x。"
+        },
+        {
+          "type": "theorem",
+          "page": 363,
+          "en": "Theorem 5.5.3. The following are all logically equivalent: The Principle of Mathematical Induction; The Principle of Strong Induction; The Well-Ordering Principle.",
+          "zh": "定理 5.5.3。以下三条逻辑等价：数学归纳法原理（PMI）；强归纳法原理（PSI）；良序原理（WOP）。"
+        },
+        {
+          "type": "proof",
+          "page": 363,
+          "en": "To prove WOP=⇒PMI: define F = {n∈N | P(n) is False}. AFSOC F≠∅; by WOP let ℓ be its least element. ℓ≠1 since P(1) holds. By contrapositive of P(k)=⇒P(k+1), ¬P(ℓ)=⇒¬P(ℓ−1), so ℓ−1∈F, contradicting minimality of ℓ. Hence F=∅.",
+          "zh": "证明 WOP=⇒PMI：令 F={n∈N | P(n) 为假}。反设 F≠∅，由良序原理取其最小元 ℓ。因 P(1) 成立，ℓ≠1。由 P(k)=⇒P(k+1) 的逆否命题，¬P(ℓ)=⇒¬P(ℓ−1)，故 ℓ−1∈F，与 ℓ 最小矛盾。因此 F=∅。"
+        },
+        {
+          "type": "warning",
+          "page": 364,
+          "en": "You can't use a hand-wavey 'just keep going' argument to prove the very idea that you're allowed to make such arguments! This is why we invoked the WOP to produce the least element of F.",
+          "zh": "你不能用'就这样一直推下去'这种含糊其辞的论证去证明'我们被允许这样论证'这一原理本身！这正是为什么我们要援引良序原理来取出 F 的最小元。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "Principle of Mathematical Induction (PMI)", "term_zh": "数学归纳法原理", "page": 323, "note_zh": "若 P(1) 成立且 P(k)=⇒P(k+1)，则对所有 n∈N，P(n) 成立。"},
+    {"term_en": "variable proposition", "term_zh": "变量命题", "page": 323, "note_zh": "含变量、给变量赋值后方有唯一真值的语句，如 P(n)。"},
+    {"term_en": "inductive set", "term_zh": "归纳集", "page": 323, "note_zh": "含 1 且对后继运算封闭的集合；N 是最小的归纳集。"},
+    {"term_en": "Base Case (BC)", "term_zh": "基例", "page": 325, "note_zh": "归纳证明中验证 P(1)（或 P(M)）成立的那一步。"},
+    {"term_en": "Induction Hypothesis (IH)", "term_zh": "归纳假设", "page": 325, "note_zh": "任取固定 k∈N 并假设 P(k) 成立（强归纳中假设 P(1)∧…∧P(k)）。"},
+    {"term_en": "Induction Step (IS)", "term_zh": "归纳步骤", "page": 325, "note_zh": "在 IH 下推出 P(k+1) 成立的那一步。"},
+    {"term_en": "Principle of Strong Mathematical Induction (Strong PMI / PSI)", "term_zh": "强归纳法原理", "page": 343, "note_zh": "允许在 IH 中同时假设 P(1)…P(k)，与 PMI、WOP 逻辑等价。"},
+    {"term_en": "closed form", "term_zh": "闭式", "page": 351, "note_zh": "可直接代入 n 求值、无需递归计算的表达式，如比内公式。"},
+    {"term_en": "prime number / prime factorization", "term_zh": "素数 / 素因数分解", "page": 349, "note_zh": "素数的正因数只有 1 与自身；每个大于 1 的自然数都有素因数分解。"},
+    {"term_en": "minimal criminal argument", "term_zh": "极小反例论证", "page": 359, "note_zh": "对强归纳条件句取逆否命题：若 P(k+1) 失败则必有更早的实例失败；与基例矛盾即得证。"},
+    {"term_en": "No Least Counterexample / Infinite Descent", "term_zh": "无最小反例 / 无穷递降法", "page": 359, "note_zh": "极小反例论证的同义说法；通过不断构造更小反例与基例矛盾。"},
+    {"term_en": "Well-Ordering Principle (WOP)", "term_zh": "良序原理", "page": 362, "note_zh": "N 的任一非空子集都有最小元；与 PMI、PSI 逻辑等价。"},
+    {"term_en": "well-ordering", "term_zh": "良序", "page": 362, "note_zh": "一个序关系若不存在无穷降链、且每个非空子集有最小元，则称为良序；N 上的 ≤ 即良序。"}
+  ],
+  "action_rules": [
+    {"en": "Before writing an inductive proof, explicitly define the proposition P(n) and state which variable you are inducting on.", "zh": "写归纳证明前，先明确定义命题 P(n)，并说明你正在对哪个变量作归纳。"},
+    {"en": "Always verify the Base Case in full: do not just write P(1) and put a check mark; show why both sides (or both clauses) actually agree.", "zh": "务必完整验证基例：不要只写出 P(1) 再打个勾，要证明两边（或两个条件）确实成立。"},
+    {"en": "In the Induction Hypothesis, quantify k explicitly: write 'Let k ∈ N be arbitrary and fixed. Suppose P(k) holds.'", "zh": "在归纳假设中必须把 k 量化清楚：写'任取固定 k∈N，假设 P(k) 成立'。"},
+    {"en": "You must actually invoke the Induction Hypothesis somewhere in the Induction Step, and say so explicitly when you do.", "zh": "在归纳步骤中必须在某处真正调用归纳假设，并且调用时要明说。"},
+    {"en": "When using Strong Induction, cite which instance(s) P(i) of the IH you use in the IS.", "zh": "使用强归纳法时，要在归纳步骤中点明你用到了归纳假设中的哪几个实例 P(i)。"},
+    {"en": "Whenever a proof is by induction, prefer Strong Induction: it subsumes Regular Induction and can never hurt.", "zh": "凡是用归纳法证明，一律优先使用强归纳法：它在逻辑上包含普通归纳法，且不会带来任何坏处。"},
+    {"en": "For a recursively-defined sequence depending on r previous terms, be ready to prove r separate base cases before starting the IS.", "zh": "若递归序列的每一项依赖前 r 项，则要在归纳步骤之前准备好 r 个独立的基例。"},
+    {"en": "You cannot induct on the primes, or on any set without an explicit rule for the 'next' element.", "zh": "你不能在素数集上归纳，也不能在任何没有'下一个元素'显式规则的集合上归纳。"}
+  ],
+  "quiz": [
+    {
+      "page": 323,
+      "question_en": "Which two conditions together imply ∀n ∈ N. P(n), according to the Principle of Mathematical Induction?",
+      "question_zh": "根据数学归纳法原理，哪两个条件合起来能推出 ∀n∈N，P(n)？",
+      "options": [
+        {"en": "P(0) holds, and ∀k ∈ N. P(k) =⇒ P(k+2).", "zh": "P(0) 成立，且 ∀k∈N，P(k)=⇒P(k+2)。"},
+        {"en": "P(1) holds, and ∀k ∈ N. P(k) =⇒ P(k+1).", "zh": "P(1) 成立，且 ∀k∈N，P(k)=⇒P(k+1)。"},
+        {"en": "P(1) holds, and ∀k ∈ N. P(k+1) =⇒ P(k).", "zh": "P(1) 成立，且 ∀k∈N，P(k+1)=⇒P(k)。"},
+        {"en": "P(1) holds, and ∀k ∈ N. P(k) ∧ P(k+1) holds.", "zh": "P(1) 成立，且 ∀k∈N，P(k)∧P(k+1) 成立。"}
+      ],
+      "answer": 1,
+      "explanation_en": "PMI requires the base case P(1) and the inductive implication P(k)=⇒P(k+1) for every k∈N.",
+      "explanation_zh": "PMI 要求基例 P(1)，以及对每个 k∈N 成立的蕴含式 P(k)=⇒P(k+1)。"
+    },
+    {
+      "page": 343,
+      "question_en": "How does the Induction Hypothesis in Strong PMI differ from that in Regular PMI?",
+      "question_zh": "强归纳法的归纳假设与普通归纳法有何不同？",
+      "options": [
+        {"en": "Strong PMI assumes only P(k+1) to deduce P(k).", "zh": "强归纳法只假设 P(k+1)，去推 P(k)。"},
+        {"en": "Strong PMI assumes P(1)∧P(2)∧···∧P(k) all hold, not just P(k).", "zh": "强归纳法假设 P(1)∧P(2)∧…∧P(k) 全部成立，而不仅是 P(k)。"},
+        {"en": "Strong PMI requires no base case at all.", "zh": "强归纳法完全不需要基例。"},
+        {"en": "Strong PMI assumes P(n) fails and derives a contradiction directly.", "zh": "强归纳法假设 P(n) 不成立并直接导出矛盾。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Strong PMI replaces P(k) in the IH by ∀i∈[k]. P(i), i.e. all previous instances together.",
+      "explanation_zh": "强归纳法把归纳假设中的 P(k) 换成 ∀i∈[k]，P(i)，即此前所有实例合起来。"
+    },
+    {
+      "page": 340,
+      "question_en": "Why can we not prove statements about all primes by induction?",
+      "question_zh": "为什么我们不能用归纳法证明关于全体素数的命题？",
+      "options": [
+        {"en": "Because primes are too large to handle.", "zh": "因为素数太大，难以处理。"},
+        {"en": "Because there is no known rule that, given a prime k, tells us the next prime.", "zh": "因为没有一条已知规则，能在给定素数 k 时指出下一个素数是多少。"},
+        {"en": "Because primes are not natural numbers.", "zh": "因为素数不是自然数。"},
+        {"en": "Because the Well-Ordering Principle fails on primes.", "zh": "因为良序原理在素数集上不成立。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Induction requires a deterministic rule for the 'next' instance; the primes admit no such rule.",
+      "explanation_zh": "归纳法需要一条确定的规则来给出'下一个'实例；而素数集并不存在这样的规则。"
+    },
+    {
+      "page": 362,
+      "question_en": "What does the Well-Ordering Principle state about subsets of N?",
+      "question_zh": "良序原理对 N 的子集断言了什么？",
+      "options": [
+        {"en": "Every subset of N is infinite.", "zh": "N 的每个子集都是无限集。"},
+        {"en": "Every non-empty subset of N has a least element.", "zh": "N 的每个非空子集都有最小元。"},
+        {"en": "Every subset of N has a largest element.", "zh": "N 的每个子集都有最大元。"},
+        {"en": "N is closed under addition and multiplication.", "zh": "N 对加法和乘法封闭。"}
+      ],
+      "answer": 1,
+      "explanation_en": "WOP: ∀S∈P(N), S≠∅ =⇒ ∃ℓ∈S such that ∀x∈S, ℓ≤x.",
+      "explanation_zh": "良序原理：∀S∈P(N)，若 S≠∅，则存在 ℓ∈S 使得 ∀x∈S，ℓ≤x。"
+    },
+    {
+      "page": 358,
+      "question_en": "In a 'minimal criminal' argument, what contrapositive implication do we prove in the Induction Step?",
+      "question_zh": "在'极小反例'论证中，我们在归纳步骤证明的是哪条逆否蕴含式？",
+      "options": [
+        {"en": "∀k∈N. P(k) =⇒ P(k+1).", "zh": "∀k∈N，P(k)=⇒P(k+1)。"},
+        {"en": "∀k∈N. ¬P(k+1) =⇒ ∃i∈[k]. ¬P(i).", "zh": "∀k∈N，¬P(k+1)=⇒∃i∈[k]，¬P(i)。"},
+        {"en": "∀k∈N. P(k+1) =⇒ P(k).", "zh": "∀k∈N，P(k+1)=⇒P(k)。"},
+        {"en": "∀k∈N. P(k) ∨ P(k+1).", "zh": "∀k∈N，P(k)∨P(k+1)。"}
+      ],
+      "answer": 1,
+      "explanation_en": "We prove the contrapositive of the strong inductive step: if P(k+1) fails, some earlier P(i) must also fail, contradicting the base case by descent.",
+      "explanation_zh": "我们证明的是强归纳步骤的逆否命题：若 P(k+1) 失败，则此前必有某个 P(i) 也失败；如此递降下去与基例矛盾。"
+    }
+  ]
+}

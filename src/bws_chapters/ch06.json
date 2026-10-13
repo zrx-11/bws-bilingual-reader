@@ -1,0 +1,336 @@
+{
+  "chapter": 6,
+  "title_en": "Relations and Modular Arithmetic",
+  "title_zh": "关系与模算术",
+  "start_page": 377,
+  "end_page": 466,
+  "sections": [
+    {
+      "section_id": "6.1",
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "page": 377,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 377,
+          "en": "To develop a rigorous notion of functions, we will first talk about relations, a way to compare elements of sets. Equivalence relations yield natural partitions of sets, and vice-versa.",
+          "zh": "为了给出函数的严格定义，我们先讨论关系——一种比较集合中元素的方式。等价关系会导出集合的自然划分，反之亦然。"
+        },
+        {
+          "type": "strategy",
+          "page": 378,
+          "en": "By the end of this chapter, you should be able to define a relation, define equivalence relations and equivalence classes, and use them to state and prove number-theoretic results on Z.",
+          "zh": "学完本章后，你应当能够定义关系、定义等价关系与等价类，并运用它们在整数集 Z 上陈述和证明数论结论。"
+        },
+        {
+          "type": "warning",
+          "page": 379,
+          "en": "This chapter continues our foray into abstract ideas and rigorous mathematics; it takes time to digest these concepts, and it is essential to work through examples to make sure you follow along.",
+          "zh": "本章继续进入抽象观念与严格数学的领域；消化这些概念需要时间，务必亲手演算例题以确保真正跟上。"
+        }
+      ]
+    },
+    {
+      "section_id": "6.2",
+      "title_en": "Abstract (Binary) Relations",
+      "title_zh": "抽象（二元）关系",
+      "page": 380,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 380,
+          "en": "Let A, B be sets. A relation between A and B is a set of ordered pairs, R ⊆ A × B. Given a ∈ A and b ∈ B, we say a and b are related iff (a,b) ∈ R. The set A is the domain and B is the codomain.",
+          "zh": "设 A、B 为集合。A 与 B 之间的关系是一个有序对集合 R ⊆ A × B。对 a∈A、b∈B，当且仅当 (a,b)∈R 时称 a 与 b 相关。集合 A 称为定义域，B 称为陪域。"
+        },
+        {
+          "type": "definition",
+          "page": 383,
+          "en": "Let R be a relation on A. R is reflexive if ∀x∈A (x,x)∈R; symmetric if ∀x,y∈A, (x,y)∈R ⇒ (y,x)∈R; transitive if ∀x,y,z∈A, [(x,y)∈R ∧ (y,z)∈R] ⇒ (x,z)∈R; anti-symmetric if ∀x,y∈A, [(x,y)∈R ∧ (y,x)∈R] ⇒ x=y.",
+          "zh": "设 R 是 A 上的关系。若 ∀x∈A 都有 (x,x)∈R，则 R 是自反的；若 ∀x,y∈A，(x,y)∈R ⇒ (y,x)∈R，则 R 是对称的；若 ∀x,y,z∈A，(x,y)∈R 且 (y,z)∈R ⇒ (x,z)∈R，则 R 是传递的；若 ∀x,y∈A，(x,y)∈R 且 (y,x)∈R ⇒ x=y，则 R 是反对称的。"
+        },
+        {
+          "type": "warning",
+          "page": 384,
+          "en": "It is important to point out that anti-symmetric is NOT the same as not symmetric. For example, the ≤ relation on R is anti-symmetric but not symmetric.",
+          "zh": "必须指出，反对称并不等于不对称。例如 R 上的 ≤ 关系是反对称的，但不是对称的。"
+        },
+        {
+          "type": "definition",
+          "page": 386,
+          "en": "Let a,b∈Z. We say x divides y, written x | y, iff ∃k∈Z such that y = kx.",
+          "zh": "设 a,b∈Z。称 x 整除 y，记作 x | y，当且仅当存在 k∈Z 使得 y = kx。"
+        },
+        {
+          "type": "example",
+          "page": 387,
+          "en": "On Z, the divides relation x|y is reflexive and transitive, but not symmetric: 2|6 yet 6∤2. It is also not anti-symmetric: 3|(-3) and (-3)|3 yet 3≠-3.",
+          "zh": "在 Z 上，整除关系 x|y 是自反且传递的，但不是对称的：2|6 而 6∤2；它也不是反对称的：3|(-3) 且 (-3)|3，但 3≠-3。"
+        },
+        {
+          "type": "strategy",
+          "page": 386,
+          "en": "We recommend starting a proof as if a property actually held, and seeing if you can finish. If you struggle at some point, maybe that is because the property does not hold, and the snag will give you insight into finding a counterexample.",
+          "zh": "建议先假定某性质成立并着手证明，看能否完成。若在某处卡住，很可能正是因为该性质不成立，而卡住之处会引导你找到反例。"
+        }
+      ]
+    },
+    {
+      "section_id": "6.3",
+      "title_en": "[Optional Reading] Order Relations",
+      "title_zh": "[选读] 序关系",
+      "page": 393,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 393,
+          "en": "If R is reflexive, transitive, and anti-symmetric, then R is a partial order on A. If in addition ∀x,y∈A, (x,y)∈R ∨ (y,x)∈R, then R is a total order.",
+          "zh": "若 R 是自反、传递且反对称的，则称 R 为 A 上的偏序；若进一步满足 ∀x,y∈A，(x,y)∈R 或 (y,x)∈R，则称 R 为全序。"
+        },
+        {
+          "type": "example",
+          "page": 394,
+          "en": "On R: ≤ is a total order; = is a partial order but not a total order; < is not reflexive; the floor relation ⌊x⌋=⌊y⌋ is not anti-symmetric.",
+          "zh": "在 R 上：≤ 是全序；= 是偏序但不是全序；< 不是自反的；取整关系 ⌊x⌋=⌊y⌋ 不是反对称的。"
+        },
+        {
+          "type": "definition",
+          "page": 394,
+          "en": "R is irreflexive iff ∀x∈A, (x,x)∉R. A strict partial order is irreflexive, transitive, and anti-symmetric.",
+          "zh": "称 R 是反自反的，当且仅当 ∀x∈A，(x,x)∉R。严格偏序是反自反、传递且反对称的关系。"
+        },
+        {
+          "type": "lemma",
+          "page": 395,
+          "en": "Given a partial order R1, the relation S1 defined by (x,y)∈S1 ⇔ [(x,y)∈R1 ∧ x≠y] is a strict partial order; conversely adding x=y recovers the non-strict order.",
+          "zh": "给定偏序 R1，由 (x,y)∈S1 ⇔ [(x,y)∈R1 且 x≠y] 定义的 S1 是严格偏序；反之，再加入 x=y 即可恢复非严格序。"
+        },
+        {
+          "type": "example",
+          "page": 396,
+          "en": "The inclusion relation ⊆ on P(S) is a partial order but not a total order: {1} and {2,3} are incomparable, since neither {1}⊆{2,3} nor {2,3}⊆{1}.",
+          "zh": "P(S) 上的包含关系 ⊆ 是偏序但不是全序：{1} 与 {2,3} 不可比较，因为既没有 {1}⊆{2,3}，也没有 {2,3}⊆{1}。"
+        }
+      ]
+    },
+    {
+      "section_id": "6.4",
+      "title_en": "Equivalence Relations",
+      "title_zh": "等价关系",
+      "page": 399,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 399,
+          "en": "Let A be a set and R a relation on A. If R is reflexive, symmetric, and transitive, then R is an equivalence relation.",
+          "zh": "设 A 为集合，R 为 A 上的关系。若 R 同时是自反的、对称的、传递的，则称 R 为等价关系。"
+        },
+        {
+          "type": "example",
+          "page": 400,
+          "en": "On N−{1}, the relation \"x and y have a common factor >1\" is reflexive and symmetric but not transitive: (2,6)∈R and (6,9)∈R yet (2,9)∉R.",
+          "zh": "在 N−{1} 上，“x 与 y 有大于 1 的公因数”这一关系是自反、对称的，但不是传递的：(2,6)∈R 且 (6,9)∈R，而 (2,9)∉R。"
+        },
+        {
+          "type": "strategy",
+          "page": 401,
+          "en": "Go through each relevant property and try to prove it. If you succeed, done; if you struggle to prove one, use your efforts to see why it fails and construct a counterexample.",
+          "zh": "逐条验证相关性质并尝试证明。若全部证成即得等价关系；若某条证明受阻，则顺势查明失败原因并据此构造反例。"
+        },
+        {
+          "type": "definition",
+          "page": 402,
+          "en": "Let R be an equivalence relation on A and x∈A. The equivalence class of x is [x]_R = {y∈A | (x,y)∈R}.",
+          "zh": "设 R 是 A 上的等价关系，x∈A。x 的等价类定义为 [x]_R = {y∈A | (x,y)∈R}。"
+        },
+        {
+          "type": "theorem",
+          "page": 407,
+          "en": "Let R be an equivalence relation on A. Then the sets in A/R form a partition of A: they are nonempty, pairwise disjoint, and their union is A.",
+          "zh": "设 R 是 A 上的等价关系。则 A/R 中的所有等价类构成 A 的一个划分：它们非空、两两不相交，且并集为 A。"
+        },
+        {
+          "type": "theorem",
+          "page": 408,
+          "en": "Let F be a partition of S. Then there exists an equivalence relation R such that S/R = F, namely (x,y)∈R iff x and y belong to the same partition set.",
+          "zh": "设 F 是 S 的一个划分。则存在等价关系 R 使 S/R = F：定义 (x,y)∈R 当且仅当 x 与 y 属于同一个划分块。"
+        },
+        {
+          "type": "example",
+          "page": 410,
+          "en": "The parity relation on Z is an equivalence relation; its two classes are E_Z (even integers) and O_Z (odd integers), so Z/R = {O_Z, E_Z}.",
+          "zh": "Z 上的奇偶关系是等价关系，其两个等价类为偶整数集 E_Z 与奇整数集 O_Z，故 Z/R = {O_Z, E_Z}。"
+        }
+      ]
+    },
+    {
+      "section_id": "6.5",
+      "title_en": "Modular Arithmetic",
+      "title_zh": "模算术",
+      "page": 414,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 415,
+          "en": "Division Algorithm: for a,b∈Z there exist unique k,r∈Z with ak+r=b and 0≤r≤a−1. We call r the remainder of b upon division by a.",
+          "zh": "带余除法：对 a,b∈Z，存在唯一的 k,r∈Z 使 ak+r=b 且 0≤r≤a−1。称 r 为 b 除以 a 的余数。"
+        },
+        {
+          "type": "definition",
+          "page": 415,
+          "en": "Let n∈N. Define R_n on Z by (a,b)∈R_n iff a and b have the same remainder upon division by n; equivalently n | (a−b). We write a≡b mod n.",
+          "zh": "设 n∈N。在 Z 上定义 R_n：(a,b)∈R_n 当且仅当 a 与 b 除以 n 的余数相同；等价地，n | (a−b)。记作 a≡b (mod n)。"
+        },
+        {
+          "type": "theorem",
+          "page": 419,
+          "en": "Modular Arithmetic Lemma: if a≡r mod n and b≡s mod n, then a+b≡r+s mod n and a·b≡r·s mod n. We may reduce to remainders at every step.",
+          "zh": "模算术引理（MAL）：若 a≡r (mod n)、b≡s (mod n)，则 a+b≡r+s (mod n)，a·b≡r·s (mod n)。因此可在每一步都把数约化到余数再运算。"
+        },
+        {
+          "type": "example",
+          "page": 421,
+          "en": "Using MAL repeatedly: 5^1≡5, 5^2≡4, 5^3≡6, 5^4≡2, 5^5≡3, 5^6≡1 mod 7. The smallest k with 5^k one more than a multiple of 7 is k=6.",
+          "zh": "反复使用 MAL：5^1≡5、5^2≡4、5^3≡6、5^4≡2、5^5≡3、5^6≡1 (mod 7)。使 5^k 比 7 的倍数多 1 的最小 k 为 6。"
+        },
+        {
+          "type": "note",
+          "page": 425,
+          "en": "Z modulo n has exactly n equivalence classes: [0] mod n, [1] mod n, …, [n−1] mod n, each of the form {kn+r | k∈Z}; every class is infinite.",
+          "zh": "Z 模 n 恰有 n 个等价类：[0] mod n、[1] mod n、…、[n−1] mod n，每个类形如 {kn+r | k∈Z}，且都是无限集。"
+        },
+        {
+          "type": "theorem",
+          "page": 437,
+          "en": "MIRP Lemma: a·x≡1 mod n has a solution iff a and n are relatively prime (gcd(a,n)=1). Then all solutions are congruent mod n, with exactly one in {1,…,n−1}.",
+          "zh": "MIRP 引理：同余式 a·x≡1 (mod n) 有解当且仅当 a 与 n 互素（gcd(a,n)=1）；此时所有解模 n 同余，且在 {1,…,n−1} 中恰有一个代表。"
+        },
+        {
+          "type": "theorem",
+          "page": 451,
+          "en": "Chinese Remainder Theorem: if moduli n_1,…,n_r are pairwise relatively prime, the system x≡a_i mod n_i has solutions; all solutions are congruent modulo N=∏n_i.",
+          "zh": "中国剩余定理：若模数 n_1,…,n_r 两两互素，则方程组 x≡a_i (mod n_i) 必有解，且全部解模 N=∏n_i 同余。"
+        },
+        {
+          "type": "theorem",
+          "page": 454,
+          "en": "Bézout's Identity: the linear Diophantine equation ax+by=c has an integer solution iff gcd(a,b) | c.",
+          "zh": "贝祖恒等式：线性丢番图方程 ax+by=c 有整数解当且仅当 gcd(a,b) | c。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "binary relation", "term_zh": "二元关系", "page": 380, "note_zh": "A×B 的子集 R，用来比较两个集合元素；R⊆A×B。第一个集合 A 为定义域，第二个 B 为陪域。"},
+    {"term_en": "reflexive", "term_zh": "自反的", "page": 383, "note_zh": "∀x∈A 都有 (x,x)∈R。"},
+    {"term_en": "symmetric", "term_zh": "对称的", "page": 383, "note_zh": "(x,y)∈R 必有 (y,x)∈R。"},
+    {"term_en": "transitive", "term_zh": "传递的", "page": 384, "note_zh": "(x,y),(y,z)∈R 必有 (x,z)∈R。"},
+    {"term_en": "anti-symmetric", "term_zh": "反对称的", "page": 384, "note_zh": "(x,y) 与 (y,x) 同时在 R 中则 x=y；区别于“不对称”。"},
+    {"term_en": "divides (x|y)", "term_zh": "整除", "page": 386, "note_zh": "x|y ⇔ ∃k∈Z, y=kx。"},
+    {"term_en": "partial order / total order", "term_zh": "偏序 / 全序", "page": 393, "note_zh": "自反+传递+反对称为偏序；再加任意两元可比较即为全序。"},
+    {"term_en": "equivalence relation", "term_zh": "等价关系", "page": 399, "note_zh": "同时自反、对称、传递的关系。"},
+    {"term_en": "equivalence class [x]_R", "term_zh": "等价类", "page": 402, "note_zh": "[x]_R={y∈A | (x,y)∈R}；全体等价类构成划分。"},
+    {"term_en": "partition", "term_zh": "划分", "page": 407, "note_zh": "非空、两两不交、并集为全集的一族子集；与等价关系一一对应。"},
+    {"term_en": "congruence modulo n (a≡b mod n)", "term_zh": "模 n 同余", "page": 415, "note_zh": "n | (a−b)，即 a、b 除以 n 余数相同；由带余除法保证余数唯一。"},
+    {"term_en": "multiplicative inverse x^{−1} mod n", "term_zh": "（模 n）乘法逆元", "page": 435, "note_zh": "满足 xy≡1 (mod n) 的 y；存在当且仅当 gcd(x,n)=1（即 x 与 n 互素）。"},
+    {"term_en": "greatest common divisor (gcd)", "term_zh": "最大公约数", "page": 452, "note_zh": "同时整除两数的最大整数；a、b 互素即 gcd(a,b)=1。"},
+    {"term_en": "Chinese Remainder Theorem", "term_zh": "中国剩余定理", "page": 451, "note_zh": "模数两两互素时同余方程组必有解，全部解模模数之积同余。"},
+    {"term_en": "Bézout's Identity", "term_zh": "贝祖恒等式", "page": 454, "note_zh": "ax+by=c 有整数解 ⇔ gcd(a,b)|c。"}
+  ],
+  "action_rules": [
+    {"en": "To prove a relation has a property, prove a ∀-statement about arbitrary elements; to disprove it, prove the negation ∃ by giving one explicit counterexample.", "zh": "证明关系具有某性质，须对任意元素证明全称命题；否定它，则用一个具体反例证明存在性命题。"},
+    {"en": "When deciding whether R is an equivalence relation, verify reflexivity, symmetry, transitivity in turn; if a proof of one property stalls, that snag reveals the needed counterexample.", "zh": "判断 R 是否为等价关系，依次验证自反、对称、传递；若某条证明受阻，受阻之处往往就是反例所在。"},
+    {"en": "To test a≡b mod n, compute a−b and check whether n divides it; write a≡b mod n as ∃m∈Z, a=mn+b.", "zh": "判断 a≡b (mod n) 时，计算 a−b 并看 n 是否整除它；也可写成 ∃m∈Z，a=mn+b。"},
+    {"en": "During modular arithmetic, apply the MAL at every step: reduce each factor to its remainder 0,…,n−1 before multiplying or adding.", "zh": "模算术运算中每一步都使用 MAL：在相乘或相加之前先把每个因子约化为 0,…,n−1 中的余数。"},
+    {"en": "A multiplicative inverse of a mod n exists iff gcd(a,n)=1; search for it among 1,2,…,n−1 by brute force, and declare none exists otherwise.", "zh": "a 模 n 的乘法逆元存在当且仅当 gcd(a,n)=1；可在 1,2,…,n−1 中逐一试乘查找，否则断言不存在。"},
+    {"en": "Do not cancel a common factor from a congruence ax≡bx mod n unless you know gcd(x,n)=1; otherwise the step is invalid.", "zh": "除非已知 gcd(x,n)=1，否则不要在同余式 ax≡bx (mod n) 两边约去公因子 x，否则推理无效。"},
+    {"en": "The Chinese Remainder Theorem guarantees solutions only when moduli are pairwise relatively prime; otherwise analyze consistency case by case (e.g. parity clashes).", "zh": "中国剩余定理仅在模数两两互素时保证有解；否则须逐情形检查相容性（例如奇偶矛盾）。"},
+    {"en": "For a linear Diophantine equation ax+by=c, first compute gcd(a,b): if gcd(a,b)∤c, there are no integer solutions; if it divides, use a known solution to parametrize all solutions.", "zh": "对线性丢番图方程 ax+by=c，先算 gcd(a,b)：若 gcd(a,b)∤c 则无整数解；若整除，则由一个特解参数化全部解。"}
+  ],
+  "quiz": [
+    {
+      "page": 387,
+      "question_en": "On Z, which of the four standard properties does the divides relation x|y have?",
+      "question_zh": "在 Z 上，整除关系 x|y 具有以下哪些标准性质？",
+      "options": [
+        {"en": "Reflexive and transitive, but neither symmetric nor anti-symmetric.", "zh": "自反且传递，但既不对称也不反对称。"},
+        {"en": "Reflexive, symmetric, and transitive (an equivalence relation).", "zh": "自反、对称、传递（是等价关系）。"},
+        {"en": "Reflexive, transitive, and anti-symmetric (a partial order).", "zh": "自反、传递、反对称（是偏序）。"},
+        {"en": "Transitive only, but not reflexive.", "zh": "仅传递，但不自反。"}
+      ],
+      "answer": 0,
+      "explanation_en": "x|x holds (reflexive); x|y and y|z imply x|z (transitive). But 2|6 yet 6∤2 (not symmetric), and 3|(−3) with (−3)|3 yet 3≠−3 (not anti-symmetric).",
+      "explanation_zh": "x|x 成立故自反；x|y、y|z 推出 x|z 故传递。但 2|6 而 6∤2，故不对称；3|(−3) 且 (−3)|3 而 3≠−3，故不反对称。"
+    },
+    {
+      "page": 400,
+      "question_en": "On N−{1}, is the relation \"x and y have a common factor >1\" transitive?",
+      "question_zh": "在 N−{1} 上，“x 与 y 有大于 1 的公因数”这一关系是否传递？",
+      "options": [
+        {"en": "No; (2,6) and (6,9) are related but (2,9) is not, since gcd(2,9)=1.", "zh": "不传递；(2,6) 与 (6,9) 相关，但 (2,9) 不相关，因为 gcd(2,9)=1。"},
+        {"en": "Yes, because any common factor of x,y and y,z is also a common factor of x,z.", "zh": "传递，因为 x、y 与 y、z 的公因数也必为 x、z 的公因数。"},
+        {"en": "No, because it is not reflexive.", "zh": "不传递，因为它不自反。"},
+        {"en": "Yes, because gcd(x,y)>1 and gcd(y,z)>1 always implies gcd(x,z)>1.", "zh": "传递，因为 gcd(x,y)>1 且 gcd(y,z)>1 必推出 gcd(x,z)>1。"}
+      ],
+      "answer": 0,
+      "explanation_en": "x=2,y=6,z=9: gcd(2,6)=2 and gcd(6,9)=3, but gcd(2,9)=1, so (2,9)∉R. The common factors 2 and 3 need not coincide.",
+      "explanation_zh": "取 x=2,y=6,z=9：gcd(2,6)=2、gcd(6,9)=3，但 gcd(2,9)=1，故 (2,9)∉R。公因数 2 与 3 不必相同。"
+    },
+    {
+      "page": 425,
+      "question_en": "How many equivalence classes does Z have modulo n?",
+      "question_zh": "Z 模 n 共有多少个等价类？",
+      "options": [
+        {"en": "Exactly n classes: [0] mod n, [1] mod n, …, [n−1] mod n.", "zh": "恰有 n 个类：[0] mod n、[1] mod n、…、[n−1] mod n。"},
+        {"en": "Exactly n−1 classes, since 0 is not a remainder.", "zh": "恰有 n−1 个类，因为 0 不是余数。"},
+        {"en": "Infinitely many classes, one for each integer.", "zh": "无穷多个类，每个整数对应一个。"},
+        {"en": "Exactly 2 classes, even and odd.", "zh": "恰有 2 个类：偶数与奇数。"}
+      ],
+      "answer": 0,
+      "explanation_en": "By the Division Algorithm the remainder r satisfies 0≤r≤n−1, giving exactly n possible remainders, and each r occurs, so there are exactly n classes.",
+      "explanation_zh": "由带余除法，余数 r 满足 0≤r≤n−1，恰有 n 种可能余数，且每种都能取到，故恰有 n 个等价类。"
+    },
+    {
+      "page": 436,
+      "question_en": "Does the integer 2 have a multiplicative inverse modulo 4?",
+      "question_zh": "整数 2 在模 4 意义下是否有乘法逆元？",
+      "options": [
+        {"en": "No, because gcd(2,4)=2≠1; every multiple of 2 is even, but any y≡1 mod 4 is odd.", "zh": "没有，因为 gcd(2,4)=2≠1；2 的倍数都是偶数，而 y≡1 (mod 4) 必为奇数。"},
+        {"en": "Yes, 2^{−1}≡2 mod 4, since 2·2=4≡0 mod 4.", "zh": "有，2^{−1}≡2 (mod 4)，因为 2·2=4≡0 (mod 4)。"},
+        {"en": "Yes, 2^{−1}≡1 mod 4.", "zh": "有，2^{−1}≡1 (mod 4)。"},
+        {"en": "No, because 2 is not an integer.", "zh": "没有，因为 2 不是整数。"}
+      ],
+      "answer": 0,
+      "explanation_en": "By the MIRP Lemma, an inverse of a mod n exists iff gcd(a,n)=1. Here gcd(2,4)=2, so no y can satisfy 2y≡1 mod 4.",
+      "explanation_zh": "由 MIRP 引理，a 模 n 的逆元存在当且仅当 gcd(a,n)=1。此处 gcd(2,4)=2，故不存在 y 使 2y≡1 (mod 4)。"
+    },
+    {
+      "page": 451,
+      "question_en": "Does the Chinese Remainder Theorem guarantee a solution to x≡3 mod 4 and x≡2 mod 6?",
+      "question_zh": "中国剩余定理是否保证方程组 x≡3 (mod 4)、x≡2 (mod 6) 有解？",
+      "options": [
+        {"en": "No; CRT requires pairwise relatively prime moduli, but gcd(4,6)=2, and the system also demands x be both odd and even.", "zh": "不保证；CRT 要求模数两两互素，但 gcd(4,6)=2，且该方程组同时要求 x 既奇又偶。"},
+        {"en": "Yes; CRT always guarantees a solution to any system of congruences.", "zh": "保证；CRT 对任意同余方程组都保证有解。"},
+        {"en": "Yes, because 4 and 6 are both even.", "zh": "保证，因为 4 与 6 都是偶数。"},
+        {"en": "No, because CRT only applies when there is exactly one congruence.", "zh": "不保证，因为 CRT 只适用于只有一个同余式的情形。"}
+      ],
+      "answer": 0,
+      "explanation_en": "CRT's hypothesis is pairwise relatively prime moduli; gcd(4,6)=2 so it does not apply. Indeed x≡3 mod 4 forces x odd, while x≡2 mod 6 forces x even: impossible.",
+      "explanation_zh": "CRT 的前提是模数两两互素，而 gcd(4,6)=2，前提不满足。事实上 x≡3 (mod 4) 要求 x 为奇数，x≡2 (mod 6) 要求 x 为偶数，矛盾。"
+    },
+    {
+      "page": 454,
+      "question_en": "By Bézout's Identity, does 2x+4y=9 have any integer solutions?",
+      "question_zh": "由贝祖恒等式，方程 2x+4y=9 是否有整数解？",
+      "options": [
+        {"en": "No, because gcd(2,4)=2 does not divide 9.", "zh": "没有，因为 gcd(2,4)=2 不整除 9。"},
+        {"en": "Yes, because gcd(2,4)=2 divides 9.", "zh": "有，因为 gcd(2,4)=2 整除 9。"},
+        {"en": "Yes, by choosing x=9, y=0.", "zh": "有，取 x=9、y=0 即可。"},
+        {"en": "No, because gcd(2,4)=1.", "zh": "没有，因为 gcd(2,4)=1。"}
+      ],
+      "answer": 0,
+      "explanation_en": "Bézout says ax+by=c is solvable in Z iff gcd(a,b)|c. Here gcd(2,4)=2, but 2∤9, so no integer solution exists.",
+      "explanation_zh": "贝祖恒等式指出 ax+by=c 在 Z 中有解当且仅当 gcd(a,b)|c。此处 gcd(2,4)=2，但 2∤9，故无整数解。"
+    }
+  ]
+}

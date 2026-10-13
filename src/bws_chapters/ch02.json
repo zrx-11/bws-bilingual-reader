@@ -1,0 +1,309 @@
+{
+  "chapter": 2,
+  "title_en": "Mathematical Induction",
+  "title_zh": "数学归纳法",
+  "start_page": 101,
+  "end_page": 148,
+  "sections": [
+    {
+      "section_id": "2.1",
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "page": 101,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 101,
+          "en": "This chapter marks our first big step toward investigating mathematical proofs more thoroughly and learning to construct our own. It is also an introduction to the first significant proof technique we will see.",
+          "zh": "本章是我们深入研究数学证明、并学习自己构造证明的第一个重要台阶；同时它也是我们遇到的第一个重要证明技巧。"
+        },
+        {
+          "type": "strategy",
+          "page": 103,
+          "en": "Applying induction to a problem requires there to be a certain structure to the problem, a dependence of one 'part' of the result on a 'previous part'. Recognizing that induction applies, and actually going through the subsequent proof process, will usually teach us something about the inherent structure of the problem.",
+          "zh": "对一个问题应用归纳法，要求该问题具有某种结构：结论的某一部分依赖于它的“前一部分”。识别出归纳法的适用性并走完后续证明过程，通常会让我们理解问题内在的结构。"
+        },
+        {
+          "type": "warning",
+          "page": 103,
+          "en": "Some of the claims we make in this Chapter will be clarified and technically proven later on, once we have properly discussed the natural numbers and some basic mathematical logic. All in due time!",
+          "zh": "本章中的一些断言要等到后面讨论过自然数和基本数理逻辑之后才会被澄清并严格证明；现在给出的只是启发式说明，尚不是严格证明。"
+        }
+      ]
+    },
+    {
+      "section_id": "2.2",
+      "title_en": "Examples and Discussion",
+      "title_zh": "例子与讨论",
+      "page": 104,
+      "key_points": [
+        {
+          "type": "example",
+          "page": 108,
+          "en": "By enlarging the three exposed faces, then filling in the gaps between them, then the top corner, we obtain (n+1)^3 = n^3 + 3n^2 + 3n + 1. This geometric derivation shows how a larger fact can be built from a previous, smaller fact.",
+          "zh": "通过先扩大三个暴露面、再填补面与面之间的缝隙、最后补上顶角，我们得到 (n+1)^3 = n^3 + 3n^2 + 3n + 1。这一几何推导展示了如何由一个“更小的事实”构造出“更大的事实”。"
+        },
+        {
+          "type": "theorem",
+          "page": 111,
+          "en": "Iterating the identity for (n+1)^3 and using the known sum formula, we derive sum_{k=1}^n k^2 = n(n+1)(2n+1)/6.",
+          "zh": "将 (n+1)^3 的恒等式反复迭代，并代入已知的求和公式，我们推导出 sum_{k=1}^n k^2 = n(n+1)(2n+1)/6。"
+        },
+        {
+          "type": "warning",
+          "page": 111,
+          "en": "'And so on' is not rigorous! Writing '...' in the middle of columns of terms was helpful in guiding our intuition, but this is not a mathematically rigorous technique. We cannot assume a reader will intuit exactly what we mean.",
+          "zh": "'……以此类推'并不严格！在一列项中间写省略号有助于引导直觉，但这不是严格的数学技巧；我们不能假定读者会自然而然地理解我们想说的内容。"
+        },
+        {
+          "type": "example",
+          "page": 116,
+          "en": "When we add the (n+1)-th line (non-parallel to all existing lines, avoiding old intersection points), it creates n new intersection points, hence n+1 segments, hence n+1 new regions. Thus R(n+1) = R(n) + n + 1.",
+          "zh": "当加入第 (n+1) 条直线时（它与已有直线均不平行，且不经过已有的交点），它与已有 n 条直线交出 n 个新交点，从而被分成 n+1 段，每段把一个区域一分为二，因此新增 n+1 个区域，即 R(n+1) = R(n) + n + 1。"
+        },
+        {
+          "type": "theorem",
+          "page": 117,
+          "en": "With R(1)=2 and R(n+1)=R(n)+n+1, iteration gives R(n) = 1 + n(n+1)/2.",
+          "zh": "由 R(1)=2 与递推式 R(n+1)=R(n)+n+1，反复迭代可得 R(n) = 1 + n(n+1)/2。"
+        },
+        {
+          "type": "note",
+          "page": 117,
+          "en": "The derivation we followed has guided our intuition into an answer, but this has not rigorously proven anything. The issue is with the '...', which is not a concrete, officially mathematical way of capturing the inductive process.",
+          "zh": "刚才的推导只是把直觉引向答案，并未严格证明任何结论；问题出在省略号上——它并不是刻画归纳过程的正式数学手段。"
+        }
+      ]
+    },
+    {
+      "section_id": "2.3",
+      "title_en": "Defining Induction",
+      "title_zh": "归纳法的定义",
+      "page": 119,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 122,
+          "en": "We could collapse the whole line of dominos falling down into just two steps: (a) Make sure the first domino topples; (b) Make sure every domino knocks over the one immediately after it in line. With only these two steps, we can guarantee every domino falls.",
+          "zh": "我们可以把整条多米诺骨牌的倒塌归结为两步：(a) 确保第一张骨牌倒下；(b) 确保每张骨牌都会撞倒紧接它后面的那一张。仅凭这两步就能保证所有骨牌都倒下。"
+        },
+        {
+          "type": "definition",
+          "page": 122,
+          "en": "In the domino analogy, P(n) is the 'fact' written on the n-th domino. Step (a) is the base case: verify P(1) by hand. Step (b) is the inductive step: assume P(k) is true (the inductive hypothesis) and deduce P(k+1) must also be true.",
+          "zh": "在多米诺类比中，P(n) 是写在第 n 张骨牌上的“事实”。第 (a) 步是基例（base case）：手工验证 P(1)。第 (b) 步是归纳步骤（inductive step）：假设 P(k) 为真（即归纳假设 inductive hypothesis），并由此推出 P(k+1) 也必为真。"
+        },
+        {
+          "type": "example",
+          "page": 123,
+          "en": "Assuming sum_{k=1}^n k^2 = n(n+1)(2n+1)/6, we separate the last term: sum_{k=1}^{n+1} k^2 = sum_{k=1}^n k^2 + (n+1)^2, substitute the hypothesis, and algebraically verify the result equals (n+1)(n+2)(2n+3)/6.",
+          "zh": "假设 sum_{k=1}^n k^2 = n(n+1)(2n+1)/6，我们把最后一项分离出来：sum_{k=1}^{n+1} k^2 = sum_{k=1}^n k^2 + (n+1)^2，代入归纳假设，再通过代数化简验证结果等于 (n+1)(n+2)(2n+3)/6。"
+        },
+        {
+          "type": "note",
+          "page": 125,
+          "en": "Other equivalent analogies are Mojo the monkey climbing an infinite ladder (must reach rung 1 and be able to step to the next rung) and Doug the duck walking down Induction Street (once he starts at house 1 and keeps going to the next house, he reaches every house).",
+          "zh": "其他等价的类比包括：猴子 Mojo 攀登无穷长梯（必须能登上第 1 阶，并且从任意一阶都能迈到下一阶），以及鸭子 Doug 沿归纳街逐户走访（只要他从 1 号院子出发、并且每到一户都必然走往下一户，他就会走到每一户）。"
+        },
+        {
+          "type": "note",
+          "page": 127,
+          "en": "We don't care whether Mojo reaches 'the top' of the infinite ladder. We only need to know that he gets to every possible rung; for any particular fact we care about, Mojo will eventually arrive at that rung.",
+          "zh": "我们并不关心 Mojo 是否到达无穷梯的“顶端”。我们只需要知道他会到达每一个可能的梯级；对于我们关心的任意一个具体事实，Mojo 最终都会到达对应的那一梯级。"
+        }
+      ]
+    },
+    {
+      "section_id": "2.4",
+      "title_en": "Two More (Different) Examples",
+      "title_zh": "另外两个（不同类型的）例子",
+      "page": 129,
+      "key_points": [
+        {
+          "type": "example",
+          "page": 132,
+          "en": "For tilings of a 2 x n board with 2x1 dominoes, look at the far right: either one vertical domino (coming from a 2x(n-1) board) or two horizontal dominoes (coming from a 2x(n-2) board). Hence T(n) = T(n-1) + T(n-2) for n>=3, with T(1)=1, T(2)=2.",
+          "zh": "对 2 x n 方格板用 2x1 多米诺骨牌铺砌时，看最右端：要么是一块竖直骨牌（对应来自 2x(n-1) 板的铺法），要么是两块并排横骨牌（对应来自 2x(n-2) 板的铺法）。因此对 n>=3 有 T(n) = T(n-1) + T(n-2)，初值 T(1)=1、T(2)=2。"
+        },
+        {
+          "type": "warning",
+          "page": 132,
+          "en": "In this example, T(n) depends on two previous terms, T(n-1) and T(n-2). The simple domino analogy (one falling domino knocks over the very next one) does not directly apply; we must adapt the idea.",
+          "zh": "在这个例子中，T(n) 同时依赖于 T(n-1) 与 T(n-2) 两个前项；简单的多米诺类比（一张骨牌只撞倒紧接的下一张）不再直接适用，必须对类比加以推广。"
+        },
+        {
+          "type": "example",
+          "page": 136,
+          "en": "In the Takeaway game T_n (two equal piles of n stones, take any number from one pile only, last stone wins), player P2 has a winning strategy: mimic P1's move on the other pile, reducing the game to a smaller previous version that P2 already wins.",
+          "zh": "在 Takeaway 游戏 T_n（两堆各 n 颗石子，每次只能从某一堆取任意颗，取到最后一颗者胜）中，后手 P2 有必胜策略：在另一堆上模仿 P1 的取法，把游戏化为一个规模更小、且已知 P2 必胜的局面。"
+        },
+        {
+          "type": "note",
+          "page": 136,
+          "en": "Induction is not about algebraic formulas all the time; induction represents some kind of 'building-up' structure, where larger situations depend on smaller ones. We have to prove some initial fact, and then argue how an arbitrary larger fact can be reduced so that it depends on a previous fact.",
+          "zh": "归纳法并不总是关于代数公式；它刻画的是一种“由小及大”的结构：较大的情形依赖于较小的情形。我们必须先证明某个初始事实，再论证任意较大的事实如何能化归为某个先前的事实。"
+        }
+      ]
+    },
+    {
+      "section_id": "2.5",
+      "title_en": "Applications",
+      "title_zh": "应用",
+      "page": 137,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 138,
+          "en": "Recursive programming takes advantage of the inductive idea: to solve a 'large' problem, identify how the problem depends on 'smaller' cases, and reduce the problem until one reaches a simple, known case.",
+          "zh": "递归编程利用了归纳思想：要解决一个“大”问题，先识别它如何依赖于“更小”的情形，不断化归，直到到达一个简单的、已知的情形。"
+        },
+        {
+          "type": "example",
+          "page": 138,
+          "en": "The factorial function is naturally recursive: n! = (n-1)! * n, with base case 1! = 1. The pseudocode factorial(n) returns 1 if n=1, and n*factorial(n-1) otherwise.",
+          "zh": "阶乘函数有自然的递归定义：n! = (n-1)! · n，基例 1! = 1。对应的伪代码为：若 n=1 则返回 1，否则返回 n * factorial(n-1)。"
+        },
+        {
+          "type": "example",
+          "page": 139,
+          "en": "The Fibonacci numbers are defined by F(1)=1, F(2)=1, and F(n)=F(n-1)+F(n-2) for n>=3. A recursive program may compute F(8) and F(7) multiple times across different sub-calls.",
+          "zh": "斐波那契数定义为 F(1)=1、F(2)=1，且对 n>=3 有 F(n)=F(n-1)+F(n-2)。递归程序在计算时会在不同子调用中重复计算 F(8)、F(7) 等。"
+        },
+        {
+          "type": "example",
+          "page": 142,
+          "en": "In the Tower of Hanoi, optimally moving n disks requires solving the (n-1)-disk puzzle twice with one extra move in between, so M(n) = 2M(n-1) + 1, with M(1)=1. This recurrence solves to M(n) = 2^n - 1.",
+          "zh": "在汉诺塔中，最优地移动 n 个圆盘需要先把上面 n-1 个圆盘移走、把最大盘移一格、再把 n-1 个圆盘移过来，因此 M(n) = 2M(n-1) + 1，初值 M(1)=1。该递推关系的解为 M(n) = 2^n - 1。"
+        },
+        {
+          "type": "warning",
+          "page": 142,
+          "en": "Observing the pattern M(n)=2^n-1 from the first four cases does not prove the pattern; just because it works for the first 4 cases does not mean the trend will continue. That is exactly what an induction proof would accomplish.",
+          "zh": "仅从前 4 个例子观察到 M(n)=2^n-1 并不能证明该规律；前 4 项成立并不意味着趋势会延续下去。而这正是归纳证明所要完成的工作。"
+        }
+      ]
+    },
+    {
+      "section_id": "2.6",
+      "title_en": "Summary",
+      "title_zh": "小结",
+      "page": 144,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 144,
+          "en": "Inductive arguments can apply to any situation where a fact depends on a 'previous instance' of that fact; this includes summation formulas, geometric counts, tilings, games, and recursive algorithms.",
+          "zh": "只要一个事实依赖于它自身的“先前实例”，归纳论证就可以适用；求和公式、几何计数、铺砌问题、博弈必胜策略以及递归算法都在其列。"
+        },
+        {
+          "type": "note",
+          "page": 144,
+          "en": "The Domino Analogy is a reasonable heuristic guide, but it is not built on mathematically rigorous foundations. Our main goal is to rigorously state and prove the Principle of Mathematical Induction in a later chapter.",
+          "zh": "多米诺类比是合理的启发式指南，但并未建立在严格的数学基础之上；我们的目标是在后续章节中严格陈述并证明数学归纳法原理（PMI）。"
+        },
+        {
+          "type": "warning",
+          "page": 144,
+          "en": "The domino analogy fails to represent examples where a falling domino depended on not only the one immediately behind it, but several others before it; we will need a broader (strong) induction later.",
+          "zh": "在“一张骨牌的倒下不仅依赖紧接的前一张、还依赖更早若干张”的例子中，简单多米诺类比并不完全适用；后面需要更一般的（强）归纳法。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "mathematical induction", "term_zh": "数学归纳法", "page": 103, "note_zh": "一种证明技巧：先验证基例，再证明由 P(k) 可推出 P(k+1)，从而断定 P(n) 对所有相关自然数成立。"},
+    {"term_en": "base case", "term_zh": "基例 / 归纳基础", "page": 122, "note_zh": "归纳证明中需要单独手工验证的初始情形，例如 P(1)。"},
+    {"term_en": "inductive hypothesis", "term_zh": "归纳假设", "page": 122, "note_zh": "在归纳步骤中假定成立的命题 P(k)，用于推出 P(k+1)。"},
+    {"term_en": "inductive step", "term_zh": "归纳步骤", "page": 126, "note_zh": "证明“若 P(k) 成立则 P(k+1) 必成立”的这一步。"},
+    {"term_en": "P(n)", "term_zh": "命题 P(n)", "page": 120, "note_zh": "依赖于自然数 n 的某个待证事实或命题，写在第 n 张“多米诺骨牌”上。"},
+    {"term_en": "domino analogy", "term_zh": "多米诺骨牌类比", "page": 119, "note_zh": "把对所有 n 成立的证明类比为无穷张骨牌依次倒下：第一张倒下，且每张撞倒下一张。"},
+    {"term_en": "recurrence relation", "term_zh": "递推关系", "page": 143, "note_zh": "用前若干项定义后项的等式，如 M(n)=2M(n-1)+1；求其闭式解通常需要归纳。"},
+    {"term_en": "Fibonacci numbers", "term_zh": "斐波那契数", "page": 139, "note_zh": "由 F(1)=F(2)=1、F(n)=F(n-1)+F(n-2) 定义的数列；与 2×n 骨牌铺砌数 T(n) 一致。"},
+    {"term_en": "Tower of Hanoi", "term_zh": "汉诺塔", "page": 139, "note_zh": "经典递归益智游戏；最优移动次数 M(n)=2^n-1。"},
+    {"term_en": "recursive programming", "term_zh": "递归程序设计", "page": 138, "note_zh": "通过把大问题归结为更小的同类问题来求解，与归纳结构同构。"},
+    {"term_en": "winning strategy", "term_zh": "必胜策略", "page": 136, "note_zh": "在博弈中无论对手如何应对都能保证取胜的一套明确走法。"},
+    {"term_en": "without loss of generality", "term_zh": "不失一般性", "page": 134, "note_zh": "当两种情形对称、可通过换名互换时，只需讨论其中一种即可。"}
+  ],
+  "action_rules": [
+    {"en": "Identify whether the problem has an inductive structure: does one case depend on a previous case? If yes, induction likely applies.", "zh": "先判断问题是否具有归纳结构：后一情形是否依赖于前一情形？若是，则归纳法很可能适用。"},
+    {"en": "Always state and verify the base case(s) explicitly; some problems (e.g. tilings) need two starting values, T(1) and T(2).", "zh": "始终显式陈述并验证基例；有些问题（如骨牌铺砌）需要两个初值 T(1)、T(2)。"},
+    {"en": "State the inductive hypothesis clearly: 'Assume P(k) is true for some arbitrary, fixed k in N.'", "zh": "清晰写出归纳假设：“对某个任意但固定的 k∈N，假设 P(k) 成立。”"},
+    {"en": "In the inductive step, use the hypothesis to rewrite the (n+1)-case and algebraically simplify until it matches the claimed formula; expanding both sides to a common polynomial is often easier than factoring.", "zh": "在归纳步骤中，利用假设把第 (n+1) 项拆开，代入假设后代数化简，直到与目标公式一致；把两边都展开成同一多项式形式通常比强行因式分解更容易。"},
+    {"en": "Never use ellipses ('...', 'and so on') as a proof substitute; they may guide intuition but are not rigorous.", "zh": "绝不能用省略号（“……”“以此类推”）代替证明；它们可以引导直觉，但不严格。"},
+    {"en": "Observing a pattern from the first few cases is NOT a proof; you still need to verify the inductive step for arbitrary k.", "zh": "从前几个特例观察到规律并不是证明；仍需对任意 k 验证归纳步骤。"},
+    {"en": "If P(k) alone is not enough to deduce P(k+1), you may need strong induction / multiple previous cases (e.g. T(n)=T(n-1)+T(n-2)).", "zh": "若仅凭 P(k) 不足以推出 P(k+1)，可能需要强归纳或同时依赖多个前项（如 T(n)=T(n-1)+T(n-2)）。"},
+    {"en": "After writing a proof, check: did I define P(n)? Did I verify the base? Did I use the hypothesis to reach P(k+1)?", "zh": "写完证明后自查：是否定义了 P(n)？是否验证了基例？是否真的用了归纳假设来得到 P(k+1)？"}
+  ],
+  "quiz": [
+    {
+      "page": 122,
+      "question_en": "In the domino analogy for induction, what does it mean that 'the first domino falls'?",
+      "question_zh": "在归纳法的多米诺骨牌类比中，“第一张骨牌倒下”对应什么？",
+      "options": [
+        {"en": "The inductive hypothesis P(k) is assumed.", "zh": "归纳假设 P(k) 被假定成立。"},
+        {"en": "The base case P(1) is verified true.", "zh": "基例 P(1) 被验证为真。"},
+        {"en": "The inductive step P(k) => P(k+1) is proven.", "zh": "归纳步骤 P(k)=>P(k+1) 被证明。"},
+        {"en": "The formula is derived from geometric pictures.", "zh": "公式是从几何图形中推出来的。"}
+      ],
+      "answer": 1,
+      "explanation_en": "The first domino falling corresponds to checking the starting value by hand; that is the base case. The chain reaction P(k)=>P(k+1) is the inductive step.",
+      "explanation_zh": "第一张骨牌倒下对应于手工验证初始值，即基例；而 P(k)=>P(k+1) 的连锁反应才是归纳步骤。"
+    },
+    {
+      "page": 117,
+      "question_en": "What is the closed form for R(n), the number of regions formed by n lines in general position?",
+      "question_zh": "R(n) 表示一般位置下 n 条直线在平面上分出的区域数，其闭式公式是什么？",
+      "options": [
+        {"en": "R(n) = n(n+1)/2", "zh": "R(n) = n(n+1)/2"},
+        {"en": "R(n) = 1 + n(n+1)/2", "zh": "R(n) = 1 + n(n+1)/2"},
+        {"en": "R(n) = 2^n", "zh": "R(n) = 2^n"},
+        {"en": "R(n) = n^2 - n + 2", "zh": "R(n) = n^2 - n + 2"}
+      ],
+      "answer": 1,
+      "explanation_en": "From R(1)=2 and R(n+1)=R(n)+n+1, iterating gives R(n)=1+sum_{k=1}^n k = 1+n(n+1)/2.",
+      "explanation_zh": "由 R(1)=2 与递推 R(n+1)=R(n)+n+1 迭代可得 R(n)=1+sum_{k=1}^n k = 1+n(n+1)/2。"
+    },
+    {
+      "page": 132,
+      "question_en": "For tilings of a 2 x n board by 2x1 dominoes, what recurrence holds for n>=3?",
+      "question_zh": "用 2x1 骨牌铺砌 2×n 方格板时，对 n>=3 成立的递推式是什么？",
+      "options": [
+        {"en": "T(n) = T(n-1)", "zh": "T(n) = T(n-1)"},
+        {"en": "T(n) = 2 T(n-1)", "zh": "T(n) = 2 T(n-1)"},
+        {"en": "T(n) = T(n-1) + T(n-2)", "zh": "T(n) = T(n-1) + T(n-2)"},
+        {"en": "T(n) = T(n-1) * T(n-2)", "zh": "T(n) = T(n-1) * T(n-2)"}
+      ],
+      "answer": 2,
+      "explanation_en": "The rightmost column is either one vertical domino (a 2x(n-1) tiling) or two horizontal dominoes (a 2x(n-2) tiling), giving T(n)=T(n-1)+T(n-2).",
+      "explanation_zh": "最右端要么是一块竖直骨牌（对应 2×(n-1) 的铺法），要么是两块横骨牌（对应 2×(n-2) 的铺法），故 T(n)=T(n-1)+T(n-2)。"
+    },
+    {
+      "page": 142,
+      "question_en": "What is the minimum number of moves M(n) needed to solve the Tower of Hanoi with n disks?",
+      "question_zh": "汉诺塔有 n 个圆盘时，最少需要多少步 M(n)？",
+      "options": [
+        {"en": "M(n) = n^2", "zh": "M(n) = n^2"},
+        {"en": "M(n) = 2n", "zh": "M(n) = 2n"},
+        {"en": "M(n) = 2^n - 1", "zh": "M(n) = 2^n - 1"},
+        {"en": "M(n) = n! - 1", "zh": "M(n) = n! - 1"}
+      ],
+      "answer": 2,
+      "explanation_en": "The recurrence is M(n)=2M(n-1)+1 with M(1)=1, which solves to M(n)=2^n-1.",
+      "explanation_zh": "递推式为 M(n)=2M(n-1)+1，初值 M(1)=1，其解为 M(n)=2^n-1。"
+    },
+    {
+      "page": 111,
+      "question_en": "Why does the book say that writing '1,2,3,...,100' is not rigorous?",
+      "question_zh": "为什么书里说写成“1,2,3,…,100”是不严格的？",
+      "options": [
+        {"en": "Because 100 is too large to list.", "zh": "因为 100 太大，列不完。"},
+        {"en": "Because ellipses can be misinterpreted; the intended pattern must be spelled out by a rigorous rule.", "zh": "因为省略号可能被误读；真正的规律必须用严格的规则写出来。"},
+        {"en": "Because natural numbers are infinite.", "zh": "因为自然数是无穷的。"},
+        {"en": "Because commas are not mathematical symbols.", "zh": "因为逗号不是数学符号。"}
+      ],
+      "answer": 1,
+      "explanation_en": "The book gives a counterexample: '1,2,3,4,7,10,11,12,14,...,100' could mean natural numbers 1..100 with no letter 'i' in their English spelling. Ellipses are informal.",
+      "explanation_zh": "书中举了反例：“1,2,3,4,7,10,11,12,14,…,100”可以被理解为 1 到 100 中英语拼写不含字母 i 的数。省略号只是非正式写法。"
+    }
+  ]
+}

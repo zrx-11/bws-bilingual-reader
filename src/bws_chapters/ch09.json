@@ -1,0 +1,333 @@
+{
+  "chapter": 9,
+  "title_en": "Definitions and Theorems",
+  "title_zh": "定义与定理",
+  "start_page": 671,
+  "end_page": 698,
+  "sections": [
+    {
+      "section_id": "9.1",
+      "title_en": "Sets",
+      "title_zh": "集合",
+      "page": 671,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 671,
+          "en": "The natural numbers are N = {1,2,3,4,5,...}; note 0 ∉ N. For n ∈ N, [n] = {x ∈ N | 1 ≤ x ≤ n} = {1,2,...,n}. The integers are Z = {...,-2,-1,0,1,2,...}. The rational numbers Q = {x ∈ R | ∃a,b ∈ Z. b≠0 and x = a/b}. The empty set is ∅.",
+          "zh": "自然数集 N={1,2,3,…}，注意 0∉N。对 n∈N，[n]={x∈N | 1≤x≤n}={1,2,…,n}。整数集 Z={…,−2,−1,0,1,2,…}。有理数集 Q={x∈R | ∃a,b∈Z，b≠0 且 x=a/b}。空集记为 ∅。"
+        },
+        {
+          "type": "strategy",
+          "page": 672,
+          "en": "To prove S ⊆ T: Let x ∈ S be arbitrary and fixed; deduce x ∈ T. To prove S = T (a double-containment argument): first prove S ⊆ T, then prove T ⊆ S. It is true that ∅ ⊆ S and S ⊆ S for any set S.",
+          "zh": "证明 S⊆T：任取固定 x∈S，推出 x∈T。证明 S=T（双向包含论证）：先证 S⊆T，再证 T⊆S。对任意集合 S，都有 ∅⊆S 与 S⊆S。"
+        },
+        {
+          "type": "definition",
+          "page": 672,
+          "en": "The power set of S is P(S) = {A | A ⊆ S}; it is the set of all subsets of S. It is true that ∅ ∈ P(S) and S ∈ P(S).",
+          "zh": "S 的幂集定义为 P(S)={A | A⊆S}，即 S 的所有子集构成的集合。对任意 S，都有 ∅∈P(S) 与 S∈P(S)。"
+        },
+        {
+          "type": "definition",
+          "page": 673,
+          "en": "Union: S ∪ T = {x ∈ U | x∈S or x∈T}. Intersection: S ∩ T = {x ∈ U | x∈S and x∈T}. Difference: S − T = {x ∈ U | x∈S and x∉T}. Complement: S̄ = U − S. Cartesian product: S × T = {(x,y) | x∈S and y∈T}.",
+          "zh": "并集 S∪T={x∈U | x∈S 或 x∈T}；交集 S∩T={x∈U | x∈S 且 x∈T}；差集 S−T={x∈U | x∈S 且 x∉T}；补集 S̄=U−S；笛卡儿积 S×T={(x,y) | x∈S 且 y∈T}。"
+        },
+        {
+          "type": "definition",
+          "page": 674,
+          "en": "A partition of S is a collection of non-empty subsets S_i (i∈I) that are pairwise disjoint (i≠j =⇒ S_i∩S_j=∅) and whose union is S.",
+          "zh": "S 的划分是一族非空子集 S_i（i∈I），满足：两两不相交（i≠j=⇒S_i∩S_j=∅），且 ∪_{i∈I} S_i = S。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.2",
+      "title_en": "Logic",
+      "title_zh": "逻辑",
+      "page": 675,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 675,
+          "en": "A mathematical statement is a grammatically-correct sentence that has exactly one truth value. A variable proposition involves one or more variables and acquires exactly one truth value once values are assigned. The Law of the Excluded Middle: every statement is either True or False.",
+          "zh": "数学命题是语法正确、且恰有一个真值的语句。变量命题含有变量，给变量赋值后才有唯一真值。排中律：每个命题非真即假，二者必居其一。"
+        },
+        {
+          "type": "definition",
+          "page": 675,
+          "en": "Universal quantifier ∀: '∀x ∈ S. P(x)' means P holds for every x∈S. Existential quantifier ∃: '∃x ∈ S. P(x)' means at least one x∈S has property P. The symbol '!' indicates uniqueness: ∃! x ∈ S. P(x).",
+          "zh": "全称量词 ∀：'∀x∈S，P(x)' 表示对每个 x∈S，P(x) 都成立。存在量词 ∃：'∃x∈S，P(x)' 表示至少有一个 x∈S 使 P(x) 成立。符号 '!' 表示唯一存在：∃!x∈S，P(x)。"
+        },
+        {
+          "type": "definition",
+          "page": 676,
+          "en": "Conditional: P =⇒ Q is True whenever P is False, by the Law of the Excluded Middle. Equivalently ¬P ∨ Q. The contrapositive ¬Q =⇒ ¬P has the same truth value; the converse Q =⇒ P need not. P ⇐⇒ Q means P and Q have the same truth value.",
+          "zh": "条件句 P=⇒Q：当 P 为假时，按排中律 P=⇒Q 为真；它等价于 ¬P∨Q。逆否命题 ¬Q=⇒¬P 与原命题同真同假；逆命题 Q=⇒P 却不一定。P⇔Q 表示 P 与 Q 真值相同（当且仅当）。"
+        },
+        {
+          "type": "strategy",
+          "page": 677,
+          "en": "Negation rules: ¬(∀x. P(x)) ⇔ ∃x. ¬P(x); ¬(∃x. P(x)) ⇔ ∀x. ¬P(x); ¬(P∨Q) ⇔ ¬P∧¬Q; ¬(P∧Q) ⇔ ¬P∨¬Q; ¬(P=⇒Q) ⇔ P∧¬Q.",
+          "zh": "否定规则：¬(∀x，P(x))⇔∃x，¬P(x)；¬(∃x，P(x))⇔∀x，¬P(x)；¬(P∨Q)⇔¬P∧¬Q；¬(P∧Q)⇔¬P∨¬Q；¬(P=⇒Q)⇔P∧¬Q。"
+        },
+        {
+          "type": "strategy",
+          "page": 678,
+          "en": "Proof strategies: to prove ∀x. P(x), let y∈S be arbitrary and fixed, prove P(y). To prove P=⇒Q, suppose P and prove Q; or prove the contrapositive ¬Q=⇒¬P; or AFSOC P∧¬Q and find a contradiction. To prove P⇔Q, prove both directions.",
+          "zh": "证明策略：证明 ∀x，P(x) 时，任取固定 y∈S，证明 P(y)。证明 P=⇒Q 时，可假设 P 证 Q，或证逆否命题 ¬Q=⇒¬P，或反设 P∧¬Q 推出矛盾。证明 P⇔Q 时，分别证明两个方向。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.3",
+      "title_en": "Induction",
+      "title_zh": "归纳法",
+      "page": 680,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 680,
+          "en": "Principle of Specific Mathematical Induction: if P(1) holds and ∀k∈N. P(k)=⇒P(k+1), then ∀n∈N. P(n). Proof template: Base Case P(1); Induction Hypothesis (k arbitrary, P(k)); Induction Step P(k+1); Conclusion by PMI.",
+          "zh": "数学归纳法原理：若 P(1) 成立，且 ∀k∈N，P(k)=⇒P(k+1)，则 ∀n∈N，P(n)。证明模板：基例证 P(1)；归纳假设任取 k 并设 P(k)；归纳步骤证 P(k+1)；最后由 PMI 得结论。"
+        },
+        {
+          "type": "theorem",
+          "page": 680,
+          "en": "Strong Mathematical Induction: if P(1) holds and ∀k∈N. [P(1)∧P(2)∧···∧P(k)] =⇒ P(k+1), then ∀n∈N. P(n). Depending on the IS, you may need more than one Base Case.",
+          "zh": "强数学归纳法：若 P(1) 成立，且 ∀k∈N，[P(1)∧P(2)∧…∧P(k)]=⇒P(k+1)，则 ∀n∈N，P(n)。根据归纳步骤的需要，可能要设置多个基例。"
+        },
+        {
+          "type": "strategy",
+          "page": 681,
+          "en": "'Minimal Criminal' argument: prove the contrapositive of the inductive step, ¬P(k)=⇒ ¬P(1)∨¬P(2)∨···∨¬P(k−1). Base case(s) prove P(1); IH supposes ¬P(k); IS deduces that some earlier instance also fails.",
+          "zh": "'极小反例'论证：证明归纳步骤的逆否命题 ¬P(k)=⇒¬P(1)∨¬P(2)∨…∨¬P(k−1)。基例证明 P(1)；归纳假设设 ¬P(k)；归纳步骤推出更早的某个实例也失败。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.4",
+      "title_en": "Relations",
+      "title_zh": "关系",
+      "page": 682,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 682,
+          "en": "A relation between A and B is a set of ordered pairs R ⊆ A × B. A relation on A is R ⊆ A × A. Properties: reflexive ∀x. (x,x)∈R; symmetric ∀x,y. (x,y)∈R=⇒(y,x)∈R; transitive ∀x,y,z. (x,y)∈R∧(y,z)∈R=⇒(x,z)∈R; anti-symmetric ∀x,y. (x,y)∈R∧(y,x)∈R=⇒x=y.",
+          "zh": "A 与 B 之间的关系是 A×B 的一个子集 R。A 上的关系即 R⊆A×A。性质：自反 ∀x，(x,x)∈R；对称 ∀x,y，(x,y)∈R=⇒(y,x)∈R；传递 ∀x,y,z，(x,y)∈R∧(y,z)∈R=⇒(x,z)∈R；反对称 ∀x,y，(x,y)∈R∧(y,x)∈R=⇒x=y。"
+        },
+        {
+          "type": "definition",
+          "page": 682,
+          "en": "An equivalence relation is reflexive, symmetric and transitive. The equivalence class of x is [x]_R = {y∈A | (x,y)∈R}; A/R = {[x]_R | x∈A}. Equivalence classes form a partition of A, and conversely every partition determines a unique equivalence relation.",
+          "zh": "等价关系是同时满足自反、对称、传递的关系。x 的等价类 [x]_R={y∈A | (x,y)∈R}；A/R={[x]_R | x∈A}。等价类构成 A 的划分；反之每个划分也唯一确定一个等价关系。"
+        },
+        {
+          "type": "definition",
+          "page": 684,
+          "en": "Congruence mod n: x ≡ y mod n iff n | (x−y). Division Lemma: ∃! k,r ∈ Z such that x = kn + r and 0 ≤ r ≤ n−1. Modular Arithmetic Lemma: if a≡r and b≡s mod n, then a+b≡r+s and a·b≡r·s mod n.",
+          "zh": "模 n 同余：x≡y (mod n) 当且仅当 n | (x−y)。带余除法定理：对 x∈Z，存在唯一的 k,r 使 x=kn+r 且 0≤r≤n−1。模运算引理：若 a≡r、b≡s (mod n)，则 a+b≡r+s、a·b≡r·s (mod n)。"
+        },
+        {
+          "type": "theorem",
+          "page": 685,
+          "en": "MIRP Lemma: if a and n are relatively prime, then ax ≡ 1 mod n has a solution x (the multiplicative inverse a⁻¹ mod n). Chinese Remainder Theorem: if n_1,...,n_r are pairwise relatively prime, the system X≡a_i mod n_i has a solution, unique modulo N=∏n_i.",
+          "zh": "MIRP 引理：若 a 与 n 互素，则 ax≡1 (mod n) 有解 x（即 a 在模 n 下的乘法逆元 a⁻¹）。中国剩余定理：若 n_1,…,n_r 两两互素，则同余方程组 X≡a_i (mod n_i) 有解，且解在模 N=∏n_i 下唯一。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.5",
+      "title_en": "Functions",
+      "title_zh": "函数",
+      "page": 686,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 686,
+          "en": "A function f : A → B is a relation f ⊆ A×B such that ∀a∈A. ∃! b∈B. (a,b)∈f. That is, every input has exactly one output. Image Im_f(X) = {f(a) | a∈X}; pre-image PreIm_f(Z) = {a∈A | f(a)∈Z}.",
+          "zh": "函数 f:A→B 是满足 ∀a∈A，存在唯一 b∈B 使 (a,b)∈f 的关系 f⊆A×B，即每个输入恰有一个输出。像 Im_f(X)={f(a) | a∈X}；原像 PreIm_f(Z)={a∈A | f(a)∈Z}。"
+        },
+        {
+          "type": "definition",
+          "page": 687,
+          "en": "f is surjective iff Im_f(A)=B, i.e. ∀b∈B. ∃a∈A. f(a)=b. f is injective iff ∀a1,a2. f(a1)=f(a2)=⇒a1=a2. f is bijective iff it is both injective and surjective.",
+          "zh": "f 是满射当且仅当 Im_f(A)=B，即 ∀b∈B，∃a∈A 使 f(a)=b。f 是单射当且仅当 ∀a1,a2，f(a1)=f(a2)=⇒a1=a2。f 是双射当且仅当它既单又满。"
+        },
+        {
+          "type": "theorem",
+          "page": 688,
+          "en": "Composition: (g∘f)(a) = g(f(a)); read 'g after f'. Composition is associative. If f and g are both in/sur/bijections, so is g∘f. f is bijective ⇔ f has an inverse f⁻¹ with f∘f⁻¹=Id_B and f⁻¹∘f=Id_A. (g∘f)⁻¹ = f⁻¹∘g⁻¹.",
+          "zh": "复合函数 (g∘f)(a)=g(f(a))，读作'g 在 f 之后'。复合满足结合律。若 f、g 都是单/满/双射，则 g∘f 也是。f 是双射 ⇔ f 有逆 f⁻¹ 满足 f∘f⁻¹=Id_B 与 f⁻¹∘f=Id_A。且 (g∘f)⁻¹=f⁻¹∘g⁻¹。"
+        },
+        {
+          "type": "strategy",
+          "page": 688,
+          "en": "To prove f surjective: let b∈B arbitrary, define a=..., show a∈A and f(a)=b. To prove f injective: let x,y∈A, suppose f(x)=f(y), deduce x=y. To prove f bijective: prove both injectivity and surjectivity, or construct F and check both F∘f=Id_A and f∘F=Id_B.",
+          "zh": "证明 f 是满射：任取 b∈B，构造 a，证明 a∈A 且 f(a)=b。证明 f 是单射：任取 x,y∈A，设 f(x)=f(y)，推出 x=y。证明 f 是双射：分别证单射与满射，或构造 F 并验证 F∘f=Id_A 与 f∘F=Id_B 两个方向。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.6",
+      "title_en": "Cardinality",
+      "title_zh": "基数",
+      "page": 692,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 692,
+          "en": "S is finite if ∃n∈N∪{0} and a bijection S→[n]. S is countably infinite (countable) if there is a bijection S→N. S is uncountable if no function S→N is a bijection. |S|=|T| iff there exists a bijection S→T.",
+          "zh": "S 是有限集当且仅当存在 n∈N∪{0} 与双射 S→[n]。S 是可数无限集（可数）当且仅当存在双射 S→N。S 是不可数集当且仅当任何 S→N 的映射都不是双射。|S|=|T| 当且仅当存在双射 S→T。"
+        },
+        {
+          "type": "theorem",
+          "page": 693,
+          "en": "If there is an injection f:A→B then |A|≤|B|; if a surjection then |A|≥|B|. Always |A|<|P(A)|. A countably infinite union of countably infinite sets is countable; a countably infinite product of non-empty sets is uncountable.",
+          "zh": "若存在单射 f:A→B，则 |A|≤|B|；若存在满射，则 |A|≥|B|。总有 |A|<|P(A)|。可数个可数集的并仍可数；可数个非空集合的笛卡儿积不可数。"
+        },
+        {
+          "type": "theorem",
+          "page": 693,
+          "en": "Cantor–Schröder–Bernstein Theorem: if there exist injections f:A→B and g:B→A, then there exists a bijection h:A→B, so |A|=|B|.",
+          "zh": "康托尔–施罗德–伯恩斯坦定理：若同时存在单射 f:A→B 与 g:B→A，则必存在双射 h:A→B，从而 |A|=|B|。"
+        },
+        {
+          "type": "note",
+          "page": 694,
+          "en": "Standard catalog: countable sets include N, Z, Q, N×N, odd/even integers; uncountable sets include R, intervals of R, P(N), P(Z), and the set of all infinite binary strings.",
+          "zh": "常见基数目录：可数集包括 N、Z、Q、N×N、奇/偶整数集；不可数集包括 R、R 的区间、P(N)、P(Z) 以及所有无限二进制串构成的集合。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.7",
+      "title_en": "Combinatorics",
+      "title_zh": "组合数学",
+      "page": 695,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 695,
+          "en": "A permutation of [n] is a bijection [n]→[n]. A k-selection is a k-element subset. A k-arrangement is an ordered list of k distinct elements. With repetition, elements may repeat.",
+          "zh": "[n] 的排列是双射 [n]→[n]。k-选择是 [n] 的 k 元子集。k-排列是 k 个不同元素的有序表。允许重复时，元素可以重复出现。"
+        },
+        {
+          "type": "theorem",
+          "page": 695,
+          "en": "Rule of Sum: if {S_i} partitions A, then |A|=Σ|S_i|. Rule of Product: an n-step process with w_i choices at step i has ∏w_i outcomes. Counts: n! permutations; C(n,k) k-selections; P(n,k)=n!/(n−k)! k-arrangements; C(k+n−1,k) k-selections with repetition; n^k k-arrangements with repetition.",
+          "zh": "加法原理：若 {S_i} 划分 A，则 |A|=Σ|S_i|。乘法原理：n 步过程、第 i 步有 w_i 种选择，则总结果数为 ∏w_i。计数：排列数 n!；k-选择数 C(n,k)；k-排列数 P(n,k)=n!/(n−k)!；可重复 k-选择数 C(k+n−1,k)；可重复 k-排列数 n^k。"
+        },
+        {
+          "type": "strategy",
+          "page": 696,
+          "en": "Counting In Two Ways: define a set S, count its elements in two combinatorial ways, equate the two expressions because both equal |S|.",
+          "zh": "双计数法：定义一个集合 S，用两种组合方式分别数出 |S|，由于两者都等于 |S|，故两式相等。"
+        },
+        {
+          "type": "theorem",
+          "page": 697,
+          "en": "Pascal's Identity: C(n,k)+C(n,k+1)=C(n+1,k+1). Binomial Theorem: (x+y)^n = Σ_{k=0}^n C(n,k) x^k y^{n−k}. Pigeonhole Principle: if n objects are split into k<n piles, some pile has at least ⌈n/k⌉ objects.",
+          "zh": "帕斯卡恒等式：C(n,k)+C(n,k+1)=C(n+1,k+1)。二项式定理：(x+y)^n=Σ_{k=0}^n C(n,k) x^k y^{n−k}。鸽巢原理：把 n 个物体分到 k<n 个堆中，必有一堆至少有 ⌈n/k⌉ 个物体。"
+        }
+      ]
+    },
+    {
+      "section_id": "9.8",
+      "title_en": "Acronyms",
+      "title_zh": "缩略语",
+      "page": 698,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 698,
+          "en": "WWTS: We want to show. AFSOC: Assume for sake of contradiction. WOLOG: Without loss of generality. PMI: Principle of Mathematical Induction. BC: Base case. IH: Induction hypothesis. IS: Induction step.",
+          "zh": "WWTS：待证（我们要证明）。AFSOC：为证反设矛盾。WOLOG：不失一般性。PMI：数学归纳法原理。BC：基例。IH：归纳假设。IS：归纳步骤。"
+        },
+        {
+          "type": "strategy",
+          "page": 698,
+          "en": "Use these abbreviations freely in write-ups: say 'WWTS P(k+1) holds' to announce the inductive goal, 'AFSOC ...' to open a proof by contradiction, and 'WOLOG' when a symmetry lets you fix one of several equivalent cases.",
+          "zh": "在书写证明时可自由使用这些缩略语：用'WWTS P(k+1) 成立'宣布归纳目标；用'AFSOC……'开始反证；当对称性允许你固定若干等价情形之一时用'WOLOG'。"
+        },
+        {
+          "type": "note",
+          "page": 680,
+          "en": "In an induction write-up, label the three components explicitly: BC verifies P(1); IH introduces an arbitrary fixed k and assumes P(k) (or P(1)∧···∧P(k) in strong induction); IS deduces P(k+1); then close with 'By PMI, ∀n∈N. P(n)'.",
+          "zh": "归纳证明中要明确标出三个部分：BC 验证 P(1)；IH 引入任意固定的 k 并假设 P(k)（强归纳中假设 P(1)∧…∧P(k)）；IS 推出 P(k+1)；最后以'由 PMI，∀n∈N，P(n)'收尾。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "N, Z, Q, R", "term_zh": "自然数集、整数集、有理数集、实数集", "page": 671, "note_zh": "N={1,2,3,…}，0∉N；Q 为 a/b 形式的实数。"},
+    {"term_en": "subset / proper subset", "term_zh": "子集 / 真子集", "page": 672, "note_zh": "S⊆T 表示 S 的每个元素都是 T 的元素；S⊂T 再加 S≠T。"},
+    {"term_en": "power set P(S)", "term_zh": "幂集 P(S)", "page": 672, "note_zh": "S 的所有子集构成的集合；|P(S)|=2^|S|。"},
+    {"term_en": "double-containment argument", "term_zh": "双向包含论证", "page": 673, "note_zh": "证 S=T 时分别证 S⊆T 与 T⊆S。"},
+    {"term_en": "partition", "term_zh": "划分", "page": 674, "note_zh": "一族两两不交、并起来等于 S 的非空子集。"},
+    {"term_en": "if and only if (⇔)", "term_zh": "当且仅当", "page": 677, "note_zh": "P⇔Q 表示 P 与 Q 真值相同，即两个方向的蕴含式同时成立。"},
+    {"term_en": "contrapositive / converse", "term_zh": "逆否命题 / 逆命题", "page": 676, "note_zh": "P=⇒Q 的逆否为 ¬Q=⇒¬P（同真同假）；逆命题 Q=⇒P 不一定成立。"},
+    {"term_en": "proof by contradiction (AFSOC)", "term_zh": "反证法", "page": 678, "note_zh": "反设结论不成立，推出矛盾，从而肯定原结论。"},
+    {"term_en": "equivalence relation / equivalence class", "term_zh": "等价关系 / 等价类", "page": 682, "note_zh": "自反、对称、传递的关系；等价类划分集合。"},
+    {"term_en": "congruence mod n", "term_zh": "模 n 同余", "page": 684, "note_zh": "x≡y (mod n) 当且仅当 n | (x−y)。"},
+    {"term_en": "injection / surjection / bijection", "term_zh": "单射 / 满射 / 双射", "page": 687, "note_zh": "单射：不同输入不同输出；满射：每个输出都被取到；双射：既单又满。"},
+    {"term_en": "countable / uncountable", "term_zh": "可数 / 不可数", "page": 692, "note_zh": "存在双射到 N 即为可数；N、Z、Q 可数；R、P(N) 不可数。"},
+    {"term_en": "Cantor–Schröder–Bernstein Theorem", "term_zh": "康托尔–施罗德–伯恩斯坦定理", "page": 693, "note_zh": "两个方向都有单射时，两集合基数相等。"},
+    {"term_en": "permutation / k-selection / k-arrangement", "term_zh": "排列 / k-选择 / k-排列", "page": 695, "note_zh": "分别对应 n!、C(n,k)、P(n,k)；选择无序，排列有序。"},
+    {"term_en": "Pigeonhole Principle", "term_zh": "鸽巢原理", "page": 697, "note_zh": "n 个物体分到 k<n 个堆，必有一堆至少 ⌈n/k⌉ 个。"}
+  ],
+  "action_rules": [
+    {"en": "To prove S ⊆ T, start 'Let x ∈ S be arbitrary and fixed' and deduce x ∈ T. To prove S = T, do both directions.", "zh": "证明 S⊆T 时，写'任取固定 x∈S'并推出 x∈T；证明 S=T 时两个方向都要证。"},
+    {"en": "When negating a quantified statement, move ¬ past each quantifier by switching ∀↔∃, and flip ∧↔∨, P=⇒Q ↦ P∧¬Q.", "zh": "否定含量词的命题时，把 ¬ 移过量词同时翻转 ∀↔∃，并把 ∧↔∨、P=⇒Q 换成 P∧¬Q。"},
+    {"en": "To prove an implication P=⇒Q, you may prove the contrapositive ¬Q=⇒¬P, or AFSOC P∧¬Q and find a contradiction.", "zh": "证明蕴含式 P=⇒Q 时，可以证逆否命题 ¬Q=⇒¬P，或反设 P∧¬Q 并推出矛盾。"},
+    {"en": "To prove f is surjective: for an arbitrary b∈B, construct a∈A with f(a)=b. To prove f is injective: assume f(x)=f(y) and deduce x=y.", "zh": "证明 f 是满射：任取 b∈B，构造 a∈A 使 f(a)=b。证明 f 是单射：设 f(x)=f(y)，推出 x=y。"},
+    {"en": "When proving two counts equal, define a set S and count it two ways; both expressions equal |S|.", "zh": "要证明两个计数式相等，定义一个集合 S，用两种方式数它，两式都等于 |S|。"},
+    {"en": "Use AFSOC, WWTS, WOLOG as standard proof abbreviations in write-ups.", "zh": "在书写证明时，使用 AFSOC、WWTS、WOLOG 等标准缩略语。"}
+  ],
+  "quiz": [
+    {
+      "page": 673,
+      "question_en": "Which argument proves two sets S and T are equal?",
+      "question_zh": "哪一种论证证明两个集合 S 与 T 相等？",
+      "options": [
+        {"en": "Show S ⊆ T only.", "zh": "只证 S⊆T。"},
+        {"en": "Show T ⊆ S only.", "zh": "只证 T⊆S。"},
+        {"en": "Show both S ⊆ T and T ⊆ S (double-containment).", "zh": "同时证 S⊆T 与 T⊆S（双向包含）。"},
+        {"en": "Show S ∩ T = ∅.", "zh": "证 S∩T=∅。"}
+      ],
+      "answer": 2,
+      "explanation_en": "Set equality S=T is defined as S⊆T ∧ T⊆S.",
+      "explanation_zh": "集合相等 S=T 的定义就是 S⊆T 且 T⊆S。"
+    },
+    {
+      "page": 677,
+      "question_en": "What is the negation of '∀x ∈ S. P(x)'?",
+      "question_zh": "'∀x∈S，P(x)' 的否定是什么？",
+      "options": [
+        {"en": "∀x ∈ S. ¬P(x).", "zh": "∀x∈S，¬P(x)。"},
+        {"en": "∃x ∈ S. ¬P(x).", "zh": "∃x∈S，¬P(x)。"},
+        {"en": "∃x ∈ S. P(x).", "zh": "∃x∈S，P(x)。"},
+        {"en": "¬(∃x ∈ S. P(x)).", "zh": "¬(∃x∈S，P(x))。"}
+      ],
+      "answer": 1,
+      "explanation_en": "By quantifier negation, ¬(∀x. P(x)) ⇔ ∃x. ¬P(x).", "explanation_zh": "由量词否定规则，¬(∀x，P(x))⇔∃x，¬P(x)。"
+    },
+    {
+      "page": 687,
+      "question_en": "Which condition characterizes an injective function f : A → B?",
+      "question_zh": "哪一条刻画了单射 f:A→B？",
+      "options": [
+        {"en": "∀b ∈ B. ∃a ∈ A. f(a)=b.", "zh": "∀b∈B，∃a∈A，f(a)=b。"},
+        {"en": "∀a1,a2 ∈ A. f(a1)=f(a2) =⇒ a1=a2.", "zh": "∀a1,a2∈A，f(a1)=f(a2)=⇒a1=a2。"},
+        {"en": "∀a ∈ A. ∃! b ∈ B. f(a)=b.", "zh": "∀a∈A，存在唯一 b∈B 使 f(a)=b。"},
+        {"en": "Im_f(A)=B.", "zh": "Im_f(A)=B。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Injectivity means equal outputs force equal inputs; options 1 and 4 describe surjectivity, option 3 describes being a function.",
+      "explanation_zh": "单射要求输出相等则输入必相等；选项 1、4 刻画满射，选项 3 只是'是函数'的条件。"
+    }
+  ]
+}

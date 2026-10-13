@@ -1,0 +1,484 @@
+{
+  "chapter": 3,
+  "title_en": "Sets",
+  "title_zh": "集合",
+  "start_page": 149,
+  "end_page": 214,
+  "sections": [
+    {
+      "section_id": "3.1",
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "page": 149,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 149,
+          "en": "Everything we do later on will involve making some claim about a set of objects; the way we specify those objects involves sets. Historically, mathematics was placed on the set-theory foundation around the turn of the 20th century through Cantor's work.",
+          "zh": "此后我们做的一切都是在对某一类对象提出断言；而刻画这些对象的方式就是集合。历史上，经康托尔的工作，数学在 20 世纪之交被奠定在集合论基础之上。"
+        },
+        {
+          "type": "warning",
+          "page": 151,
+          "en": "This is likely the first time in your mathematical careers where you are expected to be as precise and rigorous as possible with your writing. It is no longer okay to just 'have the right idea'; we care that you say exactly what you meant to say, and nothing else.",
+          "zh": "这大概是你们数学生涯中第一次被要求在写作上尽可能精确、严格；仅仅“有正确的想法”已经不够了，必须把想表达的意思一字不差地写出来，不多也不少。"
+        },
+        {
+          "type": "note",
+          "page": 151,
+          "en": "Reading mathematics can be difficult. Treat each sentence as a single jigsaw piece; read a few pages, then step back and think, find real-life analogies, and discuss with friends.",
+          "zh": "阅读数学文本可能很吃力。把每一句话都看作一块拼图；读几页就停下来想一想，在生活中找类比，和同学讨论。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.2",
+      "title_en": "The Idea of a \"Set\"",
+      "title_zh": "“集合”的直观观念",
+      "page": 151,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 152,
+          "en": "Essentially, a set refers to a collection of objects of some kind that are grouped together on the basis of having some common property.",
+          "zh": "直观地说，集合是把具有某种共同性质的对象汇集在一起而形成的“对象之总体”。"
+        },
+        {
+          "type": "note",
+          "page": 152,
+          "en": "The assumptions that everyone agrees to be part of the 'set of rules' before 'playing the game' of mathematics are known as axioms. The axioms of set theory place all results involving sets on firm foundations.",
+          "zh": "在“玩数学这个游戏”之前大家共同约定的那套“规则集”就是公理。集合论公理把一切与集合有关的结果都奠定在坚实的基础之上。"
+        },
+        {
+          "type": "note",
+          "page": 152,
+          "en": "In the language of mathematics, we aim to be precise and unambiguous with our sentences and statements, and we seek to establish truths based on certain fundamental assumptions (axioms).",
+          "zh": "在数学语言中，我们追求语句精确无歧义，并希望把结论建立在若干基本假设（公理）之上。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.3",
+      "title_en": "Definition and Examples",
+      "title_zh": "定义与例子",
+      "page": 153,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 153,
+          "en": "Definition 3.3.1: A set is a collection of all objects that have a common, well-defined property. The objects contained in a set are called elements. The symbol '∈' means 'is an element of' (and '∉' means 'is not an element of').",
+          "zh": "定义 3.3.1：集合是由一切具有某一明确性质的对象所组成的总体；其中的对象称为该集合的元素。符号“∈”表示“是……的元素”（“∉”表示“不是……的元素”）。"
+        },
+        {
+          "type": "note",
+          "page": 154,
+          "en": "Common number sets: N = {1,2,3,...}, Z = {...,-2,-1,0,1,2,...}, Q = {a/b : a,b∈Z, b≠0}, R = real numbers.",
+          "zh": "常用数集：N = {1,2,3,…}，Z = {…,-2,-1,0,1,2,…}，Q = {a/b : a,b∈Z, b≠0}，R 为实数集。"
+        },
+        {
+          "type": "note",
+          "page": 154,
+          "en": "A set is completely characterized by its elements: the order in which we list elements does not matter, and repetition of elements does not matter. Thus {a,a,a} = {a}.",
+          "zh": "集合完全由其元素所决定：元素的排列顺序无关紧要，重复出现也没有意义；因此 {a,a,a} = {a}。"
+        },
+        {
+          "type": "definition",
+          "page": 156,
+          "en": "Set-builder notation: S = {x ∈ X | P(x)} is read 'S is the set of all elements x of X such that P(x) is true'. The bar | is read 'such that'.",
+          "zh": "集合构造记号：S = {x ∈ X | P(x)} 读作“S 是 X 中一切满足性质 P(x) 的元素 x 所组成的集合”。竖线 | 读作“使得”。"
+        },
+        {
+          "type": "warning",
+          "page": 156,
+          "en": "It is absolutely essential to specify the larger set X. A definition like 'U = {x | x^2 - 2 = 0}' is meaningless because it is ambiguous; the answer is {√2,-√2} if X=R, but empty if X=N.",
+          "zh": "必须指定“大集合 X”；像“U = {x | x^2 - 2 = 0}”这样的定义是没有意义的，因为它有歧义：若 X=R，则 U={√2,-√2}；若 X=N，则 U=∅。"
+        },
+        {
+          "type": "definition",
+          "page": 158,
+          "en": "Definition 3.3.2: The empty set is the set which has no elements. It is denoted by ∅. There is only one such set.",
+          "zh": "定义 3.3.2：空集是不含任何元素的集合，记作 ∅。空集是唯一的。"
+        },
+        {
+          "type": "warning",
+          "page": 159,
+          "en": "Russell's Paradox: the 'collection' R = {x | x ∉ x} cannot be a set. If R∈R then by its definition R∉R; if R∉R then by its definition R∈R. Contradiction. Hence there is no 'set of all sets'.",
+          "zh": "罗素悖论：“集合” R = {x | x ∉ x} 不能成为集合。若 R∈R，则按其定义应有 R∉R；若 R∉R，则按其定义又应有 R∈R。矛盾。因此不存在“所有集合的集合”。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.4",
+      "title_en": "Subsets",
+      "title_zh": "子集",
+      "page": 164,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 164,
+          "en": "Definition 3.4.1: If every element of A is also an element of B, we say A is a subset of B, written A ⊆ B. If A ⊆ B but A ≠ B, we write A ⊂ B (proper subset).",
+          "zh": "定义 3.4.1：若 A 的每一个元素都是 B 的元素，则称 A 是 B 的子集，记作 A ⊆ B。若 A ⊆ B 但 A ≠ B，则记作 A ⊂ B（真子集）。"
+        },
+        {
+          "type": "example",
+          "page": 165,
+          "en": "The standard number sets chain as a proper-subset tower: N ⊂ Z ⊂ Q ⊂ R ⊂ C.",
+          "zh": "标准数集之间构成一条真子集链：N ⊂ Z ⊂ Q ⊂ R ⊂ C。"
+        },
+        {
+          "type": "definition",
+          "page": 167,
+          "en": "Definition 3.4.2: Given a set A, the power set P(A) is the set whose elements are all of the subsets of A.",
+          "zh": "定义 3.4.2：给定集合 A，其幂集 P(A) 是以 A 的所有子集为元素的集合。"
+        },
+        {
+          "type": "example",
+          "page": 167,
+          "en": "P(∅) = {∅}. Note carefully: ∅ ≠ {∅}; the left has no elements, the right has exactly one element (namely ∅).",
+          "zh": "P(∅) = {∅}。特别注意：∅ ≠ {∅}；前者没有元素，后者恰有一个元素（即 ∅）。"
+        },
+        {
+          "type": "definition",
+          "page": 168,
+          "en": "Definition 3.4.5: Two sets A, B are equal, written A = B, if and only if A ⊆ B and B ⊆ A.",
+          "zh": "定义 3.4.5：两个集合 A、B 相等（记作 A = B）当且仅当 A ⊆ B 且 B ⊆ A。"
+        },
+        {
+          "type": "note",
+          "page": 168,
+          "en": "The 'bag' analogy: a set is like a bag; the bag itself is irrelevant, only what is inside matters. '∈' asks whether a specific object is sitting inside the bag; '⊆' asks whether everything inside the left bag is also inside the right bag.",
+          "zh": "“袋子”类比：集合就像一个袋子，袋子本身不重要，重要的是里面装了什么。“∈”问的是某个具体对象是否就在这个袋子里；“⊆”问的是左边袋子里的每一样东西是否也都在右边袋子里。"
+        },
+        {
+          "type": "warning",
+          "page": 168,
+          "en": "The distinction between '∈' and '⊆' is very important. E.g. for A = {∅, {1,∅}}: ∅∈A is true, but {∅}∉A; {∅}⊆A is true, but {1}⊄A.",
+          "zh": "必须严格区分“∈”与“⊆”。例如对 A = {∅, {1,∅}}：∅∈A 为真，但 {∅}∉A；{∅}⊆A 为真，但 {1}⊄A。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.5",
+      "title_en": "Set Operations",
+      "title_zh": "集合的运算",
+      "page": 172,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 172,
+          "en": "Definition 3.5.1: The intersection A ∩ B = {x ∈ U | x ∈ A and x ∈ B}. If A ∩ B = ∅, A and B are called disjoint.",
+          "zh": "定义 3.5.1：交集 A ∩ B = {x ∈ U | x ∈ A 且 x ∈ B}。若 A ∩ B = ∅，则称 A 与 B 不相交（disjoint）。"
+        },
+        {
+          "type": "theorem",
+          "page": 173,
+          "en": "Proposition 3.5.4: For any sets A, B, A ∩ B ⊆ A and A ∩ B ⊆ B. Proof: take arbitrary x ∈ A ∩ B; by definition x ∈ A and x ∈ B.",
+          "zh": "命题 3.5.4：对任意集合 A、B，有 A ∩ B ⊆ A 且 A ∩ B ⊆ B。证明：任取 x ∈ A ∩ B，由交集定义知 x ∈ A 且 x ∈ B。"
+        },
+        {
+          "type": "definition",
+          "page": 173,
+          "en": "Definition 3.5.5: The union A ∪ B = {x ∈ U | x ∈ A or x ∈ B}. The 'or' is inclusive: elements in both sets are still included.",
+          "zh": "定义 3.5.5：并集 A ∪ B = {x ∈ U | x ∈ A 或 x ∈ B}。这里的“或”是相容或：同时属于两者的元素仍被包含。"
+        },
+        {
+          "type": "theorem",
+          "page": 174,
+          "en": "Proposition 3.5.7: For any sets A, B, A ⊆ A ∪ B and B ⊆ A ∪ B. Proof: take arbitrary x ∈ A; then x ∈ A or x ∈ B, so x ∈ A ∪ B.",
+          "zh": "命题 3.5.7：对任意集合 A、B，有 A ⊆ A ∪ B 且 B ⊆ A ∪ B。证明：任取 x ∈ A，则“x ∈ A 或 x ∈ B”成立，故 x ∈ A ∪ B。"
+        },
+        {
+          "type": "definition",
+          "page": 175,
+          "en": "Definition 3.5.8: The set difference A − B = {x ∈ U | x ∈ A and x ∉ B}. This operation is not symmetric: in general A − B ≠ B − A.",
+          "zh": "定义 3.5.8：差集 A − B = {x ∈ U | x ∈ A 且 x ∉ B}。该运算不对称：一般 A − B ≠ B − A。"
+        },
+        {
+          "type": "definition",
+          "page": 176,
+          "en": "Definition 3.5.10: The complement Ā = {x ∈ U | x ∉ A}. It depends on the chosen universal set U; changing U changes Ā.",
+          "zh": "定义 3.5.10：补集 Ā = {x ∈ U | x ∉ A}。它依赖于所选定的全集 U；更换 U，Ā 也随之改变。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.6",
+      "title_en": "Indexed Sets",
+      "title_zh": "指标集",
+      "page": 177,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 181,
+          "en": "Definition 3.6.3: The indexed union ⋃_{i∈I} A_i = {x ∈ U | x ∈ A_i for some i ∈ I}. Definition 3.6.4: the indexed intersection ⋂_{i∈I} A_i = {x ∈ U | x ∈ A_i for every i ∈ I}.",
+          "zh": "定义 3.6.3：指标并集 ⋃_{i∈I} A_i = {x ∈ U | 存在某个 i ∈ I 使 x ∈ A_i}。定义 3.6.4：指标交集 ⋂_{i∈I} A_i = {x ∈ U | 对每一个 i ∈ I 都有 x ∈ A_i}。"
+        },
+        {
+          "type": "example",
+          "page": 182,
+          "en": "With I={1,2,3} and A_i = {i-2,i-1,i,i+1,i+2}, we get ⋃ A_i = {-1,0,1,2,3,4,5} and ⋂ A_i = {1,2,3}.",
+          "zh": "取 I={1,2,3}、A_i = {i-2,i-1,i,i+1,i+2}，则 ⋃ A_i = {-1,0,1,2,3,4,5}，而 ⋂ A_i = {1,2,3}。"
+        },
+        {
+          "type": "definition",
+          "page": 183,
+          "en": "Definition 3.6.9: A partition of A is a collection of non-empty subsets S_i (i∈I) such that (1) each S_i ⊆ A, (2) the S_i are pairwise disjoint (i≠j ⇒ S_i ∩ S_j = ∅), and (3) ⋃_{i∈I} S_i = A.",
+          "zh": "定义 3.6.9：A 的一个划分是由若干非空子集 S_i（i∈I）组成的集合，满足：(1) 每个 S_i ⊆ A；(2) 这些 S_i 两两不相交（i≠j 时 S_i ∩ S_j = ∅）；(3) ⋃_{i∈I} S_i = A。"
+        },
+        {
+          "type": "warning",
+          "page": 184,
+          "en": "Pairwise disjoint is much stronger than 'the total intersection of all sets is empty'. E.g. { {1,2},{2,3},{3,4} } has empty triple intersection but is not pairwise disjoint.",
+          "zh": "“两两不相交”比“所有集合的总交集为空”强得多。例如 { {1,2},{2,3},{3,4} } 的三者交集为空，但它并不是两两不相交的。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.7",
+      "title_en": "Cartesian Products",
+      "title_zh": "笛卡儿积",
+      "page": 186,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 187,
+          "en": "Definition 3.7.1: The Cartesian product A × B = {(a,b) | a ∈ A and b ∈ B}; it is the set of all ordered pairs with first coordinate from A and second from B.",
+          "zh": "定义 3.7.1：笛卡儿积 A × B = {(a,b) | a ∈ A 且 b ∈ B}，即所有第一坐标取自 A、第二坐标取自 B 的有序对所组成的集合。"
+        },
+        {
+          "type": "note",
+          "page": 187,
+          "en": "Two ordered pairs are equal if and only if both of their coordinates are equal. In general A × B ≠ B × A.",
+          "zh": "两个有序对相等当且仅当它们的两个坐标分别相等。一般地 A × B ≠ B × A。"
+        },
+        {
+          "type": "example",
+          "page": 188,
+          "en": "For any set A, A × ∅ = ∅ and ∅ × B = ∅, because there are no elements available to form the second (or first) coordinate.",
+          "zh": "对任意集合 A，有 A × ∅ = ∅ 且 ∅ × B = ∅，因为根本没有元素可作为第二（或第一）坐标来构成有序对。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.8",
+      "title_en": "[Optional] Defining the Set of Natural Numbers",
+      "title_zh": "[选读] 自然数集的定义",
+      "page": 190,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 191,
+          "en": "Definition 3.8.1: For any set X, its successor is S(X) = X ∪ {X}. Starting from 0=∅, we get 1={∅}, 2={∅,{∅}}, etc.",
+          "zh": "定义 3.8.1：对任意集合 X，其后继定义为 S(X) = X ∪ {X}。从 0=∅ 出发，可得 1={∅}、2={∅,{∅}}，依此类推。"
+        },
+        {
+          "type": "definition",
+          "page": 191,
+          "en": "Definition 3.8.2: A set I is inductive if (1) 1 ∈ I, and (2) whenever n ∈ I, then S(n) ∈ I as well. The natural numbers N is the smallest inductive set: N = ⋂{I : I is inductive}.",
+          "zh": "定义 3.8.2：集合 I 称为归纳集，若 (1) 1 ∈ I；(2) 只要 n ∈ I，就有 S(n) ∈ I。自然数集 N 是最小的归纳集：N = ⋂{I : I 为归纳集}。"
+        },
+        {
+          "type": "theorem",
+          "page": 193,
+          "en": "Theorem 3.8.5 (Principle of Mathematical Induction): Let P(n) be a statement depending on n. If (1) P(1) is true, and (2) for any k∈N, P(k) true implies P(k+1) true, then P(n) is true for every n∈N.",
+          "zh": "定理 3.8.5（数学归纳法原理 PMI）：设 P(n) 是依赖于 n 的命题。若 (1) P(1) 为真；(2) 对任意 k∈N，P(k) 为真蕴含 P(k+1) 为真，则 P(n) 对一切 n∈N 为真。"
+        },
+        {
+          "type": "proof",
+          "page": 193,
+          "en": "Proof: Let S = {n ∈ N | P(n) is true}. Assumptions give 1∈S and S(n)∈S whenever n∈S, so S is inductive. Since N is the smallest inductive set, N ⊆ S. Hence S=N, so P(n) holds for all n.",
+          "zh": "证明：令 S = {n ∈ N | P(n) 为真}。题设给出 1∈S，且只要 n∈S 就有 S(n)∈S，故 S 是归纳集。由于 N 是最小归纳集，N ⊆ S；又 S ⊆ N，故 S=N，即 P(n) 对所有 n 成立。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.9",
+      "title_en": "Proofs Involving Sets",
+      "title_zh": "关于集合的证明",
+      "page": 194,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 195,
+          "en": "To prove A ⊆ B, introduce an element x ∈ A that is arbitrary and fixed (we assume nothing about it except x∈A), and deduce x ∈ B. Since x was arbitrary, this covers all elements.",
+          "zh": "要证 A ⊆ B，应任取一个“任意但固定”的元素 x ∈ A（除了 x∈A 外不对它作任何假设），再推出 x ∈ B。由于 x 是任意的，这就穷尽了 A 的所有元素。"
+        },
+        {
+          "type": "example",
+          "page": 196,
+          "en": "Lemma 3.9.2: If X ⊆ A and X ⊆ B, then X ⊆ A ∩ B. Proof: take arbitrary x∈X; by the subset assumptions x∈A and x∈B; by definition of ∩, x∈A∩B.",
+          "zh": "引理 3.9.2：若 X ⊆ A 且 X ⊆ B，则 X ⊆ A ∩ B。证明：任取 x∈X；由子集假设有 x∈A 且 x∈B；按交集定义即得 x∈A∩B。"
+        },
+        {
+          "type": "strategy",
+          "page": 198,
+          "en": "To prove A = B, use a double-containment proof: show A ⊆ B and B ⊆ A separately. This is exactly the definition of set equality.",
+          "zh": "要证 A = B，使用双向包含证明（double-containment）：分别证 A ⊆ B 与 B ⊆ A。这正是集合相等的定义。"
+        },
+        {
+          "type": "example",
+          "page": 198,
+          "en": "Lemma 3.9.5: A − (A ∩ B) = A − B. Proof by double containment: if x ∈ A − (A∩B), then x∈A and x∉A∩B, so x∉B, hence x∈A−B; converse similarly.",
+          "zh": "引理 3.9.5：A − (A ∩ B) = A − B。双向包含证明：若 x ∈ A − (A∩B)，则 x∈A 且 x∉A∩B，从而 x∉B，故 x∈A−B；反之类似。"
+        },
+        {
+          "type": "example",
+          "page": 200,
+          "en": "Proposition 3.9.7: With S_n = N − [n], the indexed intersection ⋂_{n∈N} S_n = ∅. Proof: for any fixed x∈N, x ∈ [x], so x ∉ S_x; hence x is not in the intersection. Thus the intersection has no elements.",
+          "zh": "命题 3.9.7：令 S_n = N − [n]，则指标交集 ⋂_{n∈N} S_n = ∅。证明：对任意固定的 x∈N，有 x ∈ [x]，故 x ∉ S_x；因此 x 不在该交集中。于是该交集没有任何元素。"
+        },
+        {
+          "type": "warning",
+          "page": 203,
+          "en": "The claim 'if F ⊆ G ∪ H, then F ⊆ G or F ⊆ H' is FALSE. From each x∈F being in G or H we cannot conclude that all of F lies in one of them. A counterexample: F={1,2}, G={1}, H={2}.",
+          "zh": "断言“若 F ⊆ G ∪ H，则 F ⊆ G 或 F ⊆ H”是假的。由“每个 x∈F 都在 G 或 H 中”不能推出“整个 F 都在 G 中或整个 F 都在 H 中”。反例：F={1,2}、G={1}、H={2}。"
+        },
+        {
+          "type": "strategy",
+          "page": 204,
+          "en": "A counterexample must explicitly define all the objects involved and verify that the hypothesis holds but the conclusion fails. You do not need to characterize all counterexamples; one explicit example suffices.",
+          "zh": "反例必须显式定义所涉及的全部对象，并验证前提成立而结论不成立；你不需要刻画所有反例，给出一个具体例子即可。"
+        }
+      ]
+    },
+    {
+      "section_id": "3.10",
+      "title_en": "Summary",
+      "title_zh": "小结",
+      "page": 207,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 207,
+          "en": "Double-containment is a fundamental proof technique; you will see it throughout later courses. Russell's Paradox shows there is no 'set of all sets'.",
+          "zh": "双向包含是一种基本证明技巧，在后续课程中会反复出现；罗素悖论则说明不存在“所有集合的集合”。"
+        },
+        {
+          "type": "warning",
+          "page": 207,
+          "en": "The most baffling part for students is the notation. Keep the 'bag analogy' in mind to distinguish ∈ from ⊆; power sets are the place where both relationships are at work.",
+          "zh": "学生最感困惑的是记号。用“袋子类比”区分 ∈ 与 ⊆；幂集正是这两种关系同时起作用的地方。"
+        },
+        {
+          "type": "note",
+          "page": 207,
+          "en": "We saw how natural numbers can be formally defined in terms of sets; in practice we will keep relying on our intuitions about N, but the construction underpins the Principle of Mathematical Induction.",
+          "zh": "我们看到了如何用集合形式化地定义自然数；实际计算中仍依赖对 N 的直觉，但这一构造正是数学归纳法原理的基石。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "set", "term_zh": "集合", "page": 153, "note_zh": "由一切具有某一明确性质的对象所组成的总体。"},
+    {"term_en": "element", "term_zh": "元素", "page": 153, "note_zh": "属于某集合的对象，记作 x ∈ A。"},
+    {"term_en": "set-builder notation", "term_zh": "集合构造记号", "page": 156, "note_zh": "形如 {x ∈ X | P(x)} 的记法，表示从大集合 X 中挑出满足 P(x) 的元素。"},
+    {"term_en": "empty set", "term_zh": "空集", "page": 158, "note_zh": "不含任何元素的集合，记作 ∅；空集唯一，且是任意集合的子集。"},
+    {"term_en": "subset", "term_zh": "子集", "page": 164, "note_zh": "若 A 的每个元素都属于 B，则 A ⊆ B；若还有 A≠B 则称真子集 A ⊂ B。"},
+    {"term_en": "power set", "term_zh": "幂集", "page": 167, "note_zh": "A 的所有子集构成的集合，记作 P(A)。"},
+    {"term_en": "set equality", "term_zh": "集合相等", "page": 168, "note_zh": "A=B 当且仅当 A⊆B 且 B⊆A；即双向包含。"},
+    {"term_en": "intersection", "term_zh": "交集", "page": 172, "note_zh": "A ∩ B = {x : x∈A 且 x∈B}；若 A∩B=∅ 则称 A、B 不相交。"},
+    {"term_en": "union", "term_zh": "并集", "page": 173, "note_zh": "A ∪ B = {x : x∈A 或 x∈B}（相容或）。"},
+    {"term_en": "set difference", "term_zh": "差集与补集", "page": 175, "note_zh": "差集 A−B={x∈A 且 x∉B}；补集 Ā={x∈U 且 x∉A}，依赖于全集 U。"},
+    {"term_en": "indexed union/intersection", "term_zh": "指标并集/交集", "page": 181, "note_zh": "⋃_{i∈I} A_i 收编至少属于一个 A_i 的元素；⋂_{i∈I} A_i 收编属于所有 A_i 的元素。"},
+    {"term_en": "partition", "term_zh": "划分", "page": 183, "note_zh": "把集合分成两两不相交、并起来等于原集合的非空子集。"},
+    {"term_en": "Cartesian product", "term_zh": "笛卡儿积", "page": 187, "note_zh": "A × B = {(a,b) : a∈A, b∈B}；有序对 (a,b)=(c,d) 当且仅当 a=c 且 b=d。"},
+    {"term_en": "double-containment proof", "term_zh": "双向包含证明", "page": 198, "note_zh": "通过分别证 A⊆B 与 B⊆A 来得到 A=B 的标准手法；引入“任意但固定”的元素。"},
+    {"term_en": "counterexample", "term_zh": "反例", "page": 204, "note_zh": "用一个具体对象说明全称命题不成立。"}
+  ],
+  "action_rules": [
+    {"en": "Always specify the larger set X in set-builder notation: write {x ∈ X | P(x)}, never just {x | P(x)}.", "zh": "用集合构造记号时务必写明大集合 X：写成 {x ∈ X | P(x)}，绝不要只写 {x | P(x)}。"},
+    {"en": "Distinguish ∈ from ⊆: ∈ asks whether an object is inside the bag; ⊆ asks whether everything in the left bag is also in the right bag.", "zh": "严格区分 ∈ 与 ⊆：∈ 问的是“袋里有没有这个对象”；⊆ 问的是“左袋里的东西是否都在右袋里”。"},
+    {"en": "Remember ∅, {∅}, {{∅}} are three different sets; count the braces to tell them apart.", "zh": "记住 ∅、{∅}、{{∅}} 是三个不同的集合；数大括号的层数来区分它们。"},
+    {"en": "To prove A ⊆ B: take an arbitrary and fixed x ∈ A, then use definitions to deduce x ∈ B. State 'since x was arbitrary, we conclude A ⊆ B.'", "zh": "要证 A ⊆ B：任取一个任意但固定的 x ∈ A，用定义推出 x ∈ B；最后写明“由于 x 任意，故 A ⊆ B”。"},
+    {"en": "To prove A = B: write a double-containment proof with two labeled parts (⊆) and (⊇).", "zh": "要证 A = B：写双向包含证明，分两部分标号 (⊆) 与 (⊇)。"},
+    {"en": "To prove a set is empty, show it has no elements: take an arbitrary candidate and show it is not in the set.", "zh": "要证某集合为空，就证明它没有元素：任取一个候选对象，说明它不在该集合中。"},
+    {"en": "To disprove a universal claim, construct an explicit counterexample: define every object involved, verify the hypothesis holds, and show the conclusion fails.", "zh": "要推翻一个全称命题，构造一个显式反例：把涉及的对象都定义出来，验证前提成立、结论不成立。"},
+    {"en": "Always cite definitions and previously proved lemmas; don't re-prove facts you can cite.", "zh": "随时援引定义和已证引理，不要把已经证过的事实在中间重新证一遍。"}
+  ],
+  "quiz": [
+    {
+      "page": 158,
+      "question_en": "Which of the following best describes ∅?",
+      "question_zh": "下列哪一项最准确地刻画了 ∅？",
+      "options": [
+        {"en": "∅ = {∅}", "zh": "∅ = {∅}"},
+        {"en": "∅ is the unique set with no elements.", "zh": "∅ 是唯一不含任何元素的集合。"},
+        {"en": "∅ is the set of all natural numbers.", "zh": "∅ 是全体自然数构成的集合。"},
+        {"en": "∅ only exists when the universal set is empty.", "zh": "∅ 只有在全集为空时才存在。"}
+      ],
+      "answer": 1,
+      "explanation_en": "Definition 3.3.2: the empty set is the set with no elements, and there is only one such set. Note ∅ ≠ {∅}, since {∅} contains one element (namely ∅).",
+      "explanation_zh": "定义 3.3.2：空集是不含任何元素的集合，且这样的集合唯一。注意 ∅ ≠ {∅}，因为 {∅} 含有一个元素（即 ∅）。"
+    },
+    {
+      "page": 167,
+      "question_en": "What is P(∅)?",
+      "question_zh": "P(∅) 等于什么？",
+      "options": [
+        {"en": "P(∅) = ∅", "zh": "P(∅) = ∅"},
+        {"en": "P(∅) = {∅}", "zh": "P(∅) = {∅}"},
+        {"en": "P(∅) = {{∅}}", "zh": "P(∅) = {{∅}}"},
+        {"en": "P(∅) is undefined.", "zh": "P(∅) 没有定义。"}
+      ],
+      "answer": 1,
+      "explanation_en": "The only subset of ∅ is ∅ itself, so P(∅) = {∅}, a set with exactly one element.",
+      "explanation_zh": "∅ 唯一的子集是它自身，故 P(∅) = {∅}，这是恰含一个元素的集合。"
+    },
+    {
+      "page": 156,
+      "question_en": "What does S = {x ∈ N | 1 ≤ x ≤ 100} mean?",
+      "question_zh": "S = {x ∈ N | 1 ≤ x ≤ 100} 表示什么？",
+      "options": [
+        {"en": "All real numbers x with 1 ≤ x ≤ 100.", "zh": "所有满足 1 ≤ x ≤ 100 的实数 x。"},
+        {"en": "All natural numbers x with 1 ≤ x ≤ 100.", "zh": "所有满足 1 ≤ x ≤ 100 的自然数 x。"},
+        {"en": "All integers x with x ≥ 1.", "zh": "所有满足 x ≥ 1 的整数 x。"},
+        {"en": "The set {1,100}.", "zh": "集合 {1,100}。"}
+      ],
+      "answer": 1,
+      "explanation_en": "The bar | is read 'such that'; we draw elements from N and keep those satisfying 1 ≤ x ≤ 100.",
+      "explanation_zh": "竖线 | 读作“使得”；我们从 N 中取元素，保留满足 1 ≤ x ≤ 100 的那些。"
+    },
+    {
+      "page": 198,
+      "question_en": "What is a double-containment proof?",
+      "question_zh": "什么是双向包含证明？",
+      "options": [
+        {"en": "Proving A ⊆ B and B ⊆ A separately to conclude A = B.", "zh": "分别证 A ⊆ B 与 B ⊆ A，从而得到 A = B。"},
+        {"en": "Proving A ⊆ B and then drawing a Venn diagram.", "zh": "证 A ⊆ B，然后画一个韦恩图。"},
+        {"en": "Listing all elements of A and B by hand.", "zh": "把 A、B 的所有元素都手工列出来。"},
+        {"en": "Using the complement operation twice.", "zh": "连续两次使用补集运算。"}
+      ],
+      "answer": 0,
+      "explanation_en": "By Definition 3.4.5/3.9.4, A=B iff A⊆B and B⊆A; the double-containment proof establishes both in turn.",
+      "explanation_zh": "由定义 3.4.5/3.9.4，A=B 当且仅当 A⊆B 且 B⊆A；双向包含证明就是依次建立这两个方向。"
+    },
+    {
+      "page": 183,
+      "question_en": "Which of the following is a partition of N?",
+      "question_zh": "下列哪一项是 N 的划分？",
+      "options": [
+        {"en": "{ {1,2}, {2,3}, {3,4} }", "zh": "{ {1,2}, {2,3}, {3,4} }"},
+        {"en": "{ O, E } where O is odd naturals and E is even naturals.", "zh": "{ O, E }，其中 O 为奇自然数集、E 为偶自然数集。"},
+        {"en": "{ {1,2,3}, {4,5,6}, {7,8} }", "zh": "{ {1,2,3}, {4,5,6}, {7,8} }"},
+        {"en": "{ N, ∅ }", "zh": "{ N, ∅ }"}
+      ],
+      "answer": 1,
+      "explanation_en": "O and E are non-empty, pairwise disjoint, and their union is N — exactly the three conditions of Definition 3.6.9. The others either overlap or fail to cover N.",
+      "explanation_zh": "O 与 E 非空、两两不相交，且并集为 N——正好满足定义 3.6.9 的三个条件。其余选项要么有重叠，要么没有覆盖 N。"
+    },
+    {
+      "page": 203,
+      "question_en": "Why is the claim 'if F ⊆ G ∪ H then F ⊆ G or F ⊆ H' false?",
+      "question_zh": "为什么断言“若 F ⊆ G ∪ H，则 F ⊆ G 或 F ⊆ H”是假的？",
+      "options": [
+        {"en": "Because G ∪ H is always larger than F.", "zh": "因为 G ∪ H 总是比 F 大。"},
+        {"en": "Elements of F may be split between G and H without all lying in one of them; e.g. F={1,2}, G={1}, H={2}.", "zh": "F 的元素可以分散在 G 和 H 中，而不必全部落在其中一个里；例如 F={1,2}、G={1}、H={2}。"},
+        {"en": "Because union is not commutative.", "zh": "因为并集不满足交换律。"},
+        {"en": "Because F must be empty.", "zh": "因为 F 必须为空集。"}
+      ],
+      "answer": 1,
+      "explanation_en": "With F={1,2}, G={1}, H={2}: F=G∪H so F⊆G∪H, but 2∉G and 1∉H, so neither F⊆G nor F⊆H.",
+      "explanation_zh": "取 F={1,2}、G={1}、H={2}：F=G∪H，故 F⊆G∪H；但 2∉G、1∉H，所以既没有 F⊆G，也没有 F⊆H。"
+    }
+  ]
+}

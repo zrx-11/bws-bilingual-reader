@@ -1,0 +1,527 @@
+{
+  "chapter": 8,
+  "title_en": "Combinatorics",
+  "title_zh": "组合数学",
+  "start_page": 567,
+  "end_page": 670,
+  "sections": [
+    {
+      "section_id": "8.1",
+      "title_en": "Introduction",
+      "title_zh": "引言",
+      "page": 567,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 567,
+          "en": "The field of combinatorics is one of the most active and exciting areas of interest in modern mathematics. It is also sometimes known as \"discrete math\" to distinguish it from analysis, which studies more \"continuous\" notions like the real number line.",
+          "zh": "组合数学是现代数学中最活跃、最引人入胜的领域之一。它有时也被称为\"离散数学\"，以区别于研究实数轴等\"连续\"概念的分析学。"
+        },
+        {
+          "type": "strategy",
+          "page": 568,
+          "en": "By the end of this chapter, you should be able to: State the Rules of Sum and Product, and use and combine them to construct simple counting arguments; State the meaning of binomial coefficients and evaluate their numerical formulae; Critique a proposed counting argument by demonstrating if it is an undercount or overcount; Prove combinatorial identities by constructing \"counting in two ways\" proofs; State the Pigeonhole Principle and the Principle of Inclusion/Exclusion.",
+          "zh": "学完本章后，你应当能够：陈述并联合运用加法法则与乘法法则构造简单的计数论证；说明二项式系数的含义并计算其数值；通过指出是漏计还是重计来评判一个计数论证；用\"双路计数\"证明组合恒等式；陈述并运用鸽巢原理与容斥原理。"
+        },
+        {
+          "type": "note",
+          "page": 567,
+          "en": "Essentially, we will be learning interesting and useful principles about how to count the number of elements in finite sets where those elements are described in some way but not enumerated for us.",
+          "zh": "本质上，本章学习的是一套关于如何计数有限集合元素个数的有趣而有用的原理——其中元素只以某种方式被描述，而不是被逐一列举出来。"
+        }
+      ]
+    },
+    {
+      "section_id": "8.2",
+      "title_en": "Basic Counting Principles",
+      "title_zh": "基本计数原理",
+      "page": 570,
+      "key_points": [
+        {
+          "type": "definition",
+          "page": 571,
+          "en": "Let A be a set. A partition of A is a collection of sets that are pairwise disjoint and whose union is A.",
+          "zh": "设 A 为集合。A 的一个划分是由若干两两不交、且并集等于 A 的集合所组成的集族。"
+        },
+        {
+          "type": "theorem",
+          "page": 573,
+          "en": "(Rule of Sum) Let A be a finite set, let n∈N, and let S={Si | i∈[n]} be a finite partition of A. Then |A| = Σ_{i∈[n]} |Si|.",
+          "zh": "（加法法则，Rule of Sum）设 A 为有限集，n∈N，且 S={Si | i∈[n]} 是 A 的一个有限划分，则 |A| = Σ_{i∈[n]} |Si|。"
+        },
+        {
+          "type": "theorem",
+          "page": 575,
+          "en": "(Rule of Product) Consider a process completed in n distinct steps. If step i has exactly wi choices, independent of previous choices, and distinct step-choices yield distinct outcomes, then the total number of outcomes is N = Π_{i∈[n]} wi.",
+          "zh": "（乘法法则，Rule of Product）考虑一个由 n 个不同步骤完成的过程。若第 i 步恰有 wi 种选择，且该数目不依赖于此前各步的选择，同时不同的步骤选择序列给出不同的结果，则结果总数为 N = Π_{i∈[n]} wi。"
+        },
+        {
+          "type": "theorem",
+          "page": 578,
+          "en": "(Rule of Product, set-theoretic version) Let n∈N. Suppose that for every i∈[n], Ti is a finite set. Then |T1 × T2 × ··· × Tn| = |T1|·|T2|···|Tn| = Π_{i∈[n]} |Ti|.",
+          "zh": "（乘法法则的集合论形式）设 n∈N，且对每个 i∈[n]，Ti 为有限集，则 |T1 × T2 × ··· × Tn| = |T1|·|T2|···|Tn| = Π_{i∈[n]} |Ti|。"
+        },
+        {
+          "type": "strategy",
+          "page": 580,
+          "en": "To count a set, we can count its complement (all of the \"other\" elements outside the set) and remove that count from the \"total\". We only have a Rule of Sum, not a rule of Subtraction, so phrase such a step in terms of a partition and a sum.",
+          "zh": "要计数某个集合，可以先计数它的补集（即该集合之外的所有\"其余\"元素），再从\"总数\"中减去。由于我们只有加法法则而没有减法法则，应把这一步表述为对一个划分求和，然后再做代数相减。"
+        },
+        {
+          "type": "definition",
+          "page": 581,
+          "en": "Let n∈N. The natural number n!, read as n factorial, is given by n! = Π_{k∈[n]} k = k·(k−1)···3·2·1. By definition, 0! = 1.",
+          "zh": "设 n∈N。自然数 n! 读作 n 的阶乘，定义为 n! = Π_{k∈[n]} k = n·(n−1)···3·2·1。并约定 0! = 1。"
+        },
+        {
+          "type": "definition",
+          "page": 582,
+          "en": "A permutation of [n] is a function f : [n] → [n] that is a bijection. Equivalently, it is an ordered n-tuple of elements from [n] in which every element appears exactly once. There are n! permutations of [n].",
+          "zh": "[n] 的一个排列（permutation）是指双射 f : [n] → [n]。等价地，它是 [n] 的元素构成的有序 n 元组，其中每个元素恰好出现一次。[n] 的排列共有 n! 个。"
+        },
+        {
+          "type": "definition",
+          "page": 584,
+          "en": "Let k,n∈N with n≥k. A k-selection from [n] is an unordered set of k elements from [n]. Its number is denoted C(n,k), read \"n choose k\", and is called a binomial coefficient. Formula: C(n,k) = n!/(k!·(n−k)!).",
+          "zh": "设 k,n∈N 且 n≥k。从 [n] 中取 k 个元素的 k-选择（k-selection，即组合）是指由 [n] 中 k 个元素构成的无序集合。其个数记作 C(n,k)（读作\"n 选 k\"），称为二项式系数。公式为 C(n,k) = n!/(k!·(n−k)!)。"
+        },
+        {
+          "type": "definition",
+          "page": 586,
+          "en": "A k-arrangement from [n] is an ordered k-tuple of elements from [n] with no repeated elements, equivalently an injection f : [k] → [n]. Its number is C(n,k)·k! = n!/(n−k)!. A k-arrangement with repetition from [n] allows repeats; its number is n^k.",
+          "zh": "从 [n] 中取 k 个元素的 k-排列（k-arrangement）是指 [n] 的元素构成的无重复有序 k 元组，等价于单射 f : [k] → [n]，其个数为 C(n,k)·k! = n!/(n−k)!。允许重复的 k-排列（k-arrangement with repetition）允许元素重复出现，其个数为 n^k。"
+        }
+      ]
+    },
+    {
+      "section_id": "8.3",
+      "title_en": "Counting Arguments",
+      "title_zh": "计数论证",
+      "page": 589,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 589,
+          "en": "We seek a process wherein we construct an object with the desired properties. By counting the number of options at each step, and ensuring that every desired object can only be obtained via one set of options in the process, we apply the Rule of Product to count the objects with the desired properties.",
+          "zh": "我们要构造一个过程，使其产生的对象恰为满足所需性质的对象。通过计数每一步的可选数目，并确保每个满足条件的对象只能由该过程的唯一一组选择产生，便可运用乘法法则计数所有满足条件的对象。"
+        },
+        {
+          "type": "warning",
+          "page": 590,
+          "en": "C(n,k) is a NUMBER. It represents the number of ways to do something, and does not itself correspond to doing that action. In general, we do not expect you to evaluate binomial coefficients; the number C(n,k) is far more illustrative than the decimal value.",
+          "zh": "C(n,k) 是一个\"数\"，它表示做某事的方式数，而不是\"做\"那个动作本身。一般不要求把二项式系数算成十进制数；保留 C(n,k) 的形式比算出数值更能说明这一步在做什么。"
+        },
+        {
+          "type": "example",
+          "page": 592,
+          "en": "The number of \"one pair\" poker hands is C(13,1)·C(4,2)·C(12,3)·C(4,1)^3: choose the rank of the pair, choose its two suits, choose the three other ranks, and choose a suit for each.",
+          "zh": "\"一对\"型扑克手牌数为 C(13,1)·C(4,2)·C(12,3)·C(4,1)^3：先选对子的点数，再选该点的两张花色，再选另外三个不同点数，最后为这三个点数各选一个花色。"
+        },
+        {
+          "type": "example",
+          "page": 594,
+          "en": "The number of flush hands is C(4,1)·C(13,5) = 5148: choose one suit, then choose five cards from that suit.",
+          "zh": "同花（flush）的手牌数为 C(4,1)·C(13,5) = 5148：先选一种花色，再从该花色的 13 张牌中选 5 张。"
+        },
+        {
+          "type": "example",
+          "page": 595,
+          "en": "The number of straight hands is C(10,1)·(4^5 − 4): choose the lowest rank (10 possibilities, A2345 through TJQKA), then assign suits to the five cards in 4^5 ways, excluding the 4 all-same-suit assignments that yield straight flushes.",
+          "zh": "顺子（straight）的手牌数为 C(10,1)·(4^5 − 4)：先选最低点数（共 10 种，从 A2345 到 TJQKA），再为五张牌分配花色共 4^5 种，减去其中 4 种全同花（即同花顺）的情形。"
+        }
+      ]
+    },
+    {
+      "section_id": "8.4",
+      "title_en": "Counting in Two Ways",
+      "title_zh": "双路计数",
+      "page": 623,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 623,
+          "en": "(Symmetry of binomial coefficients) Let n,k∈N∪{0}. Then C(n,k) = C(n,n−k). Proof idea: count the k-element subsets of [n] by identifying the elements to include or the elements to omit.",
+          "zh": "（二项式系数的对称性）设 n,k∈N∪{0}，则 C(n,k) = C(n,n−k)。证明思路：通过\"指定要纳入的元素\"或\"指定要舍弃的元素\"两种方式来计数 [n] 的 k 元子集。"
+        },
+        {
+          "type": "strategy",
+          "page": 624,
+          "en": "A Counting in Two Ways proof follows the skeleton: (1) state the result to be proven with quantified variables; (2) define a set S of objects to be counted; (3) count |S| one way by a combinatorial argument; (4) count |S| another way; (5) equate the two expressions.",
+          "zh": "双路计数证明的骨架为：(1) 陈述待证结论并量化其中的变量；(2) 定义一个待计数对象的集合 S；(3) 用一种组合论证算出 |S|；(4) 再用另一种方式算出 |S|；(5) 令两式相等。"
+        },
+        {
+          "type": "warning",
+          "page": 625,
+          "en": "Common mistakes: forgetting to define a set of objects to be counted; defining a set but counting something else; counting one set in one way and a different set in the other way; failing to equate the two expressions in the conclusion.",
+          "zh": "常见错误：忘记定义待计数对象的集合；定义了集合却计数了别的东西；两种方式计数的不是同一个集合；结论中没有把两个表达式写成等式。"
+        },
+        {
+          "type": "theorem",
+          "page": 625,
+          "en": "(Pascal's Identity) For any n,k∈N, C(n,k) = C(n−1,k−1) + C(n−1,k). Proof: partition the k-subsets of [n] according to whether or not they contain a fixed element (say, 1).",
+          "zh": "（帕斯卡恒等式）对任意 n,k∈N，有 C(n,k) = C(n−1,k−1) + C(n−1,k)。证明：按 [n] 的 k 元子集是否包含某个固定元素（例如 1）来划分。"
+        },
+        {
+          "type": "theorem",
+          "page": 640,
+          "en": "(Binomial Theorem) Let x,y∈R and n∈N. Then (x + y)^n = Σ_{k=0}^{n} C(n,k) x^k y^{n−k}. Proof: to form a term in the product (x+y)^n, choose k of the n factors from which to take x; there are C(n,k) such choices.",
+          "zh": "（二项式定理）设 x,y∈R，n∈N，则 (x + y)^n = Σ_{k=0}^{n} C(n,k) x^k y^{n−k}。证明：在乘积 (x+y)^n 展开时，一项由 n 个因子中选 k 个取 x、其余取 y 得到，选法数恰为 C(n,k)。"
+        },
+        {
+          "type": "example",
+          "page": 641,
+          "en": "Setting x=y=1 in the Binomial Theorem gives 2^n = Σ_{k=0}^{n} C(n,k); setting x=−1, y=1 gives Σ_{k=0}^{n} (−1)^k C(n,k) = 0, i.e. the number of even-sized subsets of [n] equals the number of odd-sized subsets.",
+          "zh": "在二项式定理中取 x=y=1，得 2^n = Σ_{k=0}^{n} C(n,k)；取 x=−1, y=1，得 Σ_{k=0}^{n} (−1)^k C(n,k) = 0，即 [n] 的偶大小子集数等于奇大小子集数。"
+        }
+      ]
+    },
+    {
+      "section_id": "8.5",
+      "title_en": "Selections with Repetition",
+      "title_zh": "可重复选择",
+      "page": 643,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 644,
+          "en": "To distribute n identical gold coins among k distinguishable pirates, lay the n coins in a row and insert k−1 dividers (bars) to split them into k piles. A distribution is thus a string of length n+k−1 with n coins and k−1 dividers.",
+          "zh": "要把 n 枚相同的金币分给 k 个可区分的海盗，可把 n 枚金币排成一行，插入 k−1 块隔板（divider/bar）将其分成 k 堆。于是一个分法对应一个长度为 n+k−1、含 n 枚金币和 k−1 块隔板的字符串。"
+        },
+        {
+          "type": "theorem",
+          "page": 645,
+          "en": "(Stars and Bars) The number of ways to distribute n identical objects among k distinguishable boxes is C(n+k−1, k−1) = C(n+k−1, n). This is the number of k-selections from k types with repetition allowed.",
+          "zh": "（星条法，Stars and Bars）把 n 个相同对象放入 k 个可区分盒子的放法数为 C(n+k−1, k−1) = C(n+k−1, n)。这也就是从 k 类元素中可重复地选 n 个元素的选法数。"
+        },
+        {
+          "type": "note",
+          "page": 646,
+          "en": "Equivalent formulations: the number of solutions to x1 + x2 + ··· + xk = n with each xi∈N∪{0}; the number of ways to place n identical balls into k labeled bins; the number of outcomes of rolling n indistinguishable k-sided dice. All equal C(n+k−1, k−1).",
+          "zh": "等价表述：方程 x1+x2+···+xk = n（其中 xi∈N∪{0}）的解数；把 n 个相同球放入 k 个编号箱子的放法数；掷 n 个不可区分的 k 面骰子的结果数。三者均等于 C(n+k−1, k−1)。"
+        },
+        {
+          "type": "example",
+          "page": 648,
+          "en": "If every pirate must receive at least r coins, first give each pirate r coins, then distribute the remaining n−kr coins freely: the count becomes C((n−kr)+k−1, k−1).",
+          "zh": "若要求每个海盗至少得 r 枚金币，可先给每个海盗分 r 枚，再把剩下的 n−kr 枚自由分配：方法数变为 C((n−kr)+k−1, k−1)。"
+        }
+      ]
+    },
+    {
+      "section_id": "8.6",
+      "title_en": "Pigeonhole Principle",
+      "title_zh": "鸽巢原理",
+      "page": 652,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 653,
+          "en": "(Pigeonhole Principle) If a set S with |S|=n is partitioned into k disjoint subsets whose union is S, and k<n, then at least one subset contains at least ⌈n/k⌉ elements. Equivalently, if x1,...,xn are real numbers with Σ xi ≥ z, then some xi ≥ z/n.",
+          "zh": "（鸽巢原理）若 |S|=n 的集合被划分为 k 个两两不交的子集，且 k<n，则至少有一个子集含有不少于 ⌈n/k⌉ 个元素。等价地，若实数 x1,...,xn 满足 Σ xi ≥ z，则必有某个 xi ≥ z/n。"
+        },
+        {
+          "type": "strategy",
+          "page": 654,
+          "en": "The hardest part about using the Pigeonhole Principle is deciding what the \"pigeonholes\" actually are. Enumerate the categories, then show that more objects fall into them than categories available.",
+          "zh": "运用鸽巢原理最难的一步是确定\"鸽巢\"到底是什么。先列出所有可能的类别，再证明落入这些类别的对象数多于类别数。"
+        },
+        {
+          "type": "example",
+          "page": 654,
+          "en": "Of any 8 people, two have birthdays on the same day of the week; of any 13 people, two have birthdays in the same month. Here the pigeonholes are the 7 weekdays (or 12 months) and the pigeons are the people.",
+          "zh": "任意 8 个人中必有两人的生日落在星期几相同；任意 13 个人中必有两人的生日在同一个月。这里鸽巢是 7 个星期（或 12 个月），鸽子是这些人。"
+        }
+      ]
+    },
+    {
+      "section_id": "8.7",
+      "title_en": "Inclusion/Exclusion",
+      "title_zh": "容斥原理",
+      "page": 657,
+      "key_points": [
+        {
+          "type": "theorem",
+          "page": 658,
+          "en": "(Inclusion/Exclusion) For a universal set U and subsets A1,...,An⊆U, |U − (A1∪···∪An)| = Σ_{S⊆[n]} (−1)^{|S|} |∩_{i∈S} Ai|, where ∩_{i∈∅} Ai = U.",
+          "zh": "（容斥原理）对全集 U 及其子集 A1,...,An⊆U，有 |U − (A1∪···∪An)| = Σ_{S⊆[n]} (−1)^{|S|} |∩_{i∈S} Ai|，其中规定 ∩_{i∈∅} Ai = U。"
+        },
+        {
+          "type": "theorem",
+          "page": 658,
+          "en": "(Corollary) If the intersection of any k of the Ai has a fixed size S(k), independent of which sets are chosen, then |U − (A1∪···∪An)| = Σ_{k=0}^{n} (−1)^k C(n,k) S(k).",
+          "zh": "（推论）若任意 k 个 Ai 的交集大小恒为 S(k)，与具体选哪 k 个无关，则 |U − (A1∪···∪An)| = Σ_{k=0}^{n} (−1)^k C(n,k) S(k)。"
+        },
+        {
+          "type": "example",
+          "page": 659,
+          "en": "Bridge hands with at least one card from each suit: define U as all 13-card hands and AH, AS, AC, AD as hands missing each suit. Then the count is C(52,13) − C(4,1)C(39,13) + C(4,2)C(26,13) − C(4,3)C(13,13) + C(4,4)C(0,13).",
+          "zh": "桥牌中至少每张花色都有一张的 13 张手牌数：令 U 为所有 13 张手牌，AH、AS、AC、AD 分别为缺红桃、缺黑桃、缺梅花、缺方块的手牌集合。所求为 C(52,13) − C(4,1)C(39,13) + C(4,2)C(26,13) − C(4,3)C(13,13) + C(4,4)C(0,13)。"
+        },
+        {
+          "type": "example",
+          "page": 660,
+          "en": "Number of surjections f : [5] → [3] is 3^5 − C(3,1)2^5 + C(3,2)1^5 − C(3,3)0^5 = 243 − 96 + 3 = 150.",
+          "zh": "满射 f : [5] → [3] 的个数为 3^5 − C(3,1)2^5 + C(3,2)1^5 − C(3,3)0^5 = 243 − 96 + 3 = 150。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {
+      "term_en": "combinatorics",
+      "term_zh": "组合数学",
+      "page": 567,
+      "note_zh": "研究有限集合中元素计数与结构的数学分支，又称离散数学。"
+    },
+    {
+      "term_en": "partition",
+      "term_zh": "划分",
+      "page": 571,
+      "note_zh": "把集合分成若干两两不交、并集为原集合的子集族。"
+    },
+    {
+      "term_en": "Rule of Sum (ROS)",
+      "term_zh": "加法法则",
+      "page": 573,
+      "note_zh": "对划分而言，集合大小等于各部分大小之和。"
+    },
+    {
+      "term_en": "Rule of Product (ROP)",
+      "term_zh": "乘法法则",
+      "page": 575,
+      "note_zh": "多步过程的结果数等于各步选择数之积，要求各步选择数与之前的选择无关。"
+    },
+    {
+      "term_en": "factorial",
+      "term_zh": "阶乘",
+      "page": 581,
+      "note_zh": "n! = n·(n−1)···1，并约定 0! = 1。"
+    },
+    {
+      "term_en": "permutation",
+      "term_zh": "排列",
+      "page": 582,
+      "note_zh": "[n] 上的双射，或 [n] 元素的无重复有序全排列；个数为 n!。"
+    },
+    {
+      "term_en": "k-selection / combination",
+      "term_zh": "k-选择（组合）",
+      "page": 584,
+      "note_zh": "从 n 个元素中无序选 k 个，个数为 C(n,k)。"
+    },
+    {
+      "term_en": "binomial coefficient",
+      "term_zh": "二项式系数",
+      "page": 584,
+      "note_zh": "C(n,k) = n!/(k!(n−k)!)，读作\"n 选 k\"。"
+    },
+    {
+      "term_en": "k-arrangement",
+      "term_zh": "k-排列",
+      "page": 586,
+      "note_zh": "从 n 个元素中有序选 k 个且不重复，等价于单射 [k]→[n]；个数为 n!/(n−k)!。"
+    },
+    {
+      "term_en": "counting in two ways",
+      "term_zh": "双路计数法",
+      "page": 624,
+      "note_zh": "对同一集合给出两种计数表达式，令其相等以证明恒等式。"
+    },
+    {
+      "term_en": "Pascal's identity",
+      "term_zh": "帕斯卡恒等式",
+      "page": 625,
+      "note_zh": "C(n,k) = C(n−1,k−1) + C(n−1,k)，是杨辉三角的递推关系。"
+    },
+    {
+      "term_en": "binomial theorem",
+      "term_zh": "二项式定理",
+      "page": 640,
+      "note_zh": "(x+y)^n = Σ C(n,k) x^k y^{n−k}。"
+    },
+    {
+      "term_en": "stars and bars",
+      "term_zh": "星条法",
+      "page": 645,
+      "note_zh": "把 n 个相同对象分给 k 个可区分盒子的方法数为 C(n+k−1, k−1)，即可重复选择的计数公式。"
+    },
+    {
+      "term_en": "pigeonhole principle",
+      "term_zh": "鸽巢原理",
+      "page": 653,
+      "note_zh": "n 个物体放入 k 个盒子，必有一盒至少 ⌈n/k⌉ 个。"
+    },
+    {
+      "term_en": "inclusion-exclusion",
+      "term_zh": "容斥原理",
+      "page": 658,
+      "note_zh": "通过交替加减各交集大小来计算补集并集的大小。"
+    }
+  ],
+  "action_rules": [
+    {
+      "en": "Before counting, always ask two questions: Are repeats allowed? Does order distinguish the outcome? These determine whether to use n^k, n!/(n−k)!, C(n,k), or C(n+k−1,k−1).",
+      "zh": "计数前先问两个问题：是否允许重复？顺序是否影响结果？据此决定使用 n^k、n!/(n−k)!、C(n,k) 还是 C(n+k−1,k−1)。"
+    },
+    {
+      "en": "Apply the Rule of Sum only when the parts form a genuine partition: pairwise disjoint and whose union is the whole set.",
+      "zh": "只有当各部分构成真正的划分（两两不交且并集为全集）时，才能使用加法法则。"
+    },
+    {
+      "en": "Apply the Rule of Product only when (a) the number of choices at each step is independent of previous choices, and (b) different step-choice sequences yield distinct final outcomes.",
+      "zh": "使用乘法法则时必须确认：(a) 每一步的选择数不依赖于此前的选择；(b) 不同的步骤选择序列产生不同的最终结果。"
+    },
+    {
+      "en": "To count a hard set, count its complement inside a known total set and subtract; phrase the subtraction as a partition followed by algebra.",
+      "zh": "当直接计数困难时，改为在一个已知全集内计数其补集再相减；把减法先表述为对划分求和，再做代数运算。"
+    },
+    {
+      "en": "To prove a combinatorial identity by counting in two ways: define ONE set S, count |S| two ways, then equate the expressions. Never count two different sets.",
+      "zh": "用双路计数证明组合恒等式时：只定义一个集合 S，用两种方式计算 |S|，再令两式相等。绝不能在两种方式中计数不同的集合。"
+    },
+    {
+      "en": "For problems of the form x1+...+xk=n with xi≥0, or distributing identical objects into labeled boxes, immediately apply the stars-and-bars formula C(n+k−1,k−1).",
+      "zh": "遇到形如 x1+...+xk=n（xi≥0）的方程，或把相同物体放入编号盒子的问题，直接套用星条法公式 C(n+k−1,k−1)。"
+    },
+    {
+      "en": "When invoking the Pigeonhole Principle, explicitly identify the pigeons and the pigeonholes; then verify that #pigeons > #pigeonholes.",
+      "zh": "使用鸽巢原理时，必须明确指出谁是\"鸽子\"、谁是\"鸽巢\"，并验证鸽子数严格大于鸽巢数。"
+    },
+    {
+      "en": "When counting the complement of a union of several overlapping bad sets, use Inclusion/Exclusion with alternating signs; group terms by the number of intersected sets when their sizes are uniform.",
+      "zh": "当需要在多个相互重叠的\"坏集合\"的并集之外计数时，使用带交替符号的容斥公式；若不同交集大小只与相交集合的个数有关，按个数合并同类项。"
+    }
+  ],
+  "quiz": [
+    {
+      "page": 582,
+      "question_en": "How many ways are there to arrange all 52 cards of a standard deck in order?",
+      "question_zh": "一副标准 52 张扑克牌按顺序排列，共有多少种排法？",
+      "options": [
+        {
+          "en": "52!",
+          "zh": "52!"
+        },
+        {
+          "en": "52^52",
+          "zh": "52^52"
+        },
+        {
+          "en": "C(52,5)",
+          "zh": "C(52,5)"
+        },
+        {
+          "en": "2^52",
+          "zh": "2^52"
+        }
+      ],
+      "answer": 0,
+      "explanation_en": "Arranging all n objects in order is a permutation; by the Rule of Product we get n·(n−1)···1 = n!. Here n=52.",
+      "explanation_zh": "把 n 个对象全部有序排列就是一个排列（permutation）。由乘法法则得 n·(n−1)···1 = n!。此处 n=52。"
+    },
+    {
+      "page": 584,
+      "question_en": "What is the formula for C(n,k), the number of k-element subsets of an n-element set?",
+      "question_zh": "C(n,k)（n 元集合的 k 元子集个数）的公式是？",
+      "options": [
+        {
+          "en": "n!/k!",
+          "zh": "n!/k!"
+        },
+        {
+          "en": "n!/(k!·(n−k)!)",
+          "zh": "n!/(k!·(n−k)!)"
+        },
+        {
+          "en": "n!/(n−k)!",
+          "zh": "n!/(n−k)!"
+        },
+        {
+          "en": "n^k",
+          "zh": "n^k"
+        }
+      ],
+      "answer": 1,
+      "explanation_en": "A k-selection is unordered and without repetition. Choose an ordered k-arrangement n!/(n−k)! ways and divide by k! because the order within the chosen k elements does not matter.",
+      "explanation_zh": "k-选择是无序且不重复的。先取有序 k-排列 n!/(n−k)! 种，再除以 k!（选出的 k 个元素之间的顺序不计），即得 n!/(k!(n−k)!)。"
+    },
+    {
+      "page": 645,
+      "question_en": "How many nonnegative integer solutions does x1 + x2 + x3 = 10 have?",
+      "question_zh": "方程 x1 + x2 + x3 = 10 有多少组非负整数解？",
+      "options": [
+        {
+          "en": "3^10",
+          "zh": "3^10"
+        },
+        {
+          "en": "C(10,3)",
+          "zh": "C(10,3)"
+        },
+        {
+          "en": "C(12,2)",
+          "zh": "C(12,2)"
+        },
+        {
+          "en": "C(10,2)",
+          "zh": "C(10,2)"
+        }
+      ],
+      "answer": 2,
+      "explanation_en": "This is the stars-and-bars problem: n=10 identical coins into k=3 labeled pirates, count C(n+k−1, k−1) = C(12,2) = 66.",
+      "explanation_zh": "这是星条法问题：把 n=10 枚相同金币分给 k=3 个可区分海盗，方法数为 C(n+k−1, k−1) = C(12,2) = 66。"
+    },
+    {
+      "page": 653,
+      "question_en": "What can we guarantee about birthdays among any 13 people?",
+      "question_zh": "任意 13 个人中，关于生日可以得出什么结论？",
+      "options": [
+        {
+          "en": "All 13 have different birth months.",
+          "zh": "13 个人的生日都在不同的月份。"
+        },
+        {
+          "en": "At least two have birthdays in the same month.",
+          "zh": "至少有两个人的生日在同一个月。"
+        },
+        {
+          "en": "At least seven have birthdays on a weekend.",
+          "zh": "至少有七个人的生日在周末。"
+        },
+        {
+          "en": "Nothing can be guaranteed.",
+          "zh": "无法做出任何保证。"
+        }
+      ],
+      "answer": 1,
+      "explanation_en": "There are only 12 months (pigeonholes) and 13 people (pigeons); by the Pigeonhole Principle, some month receives at least ⌈13/12⌉ = 2 people.",
+      "explanation_zh": "月份只有 12 个（鸽巢），人有 13 个（鸽子）。由鸽巢原理，必有某个月份至少落入 ⌈13/12⌉ = 2 个人。"
+    },
+    {
+      "page": 640,
+      "question_en": "What is the coefficient of x^3 y^2 in the expansion of (x + y)^5?",
+      "question_zh": "在 (x + y)^5 的展开式中，x^3 y^2 项的系数是多少？",
+      "options": [
+        {
+          "en": "5",
+          "zh": "5"
+        },
+        {
+          "en": "10",
+          "zh": "10"
+        },
+        {
+          "en": "15",
+          "zh": "15"
+        },
+        {
+          "en": "20",
+          "zh": "20"
+        }
+      ],
+      "answer": 1,
+      "explanation_en": "By the Binomial Theorem, the coefficient of x^k y^{n−k} is C(n,k). Here n=5, k=3, so C(5,3) = C(5,2) = 10.",
+      "explanation_zh": "由二项式定理，x^k y^{n−k} 的系数为 C(n,k)。此处 n=5, k=3，故系数为 C(5,3) = C(5,2) = 10。"
+    }
+  ]
+}

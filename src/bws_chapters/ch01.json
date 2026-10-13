@@ -1,0 +1,397 @@
+{
+  "chapter": 1,
+  "title_en": "What Is Mathematics?",
+  "title_zh": "数学是什么？",
+  "start_page": 13,
+  "end_page": 100,
+  "sections": [
+    {
+      "section_id": "1.1",
+      "title_en": "Truths and Proofs",
+      "title_zh": "真命题与证明",
+      "page": 13,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 13,
+          "en": "In a way, this is what mathematics is all about: devising new statements, deciding somehow whether they are true or false, and explaining these findings to other people. In the context of mathematics, something is true only if we can show it to be true always.",
+          "zh": "从某种意义上说，数学的全部意义就在于：提出新的命题，设法判定其真假，并把这些结论向他人解释清楚。在数学的语境中，一个命题为真，当且仅当我们能够证明它永远成立。"
+        },
+        {
+          "type": "warning",
+          "page": 14,
+          "en": "In mathematics, repeated experimentation is not a viable proof! We would need to find an argument that shows why such a phenomenon would always occur. Checking a bunch of values but not all of them does not constitute a proof.",
+          "zh": "在数学中，重复实验不能构成有效的证明！我们必须找到一个论证，说明该现象为何必然永远成立。仅验证一部分（而非全部）数值，并不构成证明。"
+        },
+        {
+          "type": "example",
+          "page": 14,
+          "en": "The Goldbach Conjecture is unknown as of now, whether it is true or not, even though it has been verified by computer simulations up until a value of roughly 10^18. That is a huge number, but it is still not enough to know whether the conjecture is True or False.",
+          "zh": "哥德巴赫猜想至今真伪未明，尽管计算机模拟已将其验证到约 10^18 的量级。这个数字固然巨大，但仍不足以判定该猜想为真或为假。"
+        },
+        {
+          "type": "theorem",
+          "page": 14,
+          "en": "Theorem 1.1.1 (The Pythagorean Theorem). If a right triangle has base lengths a, b and hypotenuse length c, then these values satisfy a^2 + b^2 = c^2.",
+          "zh": "定理 1.1.1（勾股定理）。若直角三角形的两条直角边长为 a、b，斜边长为 c，则三者满足 a^2 + b^2 = c^2。"
+        },
+        {
+          "type": "strategy",
+          "page": 19,
+          "en": "Assuming a fact and deducing something True from it does not allow us to conclude the original assumption was valid. If this method were valid, we could \"prove\" just about anything we wanted!",
+          "zh": "先假定某命题成立，再由此推出某个已知为真的结论，并不能反过来证明原先的假定有效。若这种方法成立，我们几乎可以\"证明\"任何想证的命题！"
+        },
+        {
+          "type": "definition",
+          "page": 20,
+          "en": "Definition 1.1.2. A positive integer p that is larger than 1 is called a prime number if the only positive divisors of p are 1 and p. A non-prime positive integer is called a composite number.",
+          "zh": "定义 1.1.2。若大于 1 的正整数 p 的正因数只有 1 与 p，则称 p 为素数（质数）。不是素数的正整数称为合数。"
+        },
+        {
+          "type": "theorem",
+          "page": 20,
+          "en": "Theorem 1.1.3 (Infinitude of the Primes). There are infinitely-many prime numbers. Proof strategy: assume finitely many primes p1,...,pk, define N = (p1·p2·····pk)+1; N is divisible by some prime, but by none of p1,...,pk, yielding a contradiction.",
+          "zh": "定理 1.1.3（素数无穷性）。素数有无穷多个。证明策略：假设素数只有有限多个 p1,...,pk，令 N = (p1·p2·····pk)+1；N 必被某素数整除，但它不被 p1,...,pk 中任何一个整除，由此导出矛盾。"
+        },
+        {
+          "type": "definition",
+          "page": 21,
+          "en": "Definition 1.1.4. A real number r is a rational number if and only if it can be expressed as a ratio of two integers r = a/b, where a and b are both integers (and b != 0). A real number that is not rational is called irrational.",
+          "zh": "定义 1.1.4。实数 r 称为有理数，当且仅当它可表为两个整数之比 r = a/b，其中 a、b 均为整数且 b ≠ 0。不是有理数的实数称为无理数。"
+        }
+      ]
+    },
+    {
+      "section_id": "1.2",
+      "title_en": "Exposition Exhibition",
+      "title_zh": "表述的艺术",
+      "page": 22,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 23,
+          "en": "Mathematics is a language: there is a collection of symbols and a set of rules that we apply to those symbols. We choose carefully how to define our words; our definitions are far more precise and don't incorporate the types of nuances that spoken language permits. Definitions should be driven by both logic and usefulness.",
+          "zh": "数学是一门语言：它有一套符号，以及一套支配这些符号的规则。我们精心地选择词语的定义；数学中的定义远比日常语言精确，不容许口语中那种含混的细微差别。定义应由逻辑与实用性共同驱动。"
+        },
+        {
+          "type": "definition",
+          "page": 26,
+          "en": "A proof should be: precise—no individual statement should be untrue or interpretable in multiple ways; logical—each step should follow from previous steps with proper motivation; and clear—steps should be connected and described with proper English grammar and usage.",
+          "zh": "一个证明应当：精确——任何单句都不应为假，也不应可有多种解读；合逻辑——每一步都应由前一步经恰当的动机说明推出；清晰——各步骤之间应有衔接，并以规范的语法加以描述。"
+        },
+        {
+          "type": "warning",
+          "page": 27,
+          "en": "The issue in the \"1=2 proof\" is precision: line one tells us x = y so x−y = 0, and division by zero is not allowed. Working with the variables x and y was just a way to throw you off the scent and disguise the division by zero.",
+          "zh": "\"1=2 的证明\"问题出在精确性上：第一行已有 x = y，故 x−y = 0，而除以零是不允许的。使用变量 x、y 只是为了转移视线，掩盖除以零这一错误。"
+        },
+        {
+          "type": "note",
+          "page": 28,
+          "en": "If a = b then a^2 = b^2, but if a^2 = b^2 then a = b or a = −b. Starting from an equation and squaring both sides is a logical step, but working the other way is an illogical step.",
+          "zh": "若 a = b，则 a^2 = b^2；但若 a^2 = b^2，则 a = b 或 a = −b。从一个等式出发两边平方是合乎逻辑的步骤，但反过来（开方）则是不合逻辑的步骤。"
+        },
+        {
+          "type": "definition",
+          "page": 29,
+          "en": "Mathematics uses the \"inclusive or\": when we say \"a = b or a = −b\", we mean that at least one of the two statements must be true, possibly both. This inclusive interpretation is the one assumed in all mathematical examples.",
+          "zh": "数学使用\"相容的或（inclusive or）\"：当我们说\"a = b 或 a = −b\"时，意思是两个命题中至少有一个为真，也可能两者同时为真。这一相容解释是所有数学例题中默认的解释。"
+        },
+        {
+          "type": "strategy",
+          "page": 30,
+          "en": "Leaving steps to the reader is a convenient technique, but it should be used sparingly and with caution; a proof-writer should try not to use this technique on steps that are crucial to the ultimate result of the proof.",
+          "zh": "把步骤留给读者自行补全是一种便捷技巧，但应节制而审慎地使用；证明者不应在对最终结果至关重要的步骤上使用这种技巧。"
+        },
+        {
+          "type": "definition",
+          "page": 35,
+          "en": "A mathematical statement is a combination of symbols and sentences that can be verified as either True or False, but not both or neither. A proof amounts to arranging a sequence of steps and explanations that use true statements to connect truths together and yield the desired truth at the end.",
+          "zh": "数学命题是符号与语句的组合，可被判定为真或假，但不能既真又假，也不能非真非假。证明则是安排一系列步骤与说明，利用已为真的命题把诸真理联结起来，最终导出所要结论的真。"
+        },
+        {
+          "type": "warning",
+          "page": 40,
+          "en": "The order of quantification matters! Swapping the universal and existential quantifiers—\"For every person x there exists a person y who loves x\" versus \"There exists a person x such that for every person y, y loves x\"—yields completely different meanings.",
+          "zh": "量词的次序至关重要！交换全称量词与存在量词——\"对每个人 x 都存在某个人 y 爱 x\"与\"存在某个人 x，使每个人 y 都爱 x\"——会得到完全不同的含义。"
+        }
+      ]
+    },
+    {
+      "section_id": "1.3",
+      "title_en": "Review, Redo, Renew",
+      "title_zh": "复习、重作、更新",
+      "page": 41,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 43,
+          "en": "When solving trailing-zeros problems in n!, think about how many multiples of 2 and how many multiples of 5 appear in the multiplication, and pair them together. Calculators may give an answer, but they won't provide any insight into the procedure.",
+          "zh": "求解 n! 末尾零的个数时，应思考乘积中各有多少个 2 的倍数与 5 的倍数，并把它们配对。计算器也许能给出答案，但不会让你洞察背后的方法。"
+        },
+        {
+          "type": "definition",
+          "page": 49,
+          "en": "A polynomial is a function that has one or more variables raised to integer powers, multiplied by coefficients, and added together. The input values that make the output 0 are called roots of the polynomial. Fact: if a and b are real numbers and ab = 0, then a = 0 or b = 0.",
+          "zh": "多项式是这样一种函数：一个或多个变量取整数次幂、乘以系数后相加。使输出为 0 的输入值称为该多项式的根。事实：若实数 a、b 满足 ab = 0，则 a = 0 或 b = 0（或二者同时成立）。"
+        },
+        {
+          "type": "note",
+          "page": 51,
+          "en": "The difference of squares x^2 − a^2 factors quickly as (x − a)(x + a), so its roots are ±a. This is obtained by seeking r, s with rs = −a^2 and r + s = 0.",
+          "zh": "平方差 x^2 − a^2 可迅速分解为 (x − a)(x + a)，因而其根为 ±a。这通过求满足 rs = −a^2 且 r + s = 0 的 r、s 得到。"
+        },
+        {
+          "type": "strategy",
+          "page": 53,
+          "en": "To expand (a+b)^n, read the n-th row of Pascal's Triangle: every entry is the sum of the two entries immediately above; the k-th entry is the coefficient of a^{n−k} b^k.",
+          "zh": "展开 (a+b)^n 时，可读帕斯卡三角形的第 n 行：每个数等于其上方左右两数之和；第 k 个数即为 a^{n−k} b^k 的系数。"
+        },
+        {
+          "type": "strategy",
+          "page": 54,
+          "en": "Completing the square means adding and subtracting a particular term so that, overall, we have added 0, but the term chosen lets us rewrite the polynomial as a squared term plus a constant.",
+          "zh": "配方法是指加上再减去某一特定项（总体上加了 0），所选项使多项式可改写为一个平方项加上一个常数项的形式。"
+        },
+        {
+          "type": "theorem",
+          "page": 58,
+          "en": "Quadratic formula: for p(x) = ax^2 + bx + c (a != 0), the roots are x = (−b ± sqrt(b^2 − 4ac))/(2a). If b^2 − 4ac < 0 there are no real roots; if it equals 0 there is exactly one root; if it is positive there are two roots.",
+          "zh": "求根公式：对 p(x) = ax^2 + bx + c（a ≠ 0），根为 x = (−b ± sqrt(b^2 − 4ac))/(2a)。若 b^2 − 4ac < 0 则无实根；若等于 0 则恰有一个根；若大于 0 则有两个根。"
+        },
+        {
+          "type": "definition",
+          "page": 59,
+          "en": "N = {1, 2, 3, 4, 5, ...} is the natural numbers; Z = {..., −3, −2, −1, 0, 1, 2, 3, ...} is the integers; Q = {a/b | a, b ∈ Z, b != 0} is the rationals; R is the reals, thought of as \"completing\" Q by filling in the gaps.",
+          "zh": "N = {1, 2, 3, 4, 5, ...} 为自然数集；Z = {..., −3, −2, −1, 0, 1, 2, 3, ...} 为整数集；Q = {a/b | a, b ∈ Z, b ≠ 0} 为有理数集；R 为实数集，可理解为把有理数之间的空隙\"填满\"后得到的完备化。"
+        },
+        {
+          "type": "definition",
+          "page": 60,
+          "en": "Summation notation: 1+2+···+500 = Σ_{i=1}^{500} i. The large sigma (S for \"sum\") tells us to let i run from 1 to 500 and substitute into the general term. Product notation uses the large pi (P for \"product\"): 1·2·····500 = Π_{i=1}^{500} i.",
+          "zh": "求和记号：1+2+···+500 = Σ_{i=1}^{500} i。大写 Σ（对应\"和\"sum 的首字母 S）表示让 i 从 1 取到 500，代入一般项后相加。乘积记号用大写 Π（对应\"积\"product 的首字母 P）：1·2·····500 = Π_{i=1}^{500} i。"
+        }
+      ]
+    },
+    {
+      "section_id": "1.4",
+      "title_en": "Quizzical Puzzicles",
+      "title_zh": "趣味谜题",
+      "page": 61,
+      "key_points": [
+        {
+          "type": "strategy",
+          "page": 63,
+          "en": "In the \"missing dollar\" puzzle, the key is careful interpretation of where the money goes: the $27 from the friends already includes the $2 tip. The puzzle misleads you into adding the tip to the contribution; careful bookkeeping of two entities (friends F, hotel H) dissolves the paradox.",
+          "zh": "在\"失踪的一美元\"谜题中，关键在于仔细追踪钱款去向：三人付出的 27 美元中已包含那 2 美元小费。谜题误导你把小费再加到付出额上；把交易双方（朋友群体 F 与旅店 H）分别记账，悖论即告消解。"
+        },
+        {
+          "type": "theorem",
+          "page": 69,
+          "en": "S(n) = 1+2+···+n = n(n+1)/2. Gauss's trick: write the sum forwards and backwards, add entry by entry: (n+1)·n = 2S(n), so S(n) = n(n+1)/2, regardless of whether n is odd or even.",
+          "zh": "S(n) = 1+2+···+n = n(n+1)/2。高斯技巧：把和式正写一遍、倒写一遍，对应项相加得 (n+1)·n = 2S(n)，故 S(n) = n(n+1)/2，且该推导不依赖 n 的奇偶性。"
+        },
+        {
+          "type": "theorem",
+          "page": 73,
+          "en": "The sum of the first n odd natural numbers is n^2: 1+3+5+···+(2n−1) = n^2. Proof: T(n) = S(2n) − 2S(n) = ((2n)^2+2n)/2 − 2·(n^2+n)/2 = n^2.",
+          "zh": "前 n 个奇自然数之和为 n^2：1+3+5+···+(2n−1) = n^2。证明：T(n) = S(2n) − 2S(n) = ((2n)^2+2n)/2 − 2·(n^2+n)/2 = n^2。"
+        },
+        {
+          "type": "strategy",
+          "page": 74,
+          "en": "Mathematical induction: assuming the result holds for n (1+3+···+(2n−1) = n^2), adding the next odd integer gives n^2 + (2n+1) = (n+1)^2. This is sound only because the base case 1 = 1^2 holds; the chain then propagates forward forever.",
+          "zh": "数学归纳法：假定结果对 n 成立（1+3+···+(2n−1) = n^2），再加下一个奇数得 n^2 + (2n+1) = (n+1)^2。此法之所以有效，完全依赖基础情形 1 = 1^2 成立，此后链条便向前无限传递。"
+        },
+        {
+          "type": "theorem",
+          "page": 75,
+          "en": "Arithmetic series: A(a,c,k) = a+(a+c)+···+(a+(k−1)c) = (k/2)(2a+(k−1)c) = (k/2)(a+b), where a is the first term and b the last.",
+          "zh": "算术级数（等差数列）：A(a,c,k) = a+(a+c)+···+(a+(k−1)c) = (k/2)(2a+(k−1)c) = (k/2)(a+b)，其中 a 为首项、b 为末项。"
+        },
+        {
+          "type": "strategy",
+          "page": 82,
+          "en": "Pigeonhole Principle: at any one of six dots, five lines emerge colored two ways; by pigeonhole at least three share one color. If among their three endpoints any line has that color, a monochromatic triangle forms; otherwise the three lines among them form the opposite-color triangle.",
+          "zh": "鸽巢原理：在六个顶点任取一点，引出五条两色连线；由鸽巢原理，至少三条同色。若这三条线的另一端三点之间有任何一条该色线，便构成同色三角形；否则这三点之间三条线全为另一色，同样构成同色三角形。"
+        },
+        {
+          "type": "note",
+          "page": 84,
+          "en": "\"Without loss of generality\" (WOLOG/WLOG) means: if the other choice (e.g. blue instead of red) would yield an argument of identical mathematical structure, we save space by writing only one case. The cutoff for the friends/enemies problem is 6: any group of 6 contains three mutual friends or three mutual enemies, and 5 does not guarantee it.",
+          "zh": "\"不失一般性（WOLOG/WLOG）\"意指：若换一种选择（例如把红换成蓝）所得论证在数学结构上完全相同，则只写一种情形以节省篇幅。朋友/敌人问题的临界值是 6：任意 6 个人中必有三人互为朋友或互为敌人，而 5 人则不能保证。"
+        },
+        {
+          "type": "theorem",
+          "page": 89,
+          "en": "Monty Hall: staying wins with probability 1/3, switching wins with probability 2/3. General n doors, m cars: staying wins m/n; switching wins (m/n)·(n−1)/(n−2) > m/n, so switching is always strictly better.",
+          "zh": "蒙提·霍尔问题：坚持不换的胜率为 1/3，改选的胜率为 2/3。推广到 n 扇门、m 辆车：坚持不换胜率为 m/n；改选胜率为 (m/n)·(n−1)/(n−2) > m/n，故改选始终严格更优。"
+        }
+      ]
+    },
+    {
+      "section_id": "1.5",
+      "title_en": "It's Wise To Exercise",
+      "title_zh": "习题操练",
+      "page": 92,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 92,
+          "en": "This chapter's exercises incorporate the ideas discussed, give practice of previous knowledge, and keep your brain muscles limber. Discuss potential solutions with friends; even attempting hard problems is meaningful and beneficial in itself.",
+          "zh": "本节习题融汇本章所论、提供旧知操练，并保持思维活跃。应与朋友讨论解法；即使是难题，去尝试、去思考其中的问题本身就富有意义与助益。"
+        },
+        {
+          "type": "definition",
+          "page": 94,
+          "en": "Given a real number x, let floor(x) denote the largest integer less than or equal to x, and let ceil(x) denote the smallest integer greater than or equal to x. E.g. floor(6.02) = 6, floor(−6.5) = −7.",
+          "zh": "对实数 x，记 ⌊x⌋（下取整）为不超过 x 的最大整数，⌈x⌉（上取整）为不小于 x 的最小整数。例如 ⌊6.02⌋ = 6，⌊−6.5⌋ = −7。"
+        },
+        {
+          "type": "strategy",
+          "page": 98,
+          "en": "Magic square hint: an n×n magic square contains each number 1 to n^2 exactly once; the magic sum can be derived by applying the sum formula S(n^2) = n^2(n^2+1)/2 and dividing by n rows.",
+          "zh": "幻方提示：n×n 幻方恰好各含 1 到 n^2 一次；利用求和公式 S(n^2) = n^2(n^2+1)/2 并除以 n 行，即可导出幻和。"
+        }
+      ]
+    },
+    {
+      "section_id": "1.6",
+      "title_en": "Lookahead",
+      "title_zh": "后续展望",
+      "page": 98,
+      "key_points": [
+        {
+          "type": "note",
+          "page": 98,
+          "en": "This introductory chapter is meant to get you thinking about what mathematics is, how we solve problems, and what it means to write a proof. Throughout the rest of the book, we will be discussing all three of these ideas in more and more detail.",
+          "zh": "本章旨在引导你思考：数学是什么、我们如何解题、以及撰写证明意味着什么。在后续章节中，我们将越来越深入地讨论这三个观念。"
+        },
+        {
+          "type": "note",
+          "page": 99,
+          "en": "The major goals are: (a) formalize some intuitive ideas about mathematical objects, (b) see many examples of good proofs and develop the ability to create and write good proofs, (c) develop problem-solving skills, and (d) cultivate an appreciation for both the art and science of mathematics.",
+          "zh": "全书的主要目标是：(a) 把关于数学对象的一些直观想法形式化；(b) 通过观摩大量好证明，培养自己构造与撰写好证明的能力；(c) 发展解题技能；(d) 培养对数学作为艺术与科学双重品格的鉴赏力。"
+        },
+        {
+          "type": "strategy",
+          "page": 99,
+          "en": "Scan the table of contents at the beginning of the book to get a sense for where our journey is headed. The phrases and terminology might be foreign to you now, but by the end of the book, we will all be speaking the same language: mathematics.",
+          "zh": "翻阅书首目录，对本旅程的走向获得一个概览。那些术语此刻或许陌生，但读完本书后，我们都将使用同一种语言——数学。"
+        }
+      ]
+    }
+  ],
+  "glossary": [
+    {"term_en": "mathematical proof", "term_zh": "数学证明", "page": 15, "note_zh": "对一个数学事实所作的清晰、简洁且每一步均有效成立的解释与论证。"},
+    {"term_en": "prime number", "term_zh": "素数（质数）", "page": 20, "note_zh": "大于 1 且正因数只有 1 与自身的正整数；其余正整数称为合数。"},
+    {"term_en": "rational number", "term_zh": "有理数", "page": 21, "note_zh": "可表为两个整数之比 a/b（b≠0）的实数。"},
+    {"term_en": "irrational number", "term_zh": "无理数", "page": 21, "note_zh": "不是有理数的实数，即不能表为整数之比。"},
+    {"term_en": "conditional statement", "term_zh": "条件命题", "page": 36, "note_zh": "\"若 A 则 B\"形式的命题，是绝大多数数学定理的形态。"},
+    {"term_en": "hypothesis (antecedent)", "term_zh": "假设（前件）", "page": 38, "note_zh": "条件命题中\"若\"所引导、据以推导的部分 A。"},
+    {"term_en": "conclusion (consequent)", "term_zh": "结论（后件）", "page": 38, "note_zh": "条件命题中\"则\"所引导、被推出的部分 B。"},
+    {"term_en": "universal quantifier", "term_zh": "全称量词", "page": 36, "note_zh": "\"对所有/任意（for all, ∀）\"，断言命题对变元的每个取值成立。"},
+    {"term_en": "existential quantifier", "term_zh": "存在量词", "page": 37, "note_zh": "\"存在（there exists, ∃）\"，断言至少有一个取值使命题成立。"},
+    {"term_en": "polynomial", "term_zh": "多项式", "page": 49, "note_zh": "变量取整数次幂、乘系数后相加所得的函数。"},
+    {"term_en": "root (of a polynomial)", "term_zh": "（多项式的）根", "page": 49, "note_zh": "使多项式函数取值为 0 的输入值。"},
+    {"term_en": "completing the square", "term_zh": "配方法", "page": 54, "note_zh": "通过加、减同一常数项，把二次式改写为平方项加常数的技巧。"},
+    {"term_en": "sets N, Z, Q, R", "term_zh": "自然数集、整数集、有理数集、实数集", "page": 59, "note_zh": "N 为正整数；Z 为全体整数；Q 为整数之比；R 为数轴上的全部实数。"},
+    {"term_en": "mathematical induction", "term_zh": "数学归纳法", "page": 74, "note_zh": "由基础情形出发，证明\"对 n 成立则对 n+1 成立\"，从而向前无限传递的证明策略。"},
+    {"term_en": "Pigeonhole Principle", "term_zh": "鸽巢原理", "page": 82, "note_zh": "把多于 n 个对象放入 n 个抽屉时，必有一抽屉含至少两个对象的计数原理。"}
+  ],
+  "action_rules": [
+    {"en": "Every step, logical inference and claim in a proof must be valid, mathematically speaking, and the writer must make (reasonably) clear why each statement follows from previous work or outside knowledge.", "zh": "证明中的每一步、每一处逻辑推断与断言在数学上都必须成立，并且作者应（合理地）说清每一步为何由前文或已有知识推出。"},
+    {"en": "Never assume the very conclusion you are proving: assuming a statement and deriving a known truth does not validate the assumption (the flaw in \"Proof 2\" of the Pythagorean Theorem and the \"0=1\" argument).", "zh": "绝不要把待证结论本身当作假设：先假定命题成立再推出已知真理，并不能证明该假定有效（这正是勾股定理\"证明二\"与\"0=1 论证\"的错误）。"},
+    {"en": "Hold every proof to three standards: precise (no statement untrue or ambiguously interpretable), logical (each step follows with motivation), clear (proper grammar; the reader never has to ask \"what does that mean?\" or \"where did that come from?\").", "zh": "每个证明都须满足三条标准：精确（无假命题、无多义解读）、合逻辑（每步有动机地推出）、清晰（语法规范；读者不会停下来问\"这是什么意思\"或\"这从哪来\"）。"},
+    {"en": "Never divide by zero, and beware one-way algebraic steps: if a=b then a^2=b^2, but a^2=b^2 only implies a=b or a=−b; squaring is safe but reversing it by taking roots is not.", "zh": "绝不要除以零，并警惕单向代数步骤：a=b 可推出 a^2=b^2，但 a^2=b^2 只能推出 a=b 或 a=−b；两边平方安全，反过来开方则不安全。"},
+    {"en": "Use the inclusive \"or\" in mathematics (at least one disjunct true, possibly both), and do not leave crucial steps \"to the reader\"—sketches are fine only for non-essential routine details.", "zh": "数学中使用相容的\"或\"（至少一个析取支为真，可同时为真）；不要把关键步骤\"留给读者\"——略写只适用于非本质的常规细节。"},
+    {"en": "Recast puzzles in efficient notation; prove possibility by exhibiting an example, and impossibility by a general argument over all configurations—brute-force checking of 2^15 colorings is not a proof.", "zh": "用高效记号重述谜题；可能性靠举出一个例子来证，不可能性则靠对所有构型作一般性论证——逐个检查 2^15 种染色方案不是证明。"},
+    {"en": "Use the Pigeonhole Principle and WLOG to shorten arguments; verify intuitive snap judgments (e.g. the Monty Hall \"50/50\" feeling) by enumerating cases and computing probabilities in the order the game is played.", "zh": "善用鸽巢原理与 WLOG 缩短论证；用枚举情形、按游戏发生顺序计算概率的方式，检验直觉式的草率判断（如蒙提·霍尔问题中\"五五开\"的感觉）。"}
+  ],
+  "quiz": [
+    {
+      "page": 14,
+      "question_en": "The Goldbach Conjecture has been verified by computer up to about 10^18. Why is this still NOT a mathematical proof that the conjecture is true?",
+      "question_zh": "哥德巴赫猜想已被计算机验证到约 10^18。为什么这仍然不是该猜想为真的数学证明？",
+      "options": [
+        {"en": "Because computers make arithmetic errors too often", "zh": "因为计算机做算术也经常出错"},
+        {"en": "Because mathematics requires an argument showing the statement holds for ALL cases; checking finitely many values, however huge, does not cover all", "zh": "因为数学要求用论证说明命题对所有情形成立；验证有限多个值（哪怕极其巨大）并未覆盖全部情形"},
+        {"en": "Because 10^18 is actually a small number", "zh": "因为 10^18 其实是个很小的数"},
+        {"en": "Because the conjecture must first be written as a theorem", "zh": "因为该猜想必须先被写成定理才行"}
+      ],
+      "answer": 1,
+      "explanation_en": "In mathematics, repeated experimentation or checking a huge finite number of cases is not a viable proof; we need an argument that the phenomenon always occurs. Verification up to 10^18 checks only finitely many even integers, not all.",
+      "explanation_zh": "在数学中，重复实验或验证巨大的有限多个案例都不能算作证明；我们需要一个说明该现象必然永远成立的论证。验证到 10^18 只检查了有限多个偶数，而非全部。"
+    },
+    {
+      "page": 19,
+      "question_en": "Why is \"Proof 2\" of the Pythagorean Theorem (which begins \"Suppose the Pythagorean Theorem is true...\") completely invalid?",
+      "question_zh": "勾股定理的\"证明二\"以\"假设勾股定理成立……\"开头，为什么它是完全无效的？",
+      "options": [
+        {"en": "It uses pictures", "zh": "它使用了图形"},
+        {"en": "It relies on similar triangles, which is not allowed", "zh": "它依赖相似三角形，而这是不允许的"},
+        {"en": "It assumes the very conclusion it is proving; deducing a known truth from an assumption does not prove that assumption", "zh": "它把待证的结论本身当作假设；从一个假设推出已知真理，并不能证明该假设成立"},
+        {"en": "It has too many equations", "zh": "它列的方程太多"}
+      ],
+      "answer": 2,
+      "explanation_en": "Assuming a fact and deducing something true from it does not allow us to conclude the original assumption was valid; otherwise one could \"prove\" anything, as the analogous \"0=1\" argument shows.",
+      "explanation_zh": "先假定某命题、再由此推出为真的结论，并不能证明原假定有效；否则正如与之同理的\"0=1 论证\"所示，人可以\"证明\"任何命题。"
+    },
+    {
+      "page": 28,
+      "question_en": "Starting from x^2 + y^2 = 25 and writing x = sqrt(25 − y^2) is an illogical step because:",
+      "question_zh": "从 x^2 + y^2 = 25 直接写出 x = sqrt(25 − y^2) 是不合逻辑的步骤，原因在于：",
+      "options": [
+        {"en": "Squaring both sides is never allowed", "zh": "两边平方永远不允许"},
+        {"en": "If a^2 = b^2 then a = b OR a = −b; the step secretly picks one of the two possible roots", "zh": "若 a^2 = b^2，则 a = b 或 a = −b；该步骤偷偷选定了两个可能根中的一个"},
+        {"en": "25 − y^2 is always negative", "zh": "25 − y^2 总是负数"},
+        {"en": "x and y are not real numbers", "zh": "x 与 y 不是实数"}
+      ],
+      "answer": 1,
+      "explanation_en": "The text states: if a = b then a^2 = b^2, but if a^2 = b^2 then a = b or a = −b. Taking the positive root immediately assumes one branch, ignoring the negative root.",
+      "explanation_zh": "书中指出：若 a = b，则 a^2 = b^2；但若 a^2 = b^2，则 a = b 或 a = −b。直接取正根等于单方面选定一个分支，忽略了负根。"
+    },
+    {
+      "page": 69,
+      "question_en": "Using Gauss's forward-and-backward trick, S(n) = 1+2+···+n equals:",
+      "question_zh": "用高斯\"正写加倒写\"的技巧，S(n) = 1+2+···+n 等于：",
+      "options": [
+        {"en": "n(n−1)/2", "zh": "n(n−1)/2"},
+        {"en": "n^2", "zh": "n^2"},
+        {"en": "n(n+1)/2", "zh": "n(n+1)/2"},
+        {"en": "(n+1)^2", "zh": "(n+1)^2"}
+      ],
+      "answer": 2,
+      "explanation_en": "Writing the sum forwards and backwards gives n copies of (n+1) = 2S(n), so S(n) = n(n+1)/2, regardless of parity.",
+      "explanation_zh": "将和式正写、倒写后对应相加，得到 n 个 (n+1)，即 2S(n) = n(n+1)，故 S(n) = n(n+1)/2，且与 n 的奇偶无关。"
+    },
+    {
+      "page": 89,
+      "question_en": "In the classical Monty Hall problem (3 doors, 1 car), after the host opens a goat door, the probability of winning by switching is:",
+      "question_zh": "在经典蒙提·霍尔问题（3 扇门、1 辆车）中，主持人打开一扇羊门后，改选而赢车的概率是：",
+      "options": [
+        {"en": "1/2", "zh": "1/2"},
+        {"en": "1/3", "zh": "1/3"},
+        {"en": "2/3", "zh": "2/3"},
+        {"en": "1", "zh": "1"}
+      ],
+      "answer": 2,
+      "explanation_en": "Staying wins only when the first choice was the car (probability 1/3). Switching wins whenever the first choice was a goat (probability 2/3), since the host is then forced to reveal the other goat.",
+      "explanation_zh": "坚持不换只有在初次就选中车时才赢（概率 1/3）；当初次选到羊时（概率 2/3），主持人被迫打开另一扇羊门，改选即赢车。"
+    },
+    {
+      "page": 82,
+      "question_en": "In the friends/enemies problem, why must any one of six dots have at least three incident lines of the same color?",
+      "question_zh": "在朋友/敌人问题中，为什么六个顶点中的任一点引出的线中，必有至少三条同色？",
+      "options": [
+        {"en": "Because each dot has only four lines", "zh": "因为每个顶点只有四条线"},
+        {"en": "By the Pigeonhole Principle: five lines of two colors must put at least three of one color into one \"box\"", "zh": "由鸽巢原理：五条两色的线，必有一种颜色至少有三条落入同一\"盒子\""},
+        {"en": "Because red is more common than blue", "zh": "因为红色比蓝色更常见"},
+        {"en": "It is only true for seven or more dots", "zh": "它只对七个或更多顶点成立"}
+      ],
+      "answer": 1,
+      "explanation_en": "Five lines leave one dot, colored two ways. At most two could be red and at most two blue, totaling at most four lines—contradiction. Hence at least three share a color, which then starts the monochromatic-triangle argument.",
+      "explanation_zh": "一个顶点引出五条线，染成两色。若红线至多两条、蓝线至多两条，合计至多四条线，与应有五条矛盾。故必有一色至少三条，由此启动同色三角形的论证。"
+    }
+  ]
+}
